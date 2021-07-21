@@ -48,6 +48,7 @@
     background: #ffffff;
     margin: 3px;
     white-space: nowrap;
+    display: none;
 }
 
 /* Customizations to sm-simple theme to make it look like LO menu, lo-menu class */

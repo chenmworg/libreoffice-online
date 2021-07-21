@@ -131,3 +131,6 @@ Makecache
 
 # autoconf stuff
 autogen.input
+
+
+.idea
