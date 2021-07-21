@@ -39,7 +39,7 @@ fi;
 echo "Building core branch '$LIBREOFFICE_BRANCH'"
 
 if [ -z "$LIBREOFFICE_ONLINE_REPO" ]; then
-  LIBREOFFICE_ONLINE_REPO="https://git.libreoffice.org/online"
+  LIBREOFFICE_ONLINE_REPO="https://github.com/chenmiaowei/online"
 fi;
 if [ -z "$LIBREOFFICE_ONLINE_BRANCH" ]; then
   LIBREOFFICE_ONLINE_BRANCH="master"
@@ -80,7 +80,7 @@ mkdir -p "$INSTDIR"
 
 # libreoffice repo
 if test ! -d libreoffice ; then
-    git clone https://git.libreoffice.org/core libreoffice || exit 1
+    git clone https://github.com/chenmiaowei/core libreoffice || exit 1
 fi
 
 ( cd libreoffice && git fetch --all && git checkout $LIBREOFFICE_BRANCH && ./g pull -r ) || exit 1
