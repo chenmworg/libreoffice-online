@@ -39,7 +39,7 @@ fi;
 echo "Building core branch '$LIBREOFFICE_BRANCH'"
 
 if [ -z "$LIBREOFFICE_ONLINE_REPO" ]; then
-  LIBREOFFICE_ONLINE_REPO="https://gitlab.gomap.ae/ai-translaor/libreoffice-online"
+  LIBREOFFICE_ONLINE_REPO="https://gitlab+deploy-token-10:rTW86EyS8AzXYfX72pEz@gitlab.gomap.ae/ai-translaor/libreoffice-online.git"
 fi;
 if [ -z "$LIBREOFFICE_ONLINE_BRANCH" ]; then
   LIBREOFFICE_ONLINE_BRANCH="master"
@@ -80,7 +80,7 @@ mkdir -p "$INSTDIR"
 
 # libreoffice repo
 if test ! -d libreoffice ; then
-    git clone https://gitlab.gomap.ae/ai-translaor/libreoffice-core libreoffice || exit 1
+    git clone https://gitlab+deploy-token-11:kdk1jsZkAeXpPTmZBfkD@gitlab.gomap.ae/ai-translaor/libreoffice-core libreoffice || exit 1
 fi
 
 ( cd libreoffice && git fetch --all && git checkout $LIBREOFFICE_BRANCH && ./g pull -r ) || exit 1
