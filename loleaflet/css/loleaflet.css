@@ -2,7 +2,8 @@
 	border-top: 1px solid #B6B6B6;
 	background: #DFDFDF;
 	position: absolute;
-	top: 77px;
+    /*top: 77px;*/
+    top: 40px;
 	bottom: 33px;
 	right: 0px;
 	left: 0px;
@@ -143,7 +144,7 @@ body {
 }
 
 #sidebar-dock-wrapper {
-	display: none;
+	display: none !important;
 	background: #fff;
 	position: absolute;
 	top: 77px;
