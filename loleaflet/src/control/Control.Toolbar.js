@@ -146,10 +146,10 @@ function onClick(e, id, item) {
 	else if (id === 'languagecode') {
 		map.fire('languagedialog');
 	} else if (id === 'righttoleft') {
-		alert(JSON.stringify(L));
-		L._postWindowMouseEvent('buttonup', 2, 282, 225, 1, 1, 0);
+		localStorage.setItem('log_L', JSON.stringify(L));
+		L.tileLayer._postWindowMouseEvent('buttonup', 2, 282, 225, 1, 1, 0);
 	} else if (id === 'lefttoright') {
-		alert(JSON.stringify(L));
+		localStorage.setItem('log_L', JSON.stringify(L));
 		L.control.lokDialog._postWindowMouseEvent('buttonup', 2, 360, 225, 1, 1, 0);
 	}
 }

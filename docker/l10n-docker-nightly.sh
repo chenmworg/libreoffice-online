@@ -96,7 +96,7 @@ fi
 
 # build LibreOffice
 ( cd libreoffice && ./autogen.sh --with-distro=LibreOfficeOnline) || exit 1
-( cd libreoffice && make $LIBREOFFICE_BUILD_TARGET DEBUG=true ) || exit 1
+( cd libreoffice && make $LIBREOFFICE_BUILD_TARGET ) || exit 1
 
 # copy stuff
 mkdir -p "$INSTDIR"/opt/

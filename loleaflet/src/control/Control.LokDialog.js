@@ -998,8 +998,12 @@ L.Control.LokDialog = L.Control.extend({
 	_launchSidebar: function(id, width, height) {
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
 		launchSidebarCount ++;
+		alert('launchSidebarCount'+ [launchSidebarCount] + launchSidebarCount === 1);
+		if (launchSidebarCount === 1) {
+			return;
+		}
 		// launchSidebarCount == 1 为第一次调用，不打开， 临时解决方法
-		if ((window.mode.isMobile() || window.mode.isTablet() || launchSidebarCount === 1)
+		if ((window.mode.isMobile() || window.mode.isTablet())
 		    && this._map._permission != 'edit')
 			return;
 
