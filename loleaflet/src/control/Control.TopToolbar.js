@@ -10,7 +10,7 @@ function parserleftClick() {
         .click();
 }
 
-console.log('parserleftClick');
+console.log('parserleftClick', parserleftClick);
 
 L.Control.TopToolbar = L.Control.extend({
 	options: {
