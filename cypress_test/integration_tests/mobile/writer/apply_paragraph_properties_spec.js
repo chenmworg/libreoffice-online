@@ -84,7 +84,6 @@ describe('Apply paragraph properties.', function() {
 	});
 
 	it('Change writing direction.', function() {
-        alert('Change writing direction')
 		// Change writing mode
 		cy.get('#ParaRightToLeft')
 			.click();

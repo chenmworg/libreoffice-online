@@ -535,6 +535,7 @@ L.TileLayer = L.GridLayer.extend({
 	},
 
 	_onMessage: function (textMsg, img) {
+		alert('_onMessage:'+JSON.stringify(textMsg));
 		// 'tile:' is the most common message type; keep this the first.
 		if (textMsg.startsWith('tile:')) {
 			this._onTileMsg(textMsg, img);
@@ -1880,6 +1881,7 @@ L.TileLayer = L.GridLayer.extend({
 	},
 
 	_onDialogMsg: function(textMsg) {
+		alert('TitleLayer_onDialogMsg');
 		textMsg = textMsg.substring('window: '.length);
 		var dialogMsg = JSON.parse(textMsg);
 		// e.type refers to signal type
