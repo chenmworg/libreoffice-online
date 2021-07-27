@@ -1143,6 +1143,7 @@ L.Control.Menubar = L.Control.extend({
 		} else if (id === 'shareas') {
 			this._map.fire('postMessage', {msgId: 'UI_Share'});
 		} else if (id === 'print') {
+			localStorage.setItem('log', 'print-menubar');
 			this._map.print();
 		} else if (id.startsWith('downloadas-')) {
 			var format = id.substring('downloadas-'.length);
@@ -1238,6 +1239,9 @@ L.Control.Menubar = L.Control.extend({
 			this._map.sendUnoCommand('.uno:LOKSidebarWriterPage');
 			this._map.fire('showwizardsidebar');
 			window.pageMobileWizard = true;
+		} else if (id === 'parserleft') {
+			alert('parserleftClick-menubar'+ id);
+			L._postWindowMouseEvent('buttonup', 2, 282, 224, 1, 1, 0);
 		}
 		// Inform the host if asked
 		if (postmessage)

@@ -79,6 +79,7 @@ function onClick(e, id, item) {
 		}
 	}
 	else if (id === 'print') {
+		localStorage.setItem('log', 'print-toolbar');
 		map.print();
 	}
 	else if (id === 'save') {
@@ -145,6 +146,9 @@ function onClick(e, id, item) {
 	}
 	else if (id === 'languagecode') {
 		map.fire('languagedialog');
+	} else if (id === 'parserleft') {
+		alert('parserleftClick-toolbar'+ id);
+		L._postWindowMouseEvent('buttonup', 2, 282, 224, 1, 1, 0);
 	}
 }
 

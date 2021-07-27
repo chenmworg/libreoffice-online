@@ -303,7 +303,6 @@ L.Control.LokDialog = L.Control.extend({
 				lines = parseInt(e.lines);
 				this._launchCalcInputBar(e.id, left, top, width, height, lines);
 			} else if (e.winType === 'deck') {
-				alert('_launchSidebar-'+ 'isMobile' + window.mode.isMobile());
 				if (!window.mode.isMobile()) {
 					this._launchSidebar(e.id, width, height);
 				} else {
@@ -1343,6 +1342,10 @@ L.Control.LokDialog = L.Control.extend({
 	_postWindowMouseEvent: function(type, winid, x, y, count, buttons, modifier) {
 		if (['buttonup', 'buttondown'].includes(type)) {
 			logInfo('_postWindowMouseEvent', winid, x, y, count, buttons, modifier);
+			localStorage.setItem('log-_postWindowMouseEvent', ' type=' + type + 'windowmouse id=' + winid +
+				' x=' + x + ' y=' + y + ' count=' + count +
+				' buttons=' + buttons + ' modifier=' + modifier);
+
 		}
 		this._map._socket.sendMessage('windowmouse id=' + winid +  ' type=' + type +
 		                              ' x=' + x + ' y=' + y + ' count=' + count +
