@@ -5,10 +5,10 @@
 
 /* global $ w2ui _ _UNO w2utils */
 function parserleftClick() {
-    alert('parserleftClick');
-    L.DomUtil.get('#ParaRightToLeft')
+        alert('parserleftClick');
+        L.DomUtil.get('#ParaRightToLeft')
         .click();
-};
+}
 window.global.parserleftClick = parserleftClick;
 L.Control.TopToolbar = L.Control.extend({
 	options: {

@@ -301,8 +301,8 @@ L.Control.LokDialog = L.Control.extend({
 				this._launchCalcInputBar(e.id, left, top, width, height, lines);
 			} else if (e.winType === 'deck') {
 				if (!window.mode.isMobile()) {
-				    alert('_launchSidebar 304');
-					this._launchSidebar(e.id, width, height);
+                    alert('_launchSidebar 304');
+                    this._launchSidebar(e.id, width, height);
 				} else {
 					// In mobile we get jsdialog messages.
 					window.sidebarId = e.id;
