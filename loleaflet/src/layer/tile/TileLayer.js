@@ -1880,6 +1880,7 @@ L.TileLayer = L.GridLayer.extend({
 	},
 
 	_onDialogMsg: function(textMsg) {
+		localStorage.setItem('log_onDialogMsg', JSON.stringify(textMsg));
 		textMsg = textMsg.substring('window: '.length);
 		var dialogMsg = JSON.parse(textMsg);
 		// e.type refers to signal type

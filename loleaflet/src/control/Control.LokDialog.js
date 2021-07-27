@@ -37,6 +37,8 @@ var draggedObject = null;
 
 var zoomTargets = [];
 
+var launchSidebarCount = 0; // Sidebar 打开次数
+
 function findZoomTarget(id) {
 	for (var item in zoomTargets) {
 		if (zoomTargets[item].key === id || zoomTargets[item].titlebar.id === id) {
@@ -995,7 +997,9 @@ L.Control.LokDialog = L.Control.extend({
 
 	_launchSidebar: function(id, width, height) {
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
-		if ((window.mode.isMobile() || window.mode.isTablet())
+		launchSidebarCount ++;
+		// launchSidebarCount == 1 为第一次调用，不打开， 临时解决方法
+		if ((window.mode.isMobile() || window.mode.isTablet() || launchSidebarCount === 1)
 		    && this._map._permission != 'edit')
 			return;
 

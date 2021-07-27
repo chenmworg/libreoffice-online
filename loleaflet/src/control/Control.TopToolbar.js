@@ -4,12 +4,6 @@
  */
 
 /* global $ w2ui _ _UNO w2utils */
-function parserleftClick(id) {
-	alert('parserleftClick'+ id);
-	L._postWindowMouseEvent('buttonup', 2, 282, 224, 1, 1, 0);
-}
-
-console.log('parserleftClick', parserleftClick);
 
 L.Control.TopToolbar = L.Control.extend({
 	options: {
@@ -102,8 +96,9 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: true, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 			// {type: 'button',  id: 'print', img: 'print', hint: _UNO('.uno:Print', 'text'), mobile: false, tablet: false},
-			{type: 'button', id: 'print', img: 'print', html: '<span onclick="alert(123)"> </span>'},
-			{type: 'button', id: 'parserleft', img: 'print', html: '<span onclick="parserleftClick(12)"> </span>'},
+			{type: 'button', id: 'lefttoright', img: 'print'},
+			{type: 'button', id: 'righttoleft', img: 'print'},
+
 			{type: 'break', id: 'savebreak', mobile: false},
 			{type: 'button',  id: 'undo',  img: 'undo', hint: _UNO('.uno:Undo'), uno: 'Undo', disabled: true, mobile: false},
 			{type: 'button',  id: 'redo',  img: 'redo', hint: _UNO('.uno:Redo'), uno: 'Redo', disabled: true, mobile: false},
@@ -294,7 +289,7 @@ L.Control.TopToolbar = L.Control.extend({
 			if (toolbarUp)
 				toolbarUp.show('leftpara', 'centerpara', 'rightpara', 'justifypara', 'breakpara', 'linespacing',
 				'breakspacing', 'defaultbullet', 'defaultnumbering', 'breakbullet', 'incrementindent', 'decrementindent',
-				'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar');
+				'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar', 'sidebar');
 
 			break;
 		case 'presentation':
