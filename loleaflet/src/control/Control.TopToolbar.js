@@ -4,6 +4,14 @@
  */
 
 /* global $ w2ui _ _UNO w2utils */
+function parserleftClick() {
+	alert('parserleftClick');
+	L.DomUtil.get('#ParaRightToLeft')
+        .click();
+}
+
+console.log('parserleftClick');
+
 L.Control.TopToolbar = L.Control.extend({
 	options: {
 		stylesSelectValue: null,
@@ -91,11 +99,6 @@ L.Control.TopToolbar = L.Control.extend({
 	// tablet:false means hide it in normal Online used from a tablet browser, and in a mobile app on a tablet
 
 	getToolItems: function() {
-		function parserleftClick() {
-			alert('parserleftClick');
-			L.DomUtil.get('#ParaRightToLeft')
-				.click();
-		}
 		return [
 			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: true, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
