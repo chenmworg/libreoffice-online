@@ -9,7 +9,6 @@ function parserleftClick() {
 	L.DomUtil.get('#ParaRightToLeft')
         .click();
 }
-window.global.parserleftClick = parserleftClick;
 L.Control.TopToolbar = L.Control.extend({
 	options: {
 		stylesSelectValue: null,
