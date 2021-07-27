@@ -301,7 +301,7 @@ L.Control.LokDialog = L.Control.extend({
 				this._launchCalcInputBar(e.id, left, top, width, height, lines);
 			} else if (e.winType === 'deck') {
 				if (!window.mode.isMobile()) {
-					this._launchSidebar(e.id, width, height);
+					// this._launchSidebar(e.id, width, height);
 				} else {
 					// In mobile we get jsdialog messages.
 					window.sidebarId = e.id;
@@ -991,7 +991,7 @@ L.Control.LokDialog = L.Control.extend({
 	},
 
 	_launchSidebar: function(id, width, height) {
-		console.log('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
+		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
 		if ((window.mode.isMobile() || window.mode.isTablet())
 		    && this._map._permission != 'edit')
 			return;

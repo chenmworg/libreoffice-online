@@ -105,6 +105,7 @@ describe('Change alignment settings.', function() {
 	});
 
 	it('Right-to-left and left-to-right writing mode.', function() {
+        console.error('Right-to-left and left-to-right writing mode')
 		openAlignmentPaneForFirstCell();
 
 		cy.get('#ParaRightToLeft')
