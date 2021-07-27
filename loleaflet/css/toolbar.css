@@ -107,6 +107,7 @@ w2ui-toolbar {
 
 .select2-container .select2-selection--single {
 		height: 100%;
+        border: none;
 }
 
 .w2ui-scroll-left,
@@ -694,8 +695,7 @@ button.leaflet-control-search-next
 .w2ui-icon.next{ background: url('images/lc_downsearch.svg') no-repeat center !important; }
 .w2ui-icon.presentation{ background: url('images/lc_dia.svg') no-repeat center !important; }
 .w2ui-icon.prev{ background: url('images/lc_upsearch.svg') no-repeat center !important; }
-/*.w2ui-icon.save{ background: url('images/lc_save.svg') no-repeat center !important; }*/
-.w2ui-icon.save .docs-icon-img{ content: url('images/material_common_sprite.svg'); left: -40px; top: -5054px; }
+.w2ui-icon.save{ background: url('images/lc_save.svg') no-repeat center !important; }
 .w2ui-icon.saveas{ background: url('images/lc_saveas.svg') no-repeat center !important; }
 .w2ui-icon.savemodified{ background: url('images/savemodified_large.svg') no-repeat center !important; }
 .w2ui-icon.zoomin{ background: url('images/plus.svg') no-repeat center !important; }
@@ -724,11 +724,6 @@ button.leaflet-control-search-next
 
 .w2ui-icon.vereign{ background: url('images/vereign.png') no-repeat center !important; }
 
-.w2ui-icon .docs-icon-img-container {
-    height: 7208px;
-    position: absolute;
-    width: 74px;
-}
 .inserttable-pop {
 		z-index: 1000;
 		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);

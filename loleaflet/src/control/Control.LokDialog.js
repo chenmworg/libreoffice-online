@@ -301,7 +301,8 @@ L.Control.LokDialog = L.Control.extend({
 				this._launchCalcInputBar(e.id, left, top, width, height, lines);
 			} else if (e.winType === 'deck') {
 				if (!window.mode.isMobile()) {
-					// this._launchSidebar(e.id, width, height);
+				    alert('_launchSidebar 304')
+					this._launchSidebar(e.id, width, height);
 				} else {
 					// In mobile we get jsdialog messages.
 					window.sidebarId = e.id;
@@ -379,7 +380,8 @@ L.Control.LokDialog = L.Control.extend({
 			// now because the size sent to us previously in 'created' cb is not correct
 			if (e.winType === 'deck' || this._isSidebar(e.id)) {
 				$('#' + strId).remove();
-				this._launchSidebar(e.id, width, height);
+                alert('_launchSidebar 383')
+                this._launchSidebar(e.id, width, height);
 			} else if (e.winType === 'calc-input-win' || this.isCalcInputBar(e.id)) {
 				lines = parseInt(e.lines);
 				left = left | this._calcInputBar.left;

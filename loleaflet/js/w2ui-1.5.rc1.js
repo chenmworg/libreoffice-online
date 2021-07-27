@@ -6198,9 +6198,7 @@ w2utils.event = {
             var img  = '<td>&#160;</td>';
             var text = item.text;
             if (typeof text == 'function') text = text.call(this, item);
-            if (item.img)  img = '<td><div class="w2ui-tb-image w2ui-icon '+ item.img +'">' +
-                '<div class="docs-icon-img-container docs-icon-img" aria-hidden="true"></div>' +
-                '</div></td>';
+            if (item.img)  img = '<td><div class="w2ui-tb-image w2ui-icon '+ item.img +'"></div></td>';
             if (item.icon) img = '<td><div class="w2ui-tb-image"><span class="'+ item.icon +'"></span></div></td>';
 
             if (html === '') switch (item.type) {

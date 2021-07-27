@@ -3009,16 +3009,17 @@ button.w2ui-btn-small:focus:before {
   cursor: default;
 }
 .w2ui-toolbar .w2ui-break {
-  background-image: -webkit-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);
-  background-image: -moz-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);
-  background-image: -ms-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);
-  background-image: -o-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);
-  background-image: linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);
+  /*background-image: -webkit-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);*/
+  /*background-image: -moz-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);*/
+  /*background-image: -ms-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);*/
+  /*background-image: -o-linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);*/
+  /*background-image: linear-gradient(top, rgba(153, 153, 153, 0.1) 0%, #999999 40%, #999999 60%, rgba(153, 153, 153, 0.1) 100%);*/
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff999999', endColorstr='#ff999999', GradientType=0);
   width: 1px !important;
   height: 22px;
   padding: 0px;
   margin: 0px 6px;
+  background-color: rgb(218, 220, 224);
 }
 .w2ui-listview {
   overflow: auto !important;
