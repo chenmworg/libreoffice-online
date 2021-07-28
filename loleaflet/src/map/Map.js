@@ -382,8 +382,7 @@ L.Map = L.Evented.extend({
 
 	initializeModificationIndicator: function() {
 		var lastModButton = L.DomUtil.get('menu-last-mod');
-		console.error('lastModButton', lastModButton !== null, lastModButton !== undefined, lastModButton.firstChild,[lastModButton.firstChild.innerHTML], lastModButton.firstChild.innerHTML === null, lastModButton.firstChild.childElementCount);
-
+		console.log('lastModButton', !!lastModButton);
 		if (lastModButton !== null && lastModButton !== undefined
 			&& lastModButton.firstChild.innerHTML !== null
 			&& lastModButton.firstChild.childElementCount == 0) {
@@ -401,7 +400,7 @@ L.Map = L.Evented.extend({
 			// Replace menu button body with new content
 			lastModButton.firstChild.innerHTML = '';
 			lastModButton.firstChild.appendChild(mainSpan);
-
+			console.log('lastModButton.firstChild', !!lastModButton.firstChild, lastModButton.firstChild);
 			if (L.Params.revHistoryEnabled) {
 				L.DomUtil.setStyle(lastModButton, 'cursor', 'pointer');
 			}
