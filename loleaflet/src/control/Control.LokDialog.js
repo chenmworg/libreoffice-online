@@ -37,9 +37,6 @@ var draggedObject = null;
 
 var zoomTargets = [];
 
-var launchSidebarCount = 0; // Sidebar 打开次数
-
-localStorage.removeItem('launchSidebarCount');
 localStorage.removeItem('launchSidebarId');
 
 
@@ -1001,16 +998,9 @@ L.Control.LokDialog = L.Control.extend({
 
 	_launchSidebar: function(id, width, height) {
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
-		launchSidebarCount ++;
-		localStorage.setItem('launchSidebarCount', launchSidebarCount);
 		localStorage.setItem('launchSidebarId', id);
-		console.error('launchSidebarCount', launchSidebarCount, 'launchSidebarId', id);
+		console.error('launchSidebarId', id);
 
-		if (launchSidebarCount === 1) {
-			launchSidebarCount ++;
-			return;
-		}
-		// launchSidebarCount == 1 为第一次调用，不打开， 临时解决方法
 		if ((window.mode.isMobile() || window.mode.isTablet())
 		    && this._map._permission != 'edit')
 			return;

@@ -96,8 +96,8 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: true, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 			// {type: 'button',  id: 'print', img: 'print', hint: _UNO('.uno:Print', 'text'), mobile: false, tablet: false},
-			{type: 'button', id: 'lefttoright', img: 'print'},
-			{type: 'button', id: 'righttoleft', img: 'print'},
+			{type: 'button', id: 'lefttoright', img: 'print', hidden: true},
+			{type: 'button', id: 'righttoleft', img: 'print', hidden: true},
 
 			{type: 'break', id: 'savebreak', mobile: false},
 			{type: 'button',  id: 'undo',  img: 'undo', hint: _UNO('.uno:Undo'), uno: 'Undo', disabled: true, mobile: false},
@@ -230,7 +230,7 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'masterslidespanel', img: 'sidebar_master_slides', hint: _UNO('.uno:MasterSlidesPanel', 'presentation', true), uno: '.uno:MasterSlidesPanel', hidden: true},
 			// {type: 'break', id: 'breaksidebar', hidden: true},
 			// {type: 'button',  id: 'fold',  img: 'fold', desktop: true, mobile: false, hidden: true},
-			{type: 'button',  id: 'hamburger-tablet',  img: 'hamburger', desktop: false, mobile: false, tablet: true, iosapptablet: false, hidden: true},
+			// {type: 'button',  id: 'hamburger-tablet',  img: 'hamburger', desktop: false, mobile: false, tablet: true, iosapptablet: false, hidden: true},
 			{type: 'button', id: 'languagecode', desktop: false, mobile: true, tablet: false}
 		];
 	},

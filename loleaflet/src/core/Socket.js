@@ -126,9 +126,9 @@ L.Socket = L.Class.extend({
 	},
 
 	sendMessage: function (msg) {
-		if (msg.includes('type=move')) {
-			return;
-		}
+		// if (msg.includes('type=move')) {
+		// 	return;
+		// }
 		if (this._map._fatal) {
 			// Avoid communicating when we're in fatal state
 			return;

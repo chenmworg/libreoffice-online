@@ -293,18 +293,17 @@ L.Map = L.Evented.extend({
 			}
 
 			this.initializeModificationIndicator();
-
 			// Show sidebar.
 			if (this._docLayer && !this._docLoadedOnce &&
 				(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
 				// Let the first page finish loading then load the sidebar.
-				var map = this;
-				setTimeout(function () {
-					// Show the sidebar by default, but not on mobile.
-					if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
-						map._socket.sendMessage('uno .uno:SidebarShow');
-					}
-				}, 200);
+				// var map = this;
+				// setTimeout(function () {
+				// 	// Show the sidebar by default, but not on mobile.
+				// 	if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
+				// 		map._socket.sendMessage('uno .uno:SidebarShow');
+				// 	}
+				// }, 200);
 			}
 
 			// We have loaded.
@@ -383,10 +382,12 @@ L.Map = L.Evented.extend({
 
 	initializeModificationIndicator: function() {
 		var lastModButton = L.DomUtil.get('menu-last-mod');
-		console.error('lastModButton', !!lastModButton);
+		console.error('lastModButton', lastModButton !== null, lastModButton !== undefined, lastModButton.firstChild,lastModButton.firstChild.innerHTML, lastModButton.firstChild.childElementCount);
+
 		if (lastModButton !== null && lastModButton !== undefined
 			&& lastModButton.firstChild.innerHTML !== null
 			&& lastModButton.firstChild.childElementCount == 0) {
+
 			var mainSpan = document.createElement('span');
 			var label = document.createTextNode(_('Last modification'));
 			var separator = document.createTextNode(': ');
