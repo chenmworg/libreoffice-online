@@ -156,11 +156,19 @@ function onClick(e, id, item) {
 	}
 	else if (id === 'righttoleft') {
 		// L.tileLayer._postWindowMouseEvent('buttonup', 2, 282, 225, 1, 1, 0);
-		postWindowMouseEvent('buttonup', 2, 282, 225, 1, 1, 0);
+		var winid = localStorage.removeItem('launchSidebarId') || 3;
+
+		postWindowMouseEvent('buttondown', winid, 282, 225, 1, 1, 0);
+		postWindowMouseEvent('buttonup', winid, 282, 225, 1, 1, 0);
+
 	}
 	else if (id === 'lefttoright') {
 		// L.control.lokDialog._postWindowMouseEvent('buttonup', 2, 360, 225, 1, 1, 0);
-		postWindowMouseEvent('buttonup', 2, 360, 225, 1, 1, 0);
+		var windowid = localStorage.removeItem('launchSidebarId') || 3;
+
+		postWindowMouseEvent('buttondown',  windowid, 360, 228, 1, 1, 0);
+		postWindowMouseEvent('buttonup', windowid, 360, 228, 1, 1, 0);
+
 
 	}
 }

@@ -126,6 +126,9 @@ L.Socket = L.Class.extend({
 	},
 
 	sendMessage: function (msg) {
+		if (msg.includes('type=move') || msg.includes('type=buttondown')) {
+			return;
+		}
 		if (this._map._fatal) {
 			// Avoid communicating when we're in fatal state
 			return;

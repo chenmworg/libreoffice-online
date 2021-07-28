@@ -2933,7 +2933,8 @@ button.w2ui-btn-small:focus:before {
   border: 0px !important;
 }
 .w2ui-toolbar table.w2ui-button {
-  margin: 0 1px 0 0;
+  /*margin: 0 1px 0 0;*/
+  margin: 5px 1px;
   border-radius: 4px;
   height: 24px;
   min-width: 24px;
@@ -2944,7 +2945,8 @@ button.w2ui-btn-small:focus:before {
   width: 22px;
   height: 16px;
   padding: 0;
-  margin: 0px 1px!important;
+  /*margin: 0px 1px!important;*/
+  margin: 2px 3px!important;
   border: 0!important;
   text-align: center;
 }
@@ -2983,8 +2985,9 @@ button.w2ui-btn-small:focus:before {
   margin-top: 5px;
 }
 .w2ui-toolbar table.w2ui-button.over {
-  border: 1px solid #cccccc;
-  background-color: #eeeeee;
+  /*border: 1px solid #cccccc;*/
+  background-color: #F1F3F4;
+
 }
 .w2ui-toolbar table.w2ui-button.over .w2ui-tb-caption {
   color: #000000;
@@ -2999,6 +3002,7 @@ button.w2ui-btn-small:focus:before {
 .w2ui-toolbar table.w2ui-button.checked {
   /*border: 1px solid #aaaaaa;*/
   /*background-color: #ffffff;*/
+  border: none;
   background-color: rgb(232, 240, 254);
   color: rgb(26, 115, 232);
 }

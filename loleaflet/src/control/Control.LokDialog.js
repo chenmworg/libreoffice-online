@@ -38,7 +38,11 @@ var draggedObject = null;
 var zoomTargets = [];
 
 var launchSidebarCount = 0; // Sidebar 打开次数
+var stepCount = 0;
+localStorage.removeItem('stepCount');
 localStorage.removeItem('launchSidebarCount');
+localStorage.removeItem('launchSidebarId');
+
 
 function findZoomTarget(id) {
 	for (var item in zoomTargets) {
@@ -1000,7 +1004,10 @@ L.Control.LokDialog = L.Control.extend({
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
 		launchSidebarCount ++;
 		localStorage.setItem('launchSidebarCount', launchSidebarCount);
+		localStorage.setItem('launchSidebarId', id);
+
 		if (launchSidebarCount === 1) {
+			launchSidebarCount ++;
 			return;
 		}
 		// launchSidebarCount == 1 为第一次调用，不打开， 临时解决方法
@@ -1192,6 +1199,8 @@ L.Control.LokDialog = L.Control.extend({
 				pos.x += this._calcInputBar.left;
 				pos.y += this._calcInputBar.top;
 			}
+			stepCount ++;
+			localStorage.setItem('_setupWindowEvents' + lokEventType + stepCount, JSON.stringify([lokEventType, id, pos.x, pos.y, 1, buttons, modifier]));
 			this._postWindowMouseEvent(lokEventType, id, pos.x, pos.y, 1, buttons, modifier);
 			this._map.setWinId(id);
 			//dlgInput.focus();
@@ -1351,7 +1360,7 @@ L.Control.LokDialog = L.Control.extend({
 	_postWindowMouseEvent: function(type, winid, x, y, count, buttons, modifier) {
 		if (['buttonup', 'buttondown'].includes(type)) {
 			logInfo('_postWindowMouseEvent', winid, x, y, count, buttons, modifier);
-			localStorage.setItem('log-_postWindowMouseEvent', ' type=' + type + 'windowmouse id=' + winid +
+			localStorage.setItem('log-_postWindowMouseEvent', ' type=' + type + ' windowmouse id=' + winid +
 				' x=' + x + ' y=' + y + ' count=' + count +
 				' buttons=' + buttons + ' modifier=' + modifier);
 
@@ -1757,6 +1766,7 @@ L.Control.LokDialog = L.Control.extend({
 		}, this);
 
 		L.DomEvent.on(canvas, 'mousedown mouseup', function(e) {
+
 			var buttons = 0;
 			if (this._map['mouse']) {
 				buttons |= e.button === this._map['mouse'].JSButtons.left ? this._map['mouse'].LOButtons.left : 0;
@@ -1766,6 +1776,8 @@ L.Control.LokDialog = L.Control.extend({
 				buttons = 1;
 			}
 			var lokEventType = e.type.replace('mouse', 'button');
+			stepCount ++;
+			localStorage.setItem('_setupChildEvents' + lokEventType + stepCount, JSON.stringify([lokEventType, childId, e.offsetX, e.offsetY, 1, buttons, 0]));
 			this._postWindowMouseEvent(lokEventType, childId, e.offsetX, e.offsetY, 1, buttons, 0);
 		}, this);
 		L.DomEvent.on(canvas, 'mousemove', function(e) {
