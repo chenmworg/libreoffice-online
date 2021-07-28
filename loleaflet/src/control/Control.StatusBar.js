@@ -369,6 +369,11 @@ L.Control.StatusBar = L.Control.extend({
 						html: '<div id="toolbar-last-modify"><a class=""></a></div>'
 					}
 				]);
+
+				if (this.map && this.map.initializeModificationIndicator) {
+					this.map.initializeModificationIndicator('toolbar-last-modify');
+				}
+
 			}
 			break;
 

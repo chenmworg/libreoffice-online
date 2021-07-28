@@ -292,8 +292,7 @@ L.Map = L.Evented.extend({
 				this._docLayer.clearAnnotations();
 			}
 
-			// this.initializeModificationIndicator();
-			this.initializeModificationIndicator('toolbar-last-modify');
+			this.initializeModificationIndicator();
 
 			// Show sidebar.
 			// if (this._docLayer && !this._docLoadedOnce &&
@@ -402,21 +401,6 @@ L.Map = L.Evented.extend({
 			// Replace menu button body with new content
 			lastModButton.firstChild.innerHTML = '';
 			lastModButton.firstChild.appendChild(mainSpan);
-			console.error('mainSpan', mainSpan);
-			if (lastModButton.firstChild.innerHTML === '') {
-				var intervalCount = 0;
-				var lastmodInterval = setInterval(function() {
-					if (lastModButton.firstChild.innerHTML || intervalCount > 10) {
-						clearInterval(lastmodInterval);
-						return;
-					}
-					intervalCount++;
-					localStorage('intervalCount:' + modId, intervalCount);
-					lastModButton.firstChild.appendChild(mainSpan);
-
-				}, 200);
-			}
-			console.error('lastModButton.firstChild', !!lastModButton.firstChild, lastModButton.firstChild);
 			if (L.Params.revHistoryEnabled) {
 				L.DomUtil.setStyle(lastModButton, 'cursor', 'pointer');
 			}

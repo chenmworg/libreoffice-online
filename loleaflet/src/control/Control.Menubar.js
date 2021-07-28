@@ -245,7 +245,7 @@ L.Control.Menubar = L.Control.extend({
 				{name: _('Latest Updates'), id: 'latest-updates', type: 'action', iosapp: false},
 				{name: _('About'), id: 'about', type: 'action'}]
 			},
-			// {name: _('Last modification'), id: 'last-mod', type: 'action', tablet: false}
+			{name: _('Last modification'), id: 'last-mod', type: 'action', tablet: false}
 		],
 
 		presentation: [
@@ -359,7 +359,7 @@ L.Control.Menubar = L.Control.extend({
 				{name: _('Latest Updates'), id: 'latest-updates', type: 'action', iosapp: false},
 				{name: _('About'), id: 'about', type: 'action'}]
 			},
-			// {name: _('Last modification'), id: 'last-mod', type: 'action', tablet: false}
+			{name: _('Last modification'), id: 'last-mod', type: 'action', tablet: false}
 		],
 
 		spreadsheet: [
@@ -476,7 +476,7 @@ L.Control.Menubar = L.Control.extend({
 				{name: _('Latest Updates'), id: 'latest-updates', type: 'action', iosapp: false},
 				{name: _('About'), id: 'about', type: 'action'}]
 			},
-			// {name: _('Last modification'), id: 'last-mod', type: 'action', tablet: false}
+			{name: _('Last modification'), id: 'last-mod', type: 'action', tablet: false}
 		],
 
 		mobiletext:  [
