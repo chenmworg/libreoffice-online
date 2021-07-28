@@ -291,8 +291,9 @@ L.Map = L.Evented.extend({
 				// remove the comments and changes
 				this._docLayer.clearAnnotations();
 			}
-
-			this.initializeModificationIndicator();
+			setTimeout(function() {
+				this.initializeModificationIndicator();
+			}, 1000);
 			// Show sidebar.
 			// if (this._docLayer && !this._docLoadedOnce &&
 			// 	(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
@@ -398,8 +399,8 @@ L.Map = L.Evented.extend({
 			this.updateModificationIndicator(this._lastmodtime);
 
 			// Replace menu button body with new content
-			lastModButton.firstChild.innerHTML = mainSpan;
-			// lastModButton.firstChild.appendChild(mainSpan);
+			lastModButton.firstChild.innerHTML = '';
+			lastModButton.firstChild.appendChild(mainSpan);
 			console.error('lastModButton.firstChild', !!lastModButton.firstChild, lastModButton.firstChild);
 			if (L.Params.revHistoryEnabled) {
 				L.DomUtil.setStyle(lastModButton, 'cursor', 'pointer');

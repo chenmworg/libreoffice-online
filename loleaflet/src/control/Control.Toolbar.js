@@ -42,9 +42,6 @@ function getUNOCommand(unoData) {
 }
 function postWindowMouseEvent(type, winid, x, y, count, buttons, modifier) {
 	// localStorage.setItem('log_map', JSON.stringify(map));
-	if (map && map.initializeModificationIndicator) {
-		map.initializeModificationIndicator();
-	}
 	map._socket.sendMessage('windowmouse id=' + winid +  ' type=' + type +
 		' x=' + x + ' y=' + y + ' count=' + count +
 		' buttons=' + buttons + ' modifier=' + modifier);
