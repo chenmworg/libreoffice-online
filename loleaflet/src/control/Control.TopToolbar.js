@@ -198,7 +198,7 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'break', id: 'breakbullet', hidden: true},
 			{type: 'button',  id: 'incrementindent',  img: 'incrementindent', hint: _UNO('.uno:IncrementIndent', '', true), uno: 'IncrementIndent', hidden: true, disabled: true},
 			{type: 'button',  id: 'decrementindent',  img: 'decrementindent', hint: _UNO('.uno:DecrementIndent', '', true), uno: 'DecrementIndent', hidden: true, disabled: true},
-			{type: 'break', id: 'breakindent', hidden: true},
+			// {type: 'break', id: 'breakindent', hidden: true},
 			{type: 'button',  id: 'sortascending',  img: 'sortascending', hint: _UNO('.uno:SortAscending', 'spreadsheet', true), uno: 'SortAscending', disabled: true, hidden: true},
 			{type: 'button',  id: 'sortdescending',  img: 'sortdescending', hint: _UNO('.uno:SortDescending', 'spreadsheet', true), uno: 'SortDescending', disabled: true, hidden: true},
 			{type: 'break', id: 'breaksorting', hidden: true},
@@ -228,7 +228,7 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'slidechangewindow', img: 'sidebar_slide_change', hint: _UNO('.uno:SlideChangeWindow', 'presentation', true), uno: '.uno:SlideChangeWindow', hidden: true},
 			{type: 'button',  id: 'customanimation', img: 'sidebar_custom_animation', hint: _UNO('.uno:CustomAnimation', 'presentation', true), uno: '.uno:CustomAnimation', hidden: true},
 			{type: 'button',  id: 'masterslidespanel', img: 'sidebar_master_slides', hint: _UNO('.uno:MasterSlidesPanel', 'presentation', true), uno: '.uno:MasterSlidesPanel', hidden: true},
-			{type: 'break', id: 'breaksidebar', hidden: true},
+			// {type: 'break', id: 'breaksidebar', hidden: true},
 			// {type: 'button',  id: 'fold',  img: 'fold', desktop: true, mobile: false, hidden: true},
 			{type: 'button',  id: 'hamburger-tablet',  img: 'hamburger', desktop: false, mobile: false, tablet: true, iosapptablet: false, hidden: true},
 			{type: 'button', id: 'languagecode', desktop: false, mobile: true, tablet: false}

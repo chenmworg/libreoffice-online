@@ -380,6 +380,10 @@ L.Control.StatusBar = L.Control.extend({
 					{type: 'menu-radio', id: 'LanguageStatus',
 						mobile: false
 					},
+					{
+						type: 'html', id: 'lastModifyTime',
+						html: '<div id="Last modification"><a class=""></a></div>'
+					},
 					{type: 'break', id: 'break8', mobile: false}
 				]);
 			}

@@ -998,7 +998,6 @@ L.Control.LokDialog = L.Control.extend({
 	_launchSidebar: function(id, width, height) {
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
 		launchSidebarCount ++;
-		alert('launchSidebarCount'+ [launchSidebarCount] + launchSidebarCount === 1);
 		if (launchSidebarCount === 1) {
 			return;
 		}
