@@ -291,9 +291,8 @@ L.Map = L.Evented.extend({
 				// remove the comments and changes
 				this._docLayer.clearAnnotations();
 			}
-			setTimeout(function() {
-				this.initializeModificationIndicator();
-			}, 1000);
+			this.initializeModificationIndicator();
+
 			// Show sidebar.
 			// if (this._docLayer && !this._docLoadedOnce &&
 			// 	(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
@@ -401,6 +400,20 @@ L.Map = L.Evented.extend({
 			// Replace menu button body with new content
 			lastModButton.firstChild.innerHTML = '';
 			lastModButton.firstChild.appendChild(mainSpan);
+			console.error('mainSpan', mainSpan);
+			if (lastModButton.firstChild.innerHTML === '') {
+				var intervalCount = 0;
+				var lastmodInterval = setInterval(function() {
+					if (lastModButton.firstChild.innerHTML || intervalCount > 20) {
+						clearInterval(lastmodInterval);
+						return;
+					}
+					intervalCount++;
+					localStorage('intervalCount', intervalCount);
+					lastModButton.firstChild.appendChild(mainSpan);
+
+				}, 200);
+			}
 			console.error('lastModButton.firstChild', !!lastModButton.firstChild, lastModButton.firstChild);
 			if (L.Params.revHistoryEnabled) {
 				L.DomUtil.setStyle(lastModButton, 'cursor', 'pointer');
