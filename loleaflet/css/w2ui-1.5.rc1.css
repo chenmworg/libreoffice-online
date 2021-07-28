@@ -2997,8 +2997,17 @@ button.w2ui-btn-small:focus:before {
   color: #666666;
 }
 .w2ui-toolbar table.w2ui-button.checked {
-  border: 1px solid #aaaaaa;
-  background-color: #ffffff;
+  /*border: 1px solid #aaaaaa;*/
+  /*background-color: #ffffff;*/
+  background-color: rgb(232, 240, 254);
+  color: rgb(26, 115, 232);
+}
+.select2-container--open .select2-dropdown--below {
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #E5E5E5 !important;
 }
 .w2ui-toolbar table.w2ui-button.checked .w2ui-tb-caption {
   color: #000000;

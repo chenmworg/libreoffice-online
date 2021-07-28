@@ -363,7 +363,11 @@ L.Control.StatusBar = L.Control.extend({
 					{type: 'menu-radio', id: 'LanguageStatus',
 						mobile: false
 					},
-					{type: 'break', id: 'break8', mobile: false}
+					{type: 'break', id: 'break8', mobile: false},
+					{
+						type: 'html', id: 'lastModifyTime', mobile: false, tablet: false,
+						html: '<div id="Last modification"><a class=""></a></div>'
+					}
 				]);
 			}
 			break;
@@ -379,10 +383,6 @@ L.Control.StatusBar = L.Control.extend({
 					{type: 'break', id: 'break2', mobile: false, tablet: false},
 					{type: 'menu-radio', id: 'LanguageStatus',
 						mobile: false
-					},
-					{
-						type: 'html', id: 'lastModifyTime',
-						html: '<div id="Last modification"><a class=""></a></div>'
 					},
 					{type: 'break', id: 'break8', mobile: false}
 				]);

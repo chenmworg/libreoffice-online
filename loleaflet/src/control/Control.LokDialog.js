@@ -38,6 +38,7 @@ var draggedObject = null;
 var zoomTargets = [];
 
 var launchSidebarCount = 0; // Sidebar 打开次数
+localStorage.removeItem('launchSidebarCount');
 
 function findZoomTarget(id) {
 	for (var item in zoomTargets) {
@@ -998,6 +999,7 @@ L.Control.LokDialog = L.Control.extend({
 	_launchSidebar: function(id, width, height) {
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
 		launchSidebarCount ++;
+		localStorage.setItem('launchSidebarCount', launchSidebarCount);
 		if (launchSidebarCount === 1) {
 			return;
 		}
