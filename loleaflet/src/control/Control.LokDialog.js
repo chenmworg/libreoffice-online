@@ -38,8 +38,7 @@ var draggedObject = null;
 var zoomTargets = [];
 
 var launchSidebarCount = 0; // Sidebar 打开次数
-var stepCount = 0;
-localStorage.removeItem('stepCount');
+
 localStorage.removeItem('launchSidebarCount');
 localStorage.removeItem('launchSidebarId');
 
@@ -1005,6 +1004,7 @@ L.Control.LokDialog = L.Control.extend({
 		launchSidebarCount ++;
 		localStorage.setItem('launchSidebarCount', launchSidebarCount);
 		localStorage.setItem('launchSidebarId', id);
+		console.error('launchSidebarCount', launchSidebarCount, 'launchSidebarId', launchSidebarId);
 
 		if (launchSidebarCount === 1) {
 			launchSidebarCount ++;
@@ -1199,8 +1199,7 @@ L.Control.LokDialog = L.Control.extend({
 				pos.x += this._calcInputBar.left;
 				pos.y += this._calcInputBar.top;
 			}
-			stepCount ++;
-			localStorage.setItem('_setupWindowEvents' + lokEventType + stepCount, JSON.stringify([lokEventType, id, pos.x, pos.y, 1, buttons, modifier]));
+			console.error('_setupWindowEvents', [lokEventType, id, pos.x, pos.y, 1, buttons, modifier], e);
 			this._postWindowMouseEvent(lokEventType, id, pos.x, pos.y, 1, buttons, modifier);
 			this._map.setWinId(id);
 			//dlgInput.focus();
@@ -1776,8 +1775,6 @@ L.Control.LokDialog = L.Control.extend({
 				buttons = 1;
 			}
 			var lokEventType = e.type.replace('mouse', 'button');
-			stepCount ++;
-			localStorage.setItem('_setupChildEvents' + lokEventType + stepCount, JSON.stringify([lokEventType, childId, e.offsetX, e.offsetY, 1, buttons, 0]));
 			this._postWindowMouseEvent(lokEventType, childId, e.offsetX, e.offsetY, 1, buttons, 0);
 		}, this);
 		L.DomEvent.on(canvas, 'mousemove', function(e) {

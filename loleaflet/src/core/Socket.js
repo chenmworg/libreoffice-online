@@ -126,7 +126,7 @@ L.Socket = L.Class.extend({
 	},
 
 	sendMessage: function (msg) {
-		if (msg.includes('type=move') || msg.includes('type=buttondown')) {
+		if (msg.includes('type=move')) {
 			return;
 		}
 		if (this._map._fatal) {
