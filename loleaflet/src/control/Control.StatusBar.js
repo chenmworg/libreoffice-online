@@ -366,7 +366,7 @@ L.Control.StatusBar = L.Control.extend({
 					{type: 'break', id: 'break8', mobile: false},
 					{
 						type: 'html', id: 'lastModifyTime', mobile: false, tablet: false,
-						html: '<div id="menu-last-mod"><a class=""></a></div>'
+						html: '<div id="toolbar-last-modify"><a class=""></a></div>'
 					}
 				]);
 			}

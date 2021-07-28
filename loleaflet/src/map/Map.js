@@ -291,7 +291,9 @@ L.Map = L.Evented.extend({
 				// remove the comments and changes
 				this._docLayer.clearAnnotations();
 			}
-			this.initializeModificationIndicator();
+
+			// this.initializeModificationIndicator();
+			this.initializeModificationIndicator('toolbar-last-modify');
 
 			// Show sidebar.
 			// if (this._docLayer && !this._docLoadedOnce &&
@@ -380,8 +382,8 @@ L.Map = L.Evented.extend({
 		}
 	},
 
-	initializeModificationIndicator: function() {
-		var lastModButton = L.DomUtil.get('menu-last-mod');
+	initializeModificationIndicator: function(modId) {
+		var lastModButton = L.DomUtil.get(modId || 'menu-last-mod');
 		console.log('lastModButton', !!lastModButton);
 		if (lastModButton !== null && lastModButton !== undefined
 			&& lastModButton.firstChild.innerHTML !== null
@@ -404,12 +406,12 @@ L.Map = L.Evented.extend({
 			if (lastModButton.firstChild.innerHTML === '') {
 				var intervalCount = 0;
 				var lastmodInterval = setInterval(function() {
-					if (lastModButton.firstChild.innerHTML || intervalCount > 20) {
+					if (lastModButton.firstChild.innerHTML || intervalCount > 10) {
 						clearInterval(lastmodInterval);
 						return;
 					}
 					intervalCount++;
-					localStorage('intervalCount', intervalCount);
+					localStorage('intervalCount:' + modId, intervalCount);
 					lastModButton.firstChild.appendChild(mainSpan);
 
 				}, 200);
