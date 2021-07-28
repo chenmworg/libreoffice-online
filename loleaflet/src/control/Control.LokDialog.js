@@ -1004,7 +1004,7 @@ L.Control.LokDialog = L.Control.extend({
 		launchSidebarCount ++;
 		localStorage.setItem('launchSidebarCount', launchSidebarCount);
 		localStorage.setItem('launchSidebarId', id);
-		console.error('launchSidebarCount', launchSidebarCount, 'launchSidebarId', launchSidebarId);
+		console.error('launchSidebarCount', launchSidebarCount, 'launchSidebarId', id);
 
 		if (launchSidebarCount === 1) {
 			launchSidebarCount ++;
