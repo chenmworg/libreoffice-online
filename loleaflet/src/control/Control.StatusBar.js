@@ -369,11 +369,6 @@ L.Control.StatusBar = L.Control.extend({
 						html: '<div id="toolbar-last-modify"><a class=""></a></div>'
 					}
 				]);
-
-				if (this.map && this.map.initializeModificationIndicator) {
-					this.map.initializeModificationIndicator('toolbar-last-modify');
-				}
-
 			}
 			break;
 
@@ -406,6 +401,16 @@ L.Control.StatusBar = L.Control.extend({
 
 		if (statusbar)
 			statusbar.refresh();
+
+		var that = this;
+		setTimeout(function() {
+			console.error('last-modify');
+			if (that.map && that.map.initializeModificationIndicator) {
+				that.map.initializeModificationIndicator('toolbar-last-modify');
+			}
+		}, 1000);
+
+
 	},
 
 	_cancelSearch: function() {

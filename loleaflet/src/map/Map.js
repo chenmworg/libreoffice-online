@@ -294,6 +294,7 @@ L.Map = L.Evented.extend({
 
 			this.initializeModificationIndicator();
 
+			// this.initializeModificationIndicator('toolbar-last-modify');
 			// Show sidebar.
 			// if (this._docLayer && !this._docLoadedOnce &&
 			// 	(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
@@ -383,7 +384,7 @@ L.Map = L.Evented.extend({
 
 	initializeModificationIndicator: function(modId) {
 		var lastModButton = L.DomUtil.get(modId || 'menu-last-mod');
-		console.log('lastModButton', !!lastModButton);
+		console.error('lastModButton', !!lastModButton);
 		if (lastModButton !== null && lastModButton !== undefined
 			&& lastModButton.firstChild.innerHTML !== null
 			&& lastModButton.firstChild.childElementCount == 0) {

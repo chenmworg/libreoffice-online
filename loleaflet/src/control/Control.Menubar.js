@@ -1143,7 +1143,6 @@ L.Control.Menubar = L.Control.extend({
 		} else if (id === 'shareas') {
 			this._map.fire('postMessage', {msgId: 'UI_Share'});
 		} else if (id === 'print') {
-			localStorage.setItem('log', 'print-menubar');
 			this._map.print();
 		} else if (id.startsWith('downloadas-')) {
 			var format = id.substring('downloadas-'.length);

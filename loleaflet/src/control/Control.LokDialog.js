@@ -1007,7 +1007,7 @@ L.Control.LokDialog = L.Control.extend({
 		console.error('launchSidebarCount', launchSidebarCount, 'launchSidebarId', id);
 		// launchSidebarCount == 1 为第一次调用，不打开
 		if (launchSidebarCount === 1) {
-			this._map._socket.sendMessage('uno .uno:SidebarHide');
+			this._map._socket.sendMessage('uno .uno:Sidebar');
 			return;
 		}
 		if ((window.mode.isMobile() || window.mode.isTablet())
