@@ -5,7 +5,7 @@
     /*top: 77px;*/
     top: 40px;
 	bottom: 33px;
-	right: 0px;
+	right: 0px !important;
 	left: 0px;
 }
 #document-container.sidebar-closed {
@@ -145,7 +145,7 @@ body {
 }
 
 #sidebar-dock-wrapper {
-	display: none;
+	display: none !important;
 	background: #fff;
 	position: absolute;
 	/*top: 77px;*/
@@ -157,7 +157,9 @@ body {
 	overflow: hidden;
 	z-index: 990;
 }
-
+.leaflet-control-container {
+    display: none;
+}
 #sidebar-panel {
 	padding: 0px;
 	margin: 0px;

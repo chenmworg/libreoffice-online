@@ -294,19 +294,16 @@ L.Map = L.Evented.extend({
 
 			this.initializeModificationIndicator();
 
-			// this.initializeModificationIndicator('toolbar-last-modify');
 			// Show sidebar.
-			// if (this._docLayer && !this._docLoadedOnce &&
-			// 	(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
-			// 	// Let the first page finish loading then load the sidebar.
-			// 	var map = this;
-			// 	setTimeout(function () {
-			// 		// Show the sidebar by default, but not on mobile.
-			// 		if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
-			// 			map._socket.sendMessage('uno .uno:SidebarHide');
-			// 		}
-			// 	}, 200);
-			// }
+			if (this._docLayer && !this._docLoadedOnce &&
+				(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
+				// Let the first page finish loading then load the sidebar.
+				var map = this;
+				// Show the sidebar by default, but not on mobile.
+				if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
+					map._socket.sendMessage('uno .uno:SidebarShow');
+				}
+			}
 
 			// We have loaded.
 			if (!this._docLoadedOnce) {

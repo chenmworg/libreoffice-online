@@ -1006,10 +1006,10 @@ L.Control.LokDialog = L.Control.extend({
 		localStorage.setItem('launchSidebarId', id);
 		console.error('launchSidebarCount', launchSidebarCount, 'launchSidebarId', id);
 		// launchSidebarCount == 1 为第一次调用，不打开
-		if (launchSidebarCount === 1) {
-			this._map._socket.sendMessage('uno .uno:Sidebar');
-			return;
-		}
+		// if (launchSidebarCount === 1) {
+		// 	this._map._socket.sendMessage('uno .uno:Sidebar');
+		// 	return;
+		// }
 		if ((window.mode.isMobile() || window.mode.isTablet())
 		    && this._map._permission != 'edit')
 			return;

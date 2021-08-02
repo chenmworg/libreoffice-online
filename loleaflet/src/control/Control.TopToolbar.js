@@ -96,8 +96,8 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: true, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 			// {type: 'button',  id: 'print', img: 'print', hint: _UNO('.uno:Print', 'text'), mobile: false, tablet: false},
-			{type: 'button', id: 'lefttoright', img: 'print', hidden: true},
-			{type: 'button', id: 'righttoleft', img: 'print', hidden: true},
+			{type: 'button', id: 'lefttoright', img: 'print', hidden: false},
+			{type: 'button', id: 'righttoleft', img: 'print', hidden: false},
 
 			{type: 'break', id: 'savebreak', mobile: false},
 			{type: 'button',  id: 'undo',  img: 'undo', hint: _UNO('.uno:Undo'), uno: 'Undo', disabled: true, mobile: false},
@@ -289,7 +289,7 @@ L.Control.TopToolbar = L.Control.extend({
 			if (toolbarUp)
 				toolbarUp.show('leftpara', 'centerpara', 'rightpara', 'justifypara', 'breakpara', 'linespacing',
 				'breakspacing', 'defaultbullet', 'defaultnumbering', 'breakbullet', 'incrementindent', 'decrementindent',
-				'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar', 'sidebar');
+				'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar');
 
 			break;
 		case 'presentation':
