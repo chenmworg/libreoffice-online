@@ -1,7 +1,33 @@
 /* -*- js-indent-level: 8 -*- */
 /* global Uint8Array */
+
 (function (global) {
-	localStorage.setItem('lang', '');
+
+	var storagePrefix = 'libreoffice_';
+	function removeStorage (prefix) {
+		var now = Date.now(); // epoch time, lets deal only with integer
+		// set expiration for storage
+		var expiresIn = localStorage.getItem(prefix + 'expiresIn');
+
+		expiresIn = expiresIn && Math.abs(expiresIn);
+		if (expiresIn) {
+			// Expired
+			if (expiresIn < now) {
+				localStorage.removeItem();
+				Object.keys(localStorage).forEach(function(item) {
+					if (item.indexOf(prefix) !== -1) {
+						localStorage.removeItem(item);
+					}
+				});
+			}
+		} else {
+			var expires = 24 * 60 * 60; // 24 hours
+			var schedule = now + expires * 1000;
+			localStorage.setItem(prefix + 'expiresIn', schedule);
+		}
+	}
+	removeStorage(storagePrefix);
+
 	var ua = navigator.userAgent.toLowerCase(),
 	    uv = navigator.vendor.toLowerCase(),
 	    doc = document.documentElement,
@@ -143,13 +169,30 @@
 	};
 
 	global.getParameterByName = function (name) {
-		console.info('getParameterByName-location', location);
+		console.error('getParameterByName-location', location);
 		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
 		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
 		var results = regex.exec(location.search);
 		return results === null ? '' : results[1].replace(/\+/g, ' ');
 	};
+	global.storageData = function (key, value) {
 
+		var timestamp = global.getParameterByName('timestamp');
+
+		var prefix = storagePrefix + timestamp;
+
+		if (value !== undefined) {
+			// set
+			return localStorage.setItem(prefix + key, JSON.stringify(value));
+		}
+		// get
+		try {
+			return JSON.parse(localStorage.getItem(prefix + key) || '');
+		} catch (e) {
+			return undefined;
+		}
+
+	};
 	global.mode = {
 		// Here "mobile" means "mobile phone" (at least for now). Has to match small screen size
 		// requirement.
@@ -168,7 +211,7 @@
 			return !L.Browser.mobile;
 		},
 		getPermissionByLocation: function() {
-			var permission = global.getParameterByName('permission');
+			var permission = global.storageData('permission') || global.getParameterByName('permission');
 			console.info('getPermissionByLocation', permission);
 			if (['edit' | 'view' | 'readonly'].includes(permission)) {
 				return permission;
@@ -575,6 +618,8 @@
 	}
 
 	global.createWebSocket = function(uri) {
+		console.error('createWebSocket', uri);
+
 		if (global.socketProxy) {
 			window.socketProxy = true;
 			return new global.ProxySocket(uri);
@@ -680,7 +725,6 @@
 		window.TheFakeWebSocket = global.socket;
 	} else {
 		var websocketURI = global.host + global.serviceRoot + '/lool/' + encodeURIComponent(global.docURL + (docParams ? '?' + docParams : '')) + '/ws' + wopiSrc;
-
 		try {
 			global.socket = global.createWebSocket(websocketURI);
 		} catch (err) {
@@ -688,7 +732,7 @@
 		}
 	}
 
-	var lang = localStorage.getItem('lang') || global.getParameterByName('lang');
+	var lang = global.storageData('lang') || global.getParameterByName('lang');
 	global.queueMsg = [];
 	if (window.ThisIsAMobileApp)
 		window.LANG = lang;

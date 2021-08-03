@@ -3,13 +3,9 @@
  * Document permission handler
  */
 /* global $ */
-var p = localStorage.getItem('permission');
-if (!p) {
-	localStorage.setItem('permission', '');
-}
 L.Map.include({
 	setPermission: function (perm) {
-		var permission = localStorage.getItem('permission');
+		var permission = window.storageData('permission');
 		if (permission) {
 			if (permission === 'readonly' || permission === 'view') {
 				this._enterReadOnlyMode('readonly');

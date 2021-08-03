@@ -381,7 +381,7 @@ L.Map = L.Evented.extend({
 
 	initializeModificationIndicator: function(modId) {
 		var lastModButton = L.DomUtil.get(modId || 'menu-last-mod');
-		console.error('lastModButton', !!lastModButton);
+		// console.error('lastModButton', !!lastModButton);
 		if (lastModButton !== null && lastModButton !== undefined
 			&& lastModButton.firstChild.innerHTML !== null
 			&& lastModButton.firstChild.childElementCount == 0) {
