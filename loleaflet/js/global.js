@@ -27,6 +27,7 @@
 		}
 	}
 	removeStorage(storagePrefix);
+	console.error('location', location);
 
 	var ua = navigator.userAgent.toLowerCase(),
 	    uv = navigator.vendor.toLowerCase(),
@@ -169,7 +170,6 @@
 	};
 
 	global.getParameterByName = function (name) {
-		console.error('getParameterByName-location', location);
 		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
 		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
 		var results = regex.exec(location.search);
@@ -185,11 +185,12 @@
 			// set
 			return localStorage.setItem(prefix + key, JSON.stringify(value));
 		}
+		var val = localStorage.getItem(prefix + key);
 		// get
 		try {
-			return JSON.parse(localStorage.getItem(prefix + key) || '');
+			return JSON.parse(String(val));
 		} catch (e) {
-			return undefined;
+			return val;
 		}
 
 	};

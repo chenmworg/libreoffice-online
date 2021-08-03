@@ -4,9 +4,6 @@
  */
 
 /* global $ L Hammer w2ui brandProductName */
-function logInfo() {
-	console.log.apply(console,arguments);
-}
 L.WinUtil = {
 
 };
@@ -1002,8 +999,8 @@ L.Control.LokDialog = L.Control.extend({
 	_launchSidebar: function(id, width, height) {
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
 		launchSidebarCount ++;
-		localStorage.setItem('launchSidebarCount', launchSidebarCount);
-		localStorage.setItem('launchSidebarId', id);
+		window.storageData('launchSidebarCount', launchSidebarCount);
+		window.storageData('launchSidebarId', id);
 		// launchSidebarCount == 1 为第一次调用，不打开
 		// if (launchSidebarCount === 1) {
 		// 	this._map._socket.sendMessage('uno .uno:Sidebar');
@@ -1356,8 +1353,7 @@ L.Control.LokDialog = L.Control.extend({
 
 	_postWindowMouseEvent: function(type, winid, x, y, count, buttons, modifier) {
 		if (['buttonup', 'buttondown'].includes(type)) {
-			logInfo('_postWindowMouseEvent', winid, x, y, count, buttons, modifier);
-			localStorage.setItem('log-_postWindowMouseEvent', ' type=' + type + ' windowmouse id=' + winid +
+			window.storageData('log-_postWindowMouseEvent', ' type=' + type + ' windowmouse id=' + winid +
 				' x=' + x + ' y=' + y + ' count=' + count +
 				' buttons=' + buttons + ' modifier=' + modifier);
 

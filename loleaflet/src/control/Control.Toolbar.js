@@ -155,7 +155,7 @@ function onClick(e, id, item) {
 	}
 	else if (id === 'lefttoright') {
 		// L.control.lokDialog._postWindowMouseEvent('buttonup', 2, 360, 225, 1, 1, 0);
-		var windowid = localStorage.getItem('launchSidebarId');
+		var windowid = window.storageData('launchSidebarId');
 		// x:[352, 370]  y: [220, 235]
 
 		postWindowMouseEvent('buttondown',  windowid, 360, 228, 1, 1, 0);
@@ -164,7 +164,7 @@ function onClick(e, id, item) {
 	}
 	else if (id === 'righttoleft') {
 		// L.tileLayer._postWindowMouseEvent('buttonup', 2, 282, 225, 1, 1, 0);
-		var winid = localStorage.getItem('launchSidebarId');
+		var winid = window.storageData('launchSidebarId');
 		// x:[375, 392]  y: [220, 235]
 
 		postWindowMouseEvent('buttondown', winid, 385, 225, 1, 1, 0);
