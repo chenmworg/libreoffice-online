@@ -3,8 +3,22 @@
  * Document permission handler
  */
 /* global $ */
+var p = localStorage.getItem('permission');
+if (!p) {
+	localStorage.setItem('permission', '');
+}
 L.Map.include({
 	setPermission: function (perm) {
+		var permission = localStorage.getItem('permission');
+		if (permission) {
+			if (permission === 'readonly' || permission === 'view') {
+				this._enterReadOnlyMode('readonly');
+			}
+			if (permission === 'edit') {
+				this._enterEditMode('edit');
+			}
+			return;
+		}
 		if (perm === 'edit') {
 			if (window.mode.isMobile() || window.mode.isTablet()) {
 				var button = $('#mobile-edit-button');
@@ -24,6 +38,10 @@ L.Map.include({
 
 				// temporarily, before the user touches the floating action button
 				this._enterReadOnlyMode('readonly');
+			}
+			else if (window.mode.getPermissionByLocation()) {
+				var p = window.mode.getPermissionByLocation();
+				this._enterReadOnlyMode(p);
 			}
 			else {
 				this._enterEditMode(perm);

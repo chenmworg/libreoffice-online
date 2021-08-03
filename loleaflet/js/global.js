@@ -1,7 +1,7 @@
 /* -*- js-indent-level: 8 -*- */
 /* global Uint8Array */
 (function (global) {
-
+	localStorage.setItem('lang', '');
 	var ua = navigator.userAgent.toLowerCase(),
 	    uv = navigator.vendor.toLowerCase(),
 	    doc = document.documentElement,
@@ -142,6 +142,14 @@
 		retina: (window.devicePixelRatio || (window.screen.deviceXDPI / window.screen.logicalXDPI)) > 1
 	};
 
+	global.getParameterByName = function (name) {
+		console.info('getParameterByName-location', location);
+		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		var results = regex.exec(location.search);
+		return results === null ? '' : results[1].replace(/\+/g, ' ');
+	};
+
 	global.mode = {
 		// Here "mobile" means "mobile phone" (at least for now). Has to match small screen size
 		// requirement.
@@ -158,6 +166,14 @@
 		},
 		isDesktop: function() {
 			return !L.Browser.mobile;
+		},
+		getPermissionByLocation: function() {
+			var permission = global.getParameterByName('permission');
+			console.info('getPermissionByLocation', permission);
+			if (['edit' | 'view' | 'readonly'].includes(permission)) {
+				return permission;
+			}
+			return '';
 		},
 		getDeviceFormFactor: function() {
 			if (window.mode.isMobile())
@@ -614,12 +630,6 @@
 		}
 	};
 
-	global.getParameterByName = function (name) {
-		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-		var results = regex.exec(location.search);
-		return results === null ? '' : results[1].replace(/\+/g, ' ');
-	};
 
 	global._ = function (string) {
 		// In the mobile app case we can't use the stuff from l10n-for-node, as that assumes HTTP.
@@ -678,7 +688,7 @@
 		}
 	}
 
-	var lang = global.getParameterByName('lang');
+	var lang = localStorage.getItem('lang') || global.getParameterByName('lang');
 	global.queueMsg = [];
 	if (window.ThisIsAMobileApp)
 		window.LANG = lang;

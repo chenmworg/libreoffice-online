@@ -20,6 +20,8 @@ L.Socket = L.Class.extend({
 
 	initialize: function (map) {
 		console.debug('socket.initialize:');
+		console.info('socket.initialize:', map);
+
 		this._map = map;
 		this._msgQueue = [];
 		this._delayedMessages = [];

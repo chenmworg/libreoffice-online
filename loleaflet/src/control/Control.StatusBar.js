@@ -339,11 +339,11 @@ L.Control.StatusBar = L.Control.extend({
 		case 'text':
 			if (!window.mode.isMobile()) {
 				statusbar.insert('left', [
-					{type: 'break', id: 'break1'},
-					{
-						type: 'html', id: 'StatePageNumber',
-						html: '<div id="StatePageNumber" class="loleaflet-font" title="' + _('Number of Pages') + '" style="padding: 5px 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</div>'
-					},
+					// {type: 'break', id: 'break1'},
+					// {
+					// 	type: 'html', id: 'StatePageNumber',
+					// 	html: '<div id="StatePageNumber" class="loleaflet-font" title="' + _('Number of Pages') + '" style="padding: 5px 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</div>'
+					// },
 					{type: 'break', id: 'break2'},
 					{
 						type: 'html', id: 'StateWordCount', mobile: false, tablet: false,
