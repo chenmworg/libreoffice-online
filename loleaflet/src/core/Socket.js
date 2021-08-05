@@ -387,11 +387,12 @@ L.Socket = L.Class.extend({
 				postMsgData['Reason'] = 'OwnerTermination';
 			}
 			else if (textMsg === 'idle' || textMsg === 'oom') {
-				msg = _('Idle document - please click to reload and resume editing');
-				this._map._documentIdle = true;
-				postMsgData['Reason'] = 'DocumentIdle';
-				if (textMsg === 'oom')
-					postMsgData['Reason'] = 'OOM';
+				// testcommnet
+				// msg = _('Idle document - please click to reload and resume editing');
+				// this._map._documentIdle = true;
+				// postMsgData['Reason'] = 'DocumentIdle';
+				// if (textMsg === 'oom')
+				// 	postMsgData['Reason'] = 'OOM';
 			}
 			else if (textMsg === 'shuttingdown') {
 				msg = _('Server is shutting down for maintenance (auto-saving)');
@@ -478,7 +479,10 @@ L.Socket = L.Class.extend({
 			};
 
 			var restartConnectionFn;
+			// testcommnet
 			if (textMsg === 'idle' || textMsg === 'oom') {
+
+				// if (false && (textMsg === 'idle' || textMsg === 'oom')) {
 				var map = this._map;
 				restartConnectionFn = function() {
 					if (map._documentIdle)
@@ -492,11 +496,13 @@ L.Socket = L.Class.extend({
 				dialogOptions.afterClose = restartConnectionFn;
 			}
 
-			var dialogOpened = vex.dialog.open(dialogOptions);
+			// testcommnet
+			// var dialogOpened = vex.dialog.open(dialogOptions);
 
 			if (textMsg === 'idle' || textMsg === 'oom') {
-				dialogOpened.contentEl.onclick = restartConnectionFn;
-				$('.vex-overlay').addClass('loleaflet-user-idle-overlay');
+				// // testcommnet
+				// dialogOpened.contentEl.onclick = restartConnectionFn;
+				// $('.vex-overlay').addClass('loleaflet-user-idle-overlay');
 			}
 
 			if (postMsgData['Reason']) {
@@ -847,7 +853,8 @@ L.Socket = L.Class.extend({
 			}
 		}
 		else if (textMsg.startsWith('viewinfo:')) {
-			this._onViewInfoMsg(textMsg);
+			// // testcommnet
+			// this._onViewInfoMsg(textMsg);
 			return;
 		}
 

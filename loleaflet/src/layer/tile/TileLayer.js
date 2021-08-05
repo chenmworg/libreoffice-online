@@ -324,11 +324,11 @@ L.TileLayer = L.GridLayer.extend({
 			},
 		this);
 
-		map.on('updatepermission', function(e) {
-			if (e.perm !== 'edit') {
-				this._clearSelections();
-			}
-		}, this);
+		// map.on('updatepermission', function(e) {
+		// 	// if (e.perm !== 'edit') { // testcommnet
+		// 	// 	this._clearSelections();
+		// 	// }
+		// }, this);
 
 		for (var key in this._selectionHandles) {
 			this._selectionHandles[key].on('drag dragend', this._onSelectionHandleDrag, this);
@@ -1122,7 +1122,9 @@ L.TileLayer = L.GridLayer.extend({
 			this._prevCellCursorXY = new L.Point(-1, -1);
 		}
 
-		if (textMsg.match('EMPTY') || this._map._permission !== 'edit') {
+		if (textMsg.match('EMPTY')) {
+
+			// if (textMsg.match('EMPTY') || this._map._permission !== 'edit') { // testcommnet
 			this._cellCursorTwips = new L.Bounds(new L.Point(0, 0), new L.Point(0, 0));
 			this._cellCursor = L.LatLngBounds.createDefault();
 			this._cellCursorXY = new L.Point(-1, -1);
@@ -1255,7 +1257,9 @@ L.TileLayer = L.GridLayer.extend({
 			this._showURLPopUp(cursorPos, obj.hyperlink.link);
 		}
 
-		if (!this._map.editorHasFocus() && this._map._isCursorVisible && (modifierViewId === this._viewId) && (this._map._permission === 'edit')) {
+		if (!this._map.editorHasFocus() && this._map._isCursorVisible && (modifierViewId === this._viewId)) { // testcommnet
+
+			// if (!this._map.editorHasFocus() && this._map._isCursorVisible && (modifierViewId === this._viewId) && (this._map._permission === 'edit')) { // testcommnet
 			// Regain cursor if we had been out of focus and now have input.
 			// Unless the focus is in the Calc Formula-Bar, don't steal the focus.
 			if (!this._map.calcInputBarHasFocus())
@@ -1798,7 +1802,9 @@ L.TileLayer = L.GridLayer.extend({
 
 	_onTextSelectionEndMsg: function (textMsg) {
 		var strTwips = textMsg.match(/\d+/g);
-		if (strTwips != null && this._map._permission === 'edit') {
+		if (strTwips != null) {
+
+			// if (strTwips != null && this._map._permission === 'edit') { // testcommnet
 			var topLeftTwips = new L.Point(parseInt(strTwips[0]), parseInt(strTwips[1]));
 			var offset = new L.Point(parseInt(strTwips[2]), parseInt(strTwips[3]));
 			var bottomRightTwips = topLeftTwips.add(offset);
@@ -1817,7 +1823,9 @@ L.TileLayer = L.GridLayer.extend({
 
 	_onTextSelectionStartMsg: function (textMsg) {
 		var strTwips = textMsg.match(/\d+/g);
-		if (strTwips != null && this._map._permission === 'edit') {
+		if (strTwips != null) {
+
+			// if (strTwips != null && this._map._permission === 'edit') { // testcommnet
 			var topLeftTwips = new L.Point(parseInt(strTwips[0]), parseInt(strTwips[1]));
 			var offset = new L.Point(parseInt(strTwips[2]), parseInt(strTwips[3]));
 			var bottomRightTwips = topLeftTwips.add(offset);
@@ -1838,7 +1846,8 @@ L.TileLayer = L.GridLayer.extend({
 
 	_onCellSelectionAreaMsg: function (textMsg) {
 		var strTwips = textMsg.match(/\d+/g);
-		if (strTwips != null && this._map._permission === 'edit') {
+		if (strTwips != null) {
+		// if (strTwips != null && this._map._permission === 'edit') { // testcommnet
 			var topLeftTwips = new L.Point(parseInt(strTwips[0]), parseInt(strTwips[1]));
 			var offset = new L.Point(parseInt(strTwips[2]), parseInt(strTwips[3]));
 			var bottomRightTwips = topLeftTwips.add(offset);
@@ -1855,7 +1864,9 @@ L.TileLayer = L.GridLayer.extend({
 
 	_onCellAutoFillAreaMsg: function (textMsg) {
 		var strTwips = textMsg.match(/\d+/g);
-		if (strTwips != null && this._map._permission === 'edit') {
+		if (strTwips != null) {
+
+			// if (strTwips != null && this._map._permission === 'edit') { // testcommnet
 			var topLeftTwips = new L.Point(parseInt(strTwips[0]), parseInt(strTwips[1]));
 			var offset = new L.Point(parseInt(strTwips[2]), parseInt(strTwips[3]));
 			var bottomRightTwips = topLeftTwips.add(offset);
@@ -2050,7 +2061,9 @@ L.TileLayer = L.GridLayer.extend({
 	},
 
 	_mapOnError: function (e) {
-		if (e.msg && this._map._permission === 'edit') {
+		if (e.msg) { // testcommnet
+
+			// if (e.msg && this._map._permission === 'edit') { // testcommnet
 			this._map.setPermission('view');
 		}
 	},
@@ -2251,12 +2264,17 @@ L.TileLayer = L.GridLayer.extend({
 	// enable or disable blinking cursor and  the cursor overlay depending on
 	// the state of the document (if the falgs are set)
 	_updateCursorAndOverlay: function (/*update*/) {
-		if (this._map._permission === 'edit'
-		&& this._map._isCursorVisible   // only when LOK has told us it is ok
-		&& this._map.editorHasFocus()   // not when document is not focused
-		&& !this._map.isSearching()  	// not when searching within the doc
-		&& !this._isZooming             // not when zooming
-		&& !this._isEmptyRectangle(this._visibleCursor)) {
+		if (this._map._isCursorVisible   // only when LOK has told us it is ok
+			&& this._map.editorHasFocus()   // not when document is not focused
+			&& !this._map.isSearching()  	// not when searching within the doc
+			&& !this._isZooming             // not when zooming
+			&& !this._isEmptyRectangle(this._visibleCursor)) {
+		// if (this._map._permission === 'edit'
+		// && this._map._isCursorVisible   // only when LOK has told us it is ok
+		// && this._map.editorHasFocus()   // not when document is not focused
+		// && !this._map.isSearching()  	// not when searching within the doc
+		// && !this._isZooming             // not when zooming
+		// && !this._isEmptyRectangle(this._visibleCursor)) { // testcommnet
 
 			this._updateCursorPos();
 
@@ -2869,9 +2887,9 @@ L.TileLayer = L.GridLayer.extend({
 				this._map.removeLayer(this._graphicMarker);
 			}
 
-			if (this._map._permission !== 'edit') {
-				return;
-			}
+			// if (this._map._permission !== 'edit') { // testcommnet
+			// 	return;
+			// }
 
 			var extraInfo = this._graphicSelection.extraInfo;
 			this._graphicMarker = L.svgGroup(this._graphicSelection, {
