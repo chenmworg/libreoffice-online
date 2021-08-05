@@ -177,9 +177,7 @@
 	};
 	global.storageData = function (key, value) {
 
-		var timestamp = global.getParameterByName('timestamp');
-
-		var prefix = storagePrefix + timestamp;
+		var prefix = storagePrefix;
 
 		if (value !== undefined) {
 			// set

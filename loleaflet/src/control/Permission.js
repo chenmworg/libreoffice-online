@@ -8,7 +8,7 @@ L.Map.include({
 		var permission = window.storageData('permission');
 		if (permission) {
 			if (permission === 'readonly' || permission === 'view') {
-				this._enterReadOnlyMode('readonly');
+				this._enterReadOnlyMode(permission);
 			}
 			if (permission === 'edit') {
 				this._enterEditMode('edit');
