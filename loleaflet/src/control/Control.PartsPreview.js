@@ -76,14 +76,26 @@ L.Control.PartsPreview = L.Control.extend({
 				return;
 			if (!this._previewInitialized)
 			{
+				// testdebug-drawing
 				// make room for the preview
-				var docContainer = this._map.options.documentContainer;
-				if (!L.DomUtil.hasClass(docContainer, 'parts-preview-document')) {
-					L.DomUtil.addClass(docContainer, 'parts-preview-document');
-					setTimeout(L.bind(function () {
-						this._map.invalidateSize();
-						$('.scroll-container').mCustomScrollbar('update');
-					}, this), 500);
+				// var docContainer = this._map.options.documentContainer;
+				// if (!L.DomUtil.hasClass(docContainer, 'parts-preview-document')) {
+				// 	L.DomUtil.addClass(docContainer, 'parts-preview-document');
+				// 	setTimeout(L.bind(function () {
+				// 		this._map.invalidateSize();
+				// 		$('.scroll-container').mCustomScrollbar('update');
+				// 	}, this), 500);
+				// }
+
+				if (docType === 'presentation') {
+					var docContainer = this._map.options.documentContainer;
+					if (!L.DomUtil.hasClass(docContainer, 'parts-preview-document')) {
+						L.DomUtil.addClass(docContainer, 'parts-preview-document');
+						setTimeout(L.bind(function () {
+							this._map.invalidateSize();
+							$('.scroll-container').mCustomScrollbar('update');
+						}, this), 500);
+					}
 				}
 				var previewContBB = this._partsPreviewCont.getBoundingClientRect();
 				var bottomBound;

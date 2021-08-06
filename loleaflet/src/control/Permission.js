@@ -5,6 +5,7 @@
 /* global $ */
 L.Map.include({
 	setPermission: function (perm) {
+		// testdebug-permission
 		var permission = window.storageData('permission');
 		if (permission) {
 			if (permission === 'readonly' || permission === 'view') {

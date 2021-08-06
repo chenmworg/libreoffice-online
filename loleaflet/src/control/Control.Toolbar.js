@@ -40,14 +40,14 @@ function getUNOCommand(unoData) {
 
 	return unoData.objectCommand;
 }
-function postWindowMouseEvent(type, winid, x, y, count, buttons, modifier) {
-	// localStorage.setItem('log_map', JSON.stringify(map));
-	map._socket.sendMessage('windowmouse id=' + winid +  ' type=' + type +
-		' x=' + x + ' y=' + y + ' count=' + count +
-		' buttons=' + buttons + ' modifier=' + modifier);
-	// Keep map active while user is playing with sidebar/dialog.
-	map.lastActiveTime = Date.now();
-}
+// function postWindowMouseEvent(type, winid, x, y, count, buttons, modifier) {
+// 	// localStorage.setItem('log_map', JSON.stringify(map));
+// 	map._socket.sendMessage('windowmouse id=' + winid +  ' type=' + type +
+// 		' x=' + x + ' y=' + y + ' count=' + count +
+// 		' buttons=' + buttons + ' modifier=' + modifier);
+// 	// Keep map active while user is playing with sidebar/dialog.
+// 	map.lastActiveTime = Date.now();
+// }
 function onClick(e, id, item) {
 	if (w2ui['editbar'].get(id) !== null) {
 		var toolbar = w2ui['editbar'];
@@ -155,20 +155,25 @@ function onClick(e, id, item) {
 	}
 	else if (id === 'lefttoright') {
 		// L.control.lokDialog._postWindowMouseEvent('buttonup', 2, 360, 225, 1, 1, 0);
-		var windowid = window.storageData('launchSidebarId');
-		// x:[352, 370]  y: [220, 235]
+		// var windowid = window.storageData('launchSidebarId');
+		// // x:[352, 370]  y: [220, 235]
+		//
+		// postWindowMouseEvent('buttondown',  windowid, 360, 228, 1, 1, 0);
+		// postWindowMouseEvent('buttonup', windowid, 360, 228, 1, 1, 0);
 
-		postWindowMouseEvent('buttondown',  windowid, 360, 228, 1, 1, 0);
-		postWindowMouseEvent('buttonup', windowid, 360, 228, 1, 1, 0);
+		map._socket.sendMessage('uno .uno:ParaLeftToRight');
 
 	}
 	else if (id === 'righttoleft') {
 		// L.tileLayer._postWindowMouseEvent('buttonup', 2, 282, 225, 1, 1, 0);
-		var winid = window.storageData('launchSidebarId');
-		// x:[375, 392]  y: [220, 235]
+		// var winid = window.storageData('launchSidebarId');
+		// // x:[375, 392]  y: [220, 235]
+		//
+		// postWindowMouseEvent('buttondown', winid, 385, 225, 1, 1, 0);
+		// postWindowMouseEvent('buttonup', winid, 385, 225, 1, 1, 0);
 
-		postWindowMouseEvent('buttondown', winid, 385, 225, 1, 1, 0);
-		postWindowMouseEvent('buttonup', winid, 385, 225, 1, 1, 0);
+		map._socket.sendMessage('uno .uno:ParaRightToLeft');
+
 
 	}
 

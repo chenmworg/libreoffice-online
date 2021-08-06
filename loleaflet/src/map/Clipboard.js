@@ -496,6 +496,11 @@ L.Clipboard = L.Class.extend({
 	},
 
 	_beforeSelectImpl: function(operation) {
+		// testdebug-clipbord
+		if (this._map._permission !== 'edit' && operation !=='copy' && operation !== 'beforecopy') {
+			return;
+		}
+
 		if (L.Browser.isInternetExplorer && operation != 'paste')
 			// We need populate our content into the div for
 			// the browser to copy.

@@ -387,7 +387,7 @@ L.Socket = L.Class.extend({
 				postMsgData['Reason'] = 'OwnerTermination';
 			}
 			else if (textMsg === 'idle' || textMsg === 'oom') {
-				// testcommnet
+				// testdebug-idle
 				// msg = _('Idle document - please click to reload and resume editing');
 				// this._map._documentIdle = true;
 				// postMsgData['Reason'] = 'DocumentIdle';
@@ -479,10 +479,7 @@ L.Socket = L.Class.extend({
 			};
 
 			var restartConnectionFn;
-			// testcommnet
 			if (textMsg === 'idle' || textMsg === 'oom') {
-
-				// if (false && (textMsg === 'idle' || textMsg === 'oom')) {
 				var map = this._map;
 				restartConnectionFn = function() {
 					if (map._documentIdle)
@@ -496,14 +493,14 @@ L.Socket = L.Class.extend({
 				dialogOptions.afterClose = restartConnectionFn;
 			}
 
-			// testcommnet
-			// var dialogOpened = vex.dialog.open(dialogOptions);
+			// testdebug-idle
 
-			if (textMsg === 'idle' || textMsg === 'oom') {
-				// // testcommnet
-				// dialogOpened.contentEl.onclick = restartConnectionFn;
-				// $('.vex-overlay').addClass('loleaflet-user-idle-overlay');
-			}
+			// if (textMsg === 'idle' || textMsg === 'oom') {
+			// 	var dialogOpened = vex.dialog.open(dialogOptions);
+			//
+			// 	dialogOpened.contentEl.onclick = restartConnectionFn;
+			// 	$('.vex-overlay').addClass('loleaflet-user-idle-overlay');
+			// }
 
 			if (postMsgData['Reason']) {
 				// Tell WOPI host about it which should handle this situation
@@ -853,7 +850,7 @@ L.Socket = L.Class.extend({
 			}
 		}
 		else if (textMsg.startsWith('viewinfo:')) {
-			// // testcommnet
+			// // testdebug-viewinfo
 			// this._onViewInfoMsg(textMsg);
 			return;
 		}

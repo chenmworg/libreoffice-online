@@ -113,7 +113,7 @@ L.Control.ContextMenu = L.Control.extend({
 
 	_onContextMenu: function(obj) {
 		var map = this._map;
-		// // testcommnet
+		// // testdebug-contextmenu
 		// if (map._permission !== 'edit') {
 		// 	return;
 		// }
@@ -219,6 +219,12 @@ L.Control.ContextMenu = L.Control.extend({
 				if (commandName.indexOf('?')!== -1) {
 					commandName = commandName.substring(0, commandName.indexOf('?'));
 					hasParam = true;
+				}
+
+				// testdebug-menu
+				// readonly || view  only copy
+				if (this._map._permission !== 'edit' && commandName !== 'Copy') {
+					continue;
 				}
 
 				// We use a special character dialog in spelling context menu with a parameter

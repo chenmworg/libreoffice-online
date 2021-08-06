@@ -13,7 +13,6 @@
 		if (expiresIn) {
 			// Expired
 			if (expiresIn < now) {
-				localStorage.removeItem();
 				Object.keys(localStorage).forEach(function(item) {
 					if (item.indexOf(prefix) !== -1) {
 						localStorage.removeItem(item);
@@ -175,6 +174,7 @@
 		var results = regex.exec(location.search);
 		return results === null ? '' : results[1].replace(/\+/g, ' ');
 	};
+	// testdebug-storage
 	global.storageData = function (key, value) {
 
 		var prefix = storagePrefix;

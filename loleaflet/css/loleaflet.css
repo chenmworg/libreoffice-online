@@ -18,7 +18,9 @@
 }
 
 #document-container.readonly {
-	top: 36px;
+	/*top: 36px;*/
+    /*testdebug-css*/
+    top: 0;
 }
 
 #toolbar-wrapper.readonly {
