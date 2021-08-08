@@ -386,13 +386,13 @@ L.Socket = L.Class.extend({
 				msg = _('Session terminated by document owner');
 				postMsgData['Reason'] = 'OwnerTermination';
 			}
+			// testdebug-idle
 			else if (textMsg === 'idle' || textMsg === 'oom') {
-				// testdebug-idle
-				// msg = _('Idle document - please click to reload and resume editing');
-				// this._map._documentIdle = true;
-				// postMsgData['Reason'] = 'DocumentIdle';
-				// if (textMsg === 'oom')
-				// 	postMsgData['Reason'] = 'OOM';
+				msg = _('Idle document - please click to reload and resume editing');
+				this._map._documentIdle = true;
+				postMsgData['Reason'] = 'DocumentIdle';
+				if (textMsg === 'oom')
+					postMsgData['Reason'] = 'OOM';
 			}
 			else if (textMsg === 'shuttingdown') {
 				msg = _('Server is shutting down for maintenance (auto-saving)');
@@ -495,12 +495,12 @@ L.Socket = L.Class.extend({
 
 			// testdebug-idle
 
-			// if (textMsg === 'idle' || textMsg === 'oom') {
-			// 	var dialogOpened = vex.dialog.open(dialogOptions);
-			//
-			// 	dialogOpened.contentEl.onclick = restartConnectionFn;
-			// 	$('.vex-overlay').addClass('loleaflet-user-idle-overlay');
-			// }
+			if (textMsg === 'idle' || textMsg === 'oom') {
+				var dialogOpened = vex.dialog.open(dialogOptions);
+
+				dialogOpened.contentEl.onclick = restartConnectionFn;
+				$('.vex-overlay').addClass('loleaflet-user-idle-overlay');
+			}
 
 			if (postMsgData['Reason']) {
 				// Tell WOPI host about it which should handle this situation

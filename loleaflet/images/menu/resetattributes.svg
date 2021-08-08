@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="AI翻译web端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编辑器更新" transform="translate(-232.000000, -383.000000)">
+            <g id="拼写语法检查" transform="translate(232.000000, 383.000000)">
+                <rect id="矩形备份-4" x="0" y="0" width="20" height="20"></rect>
+                <g id="形状-2" transform="translate(3.157895, 2.105263)" fill="#333333" fill-rule="nonzero">
+                    <path d="M3.35704125,7.46842105 L5.2916074,2.25789474 L7.22617355,7.46842105 M4.49502134,0 L0,11.5789474 L1.82076813,11.5789474 L2.73115221,9.08947368 L7.79516358,9.08947368 L8.70554766,11.5789474 L10.5263158,11.5789474 L6.08819345,0 L4.49502134,0 Z" id="形状"></path>
+                </g>
+                <g id="编组" transform="translate(8.421053, 11.578947)" fill="#333333" fill-rule="nonzero">
+                    <polygon id="路径" points="1.06767414 3.31500465 3.66917273 6.0329907 9.39849284 0 10.5263158 1.1704543 3.62406409 8.42105263 2.16439272e-16 4.63471359"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
