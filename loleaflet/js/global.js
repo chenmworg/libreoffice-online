@@ -1,6 +1,6 @@
 /* -*- js-indent-level: 8 -*- */
 /* global Uint8Array */
-
+// location params: file_path | lang | permission | timestamp | WOPISrc| showurl(show url pop) | textmenu(doc right click board)
 (function (global) {
 
 	var storagePrefix = 'libreoffice_';

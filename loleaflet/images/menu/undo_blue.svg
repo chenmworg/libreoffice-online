@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="AI翻译web端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编辑器更新" transform="translate(-152.000000, -383.000000)">
+            <g id="icon_20_previous" transform="translate(152.000000, 383.000000)">
+                <rect id="矩形" x="0" y="0" width="20" height="20"></rect>
+                <g id="编组" transform="translate(3.000000, 3.000000)" fill="#1a73e8" fill-rule="nonzero">
+                    <path d="M6.78260869,9.70552148 L5.47826087,10.9079755 L0,5.41104294 L5.47826087,0 L6.78260869,1.202454 L3.321,4.552 L6.17391304,4.55214724 C10.5217391,4.55214724 14,7.98773007 14,12.2822086 L14,14 L12.2608696,14 L12.2608696,12.2822086 C12.2608696,8.93251533 9.56521738,6.26993865 6.17391304,6.26993865 L3.303,6.269 L6.78260869,9.70552148 Z" id="形状结合"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

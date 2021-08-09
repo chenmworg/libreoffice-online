@@ -207,7 +207,8 @@
 /* visual tweaks */
 
 .leaflet-container {
-	background: #dfdfdf;
+	/*background: #dfdfdf;*/
+    background: #f8f9fa;
 	outline: 0;
 	margin: auto;
 	/*height: 100%;*/

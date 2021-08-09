@@ -1201,6 +1201,10 @@ L.TileLayer = L.GridLayer.extend({
 	},
 
 	_showURLPopUp: function(position, url) {
+		// testdebug-link
+		if (!window.getParameterByName('showurl')) {
+			return;
+		}
 		// # for internal links
 		if (!url.startsWith('#')) {
 			this._map.hyperlinkPopup = new L.Popup({className: 'hyperlink-popup', closeButton: false, closeOnClick: false})

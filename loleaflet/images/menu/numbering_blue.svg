@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="AI翻译web端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编辑器更新" transform="translate(-1172.000000, -383.000000)">
+            <g id="icon_20_number" transform="translate(1172.000000, 383.000000)">
+                <rect id="矩形备份-2" x="0" y="0" width="20" height="20"></rect>
+                <g id="编组" transform="translate(2.000000, 1.000000)" fill="#1a73e8">
+                    <path d="M5.02900926,2.14615613 L5.02900926,1 L15.9803991,1 L15.9803991,2.14615613 L5.02900926,2.14615613 Z M5.01332858,5.02682854 L5.01332858,3.88067241 L11.2871703,3.88067241 L11.2871703,5.02682854 L5.01332858,5.02682854 Z M5,8.05497304 L5,6.90881691 L16,6.90881691 L16,8.05497304 L5.00078403,8.05497304 L5,8.05497304 Z M5,12.99151 L16,12.99151 L16,14.1376661 L5.00078403,14.1376661 L5,12.99151 Z M5.01332858,10.917307 L5.01332858,9.77115082 L11.2918746,9.77115082 L11.2918746,10.917307 L5.01332858,10.917307 Z M5.01332858,17 L5.01332858,15.8538439 L11.2918746,15.8538439 L11.2918746,17 L5.01332858,17 Z" id="形状" fill-rule="nonzero"></path>
+                    <text id="1-2" font-family="PingFangSC-Semibold, PingFang SC" font-size="6" font-weight="500">
+                        <tspan x="0" y="6">1</tspan>
+                        <tspan x="0" y="12">2</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

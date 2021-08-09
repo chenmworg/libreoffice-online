@@ -113,8 +113,13 @@ L.Control.ContextMenu = L.Control.extend({
 
 	_onContextMenu: function(obj) {
 		var map = this._map;
-		// // testdebug-contextmenu
-		// if (map._permission !== 'edit') {
+		// if (map._permission !== 'edit')
+		
+		// testdebug-contextmenu
+		// if (String(window.getParameterByName('textmenu')) === 'false') {
+		// 	return;
+		// }
+		// if (String(window.getParameterByName('textmenu')) !== 'true' && map._permission !== 'edit') {
 		// 	return;
 		// }
 
