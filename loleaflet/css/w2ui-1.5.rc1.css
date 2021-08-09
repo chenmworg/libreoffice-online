@@ -2942,6 +2942,7 @@ button.w2ui-btn-small:focus:before {
   border: 0;
 
   background-color: transparent;
+  cursor: pointer;
 }
 .w2ui-toolbar table.w2ui-button .w2ui-tb-image {
   width: 22px;
@@ -2988,15 +2989,17 @@ button.w2ui-btn-small:focus:before {
 }
 .w2ui-toolbar table.w2ui-button.over {
   /*border: 1px solid #cccccc;*/
-  background-color: #F1F3F4;
-
+  /*background-color: #F1F3F4;*/
+  background-color: #e8f0fe;
 }
 .w2ui-toolbar table.w2ui-button.over .w2ui-tb-caption {
   color: #000000;
 }
 .w2ui-toolbar table.w2ui-button.down {
-  border: 1px solid #aaaaaa;
-  background-color: #dddddd;
+  /*border: 1px solid #aaaaaa;*/
+  /*background-color: #dddddd;*/
+  border: none;
+  background-color: #e8f0fe;
 }
 .w2ui-toolbar table.w2ui-button.down .w2ui-tb-caption {
   color: #666666;
@@ -3005,8 +3008,8 @@ button.w2ui-btn-small:focus:before {
   /*border: 1px solid #aaaaaa;*/
   /*background-color: #ffffff;*/
   border: none;
-  background-color: rgb(232, 240, 254);
-  color: rgb(26, 115, 232);
+  background-color: #e8f0fe;
+  color: #1a73e8;
 }
 .select2-container--open .select2-dropdown--below {
     border: none !important;

@@ -641,12 +641,14 @@ button.leaflet-control-search-next
 
 .w2ui-icon.print{ background: url('images/lc_print.svg') no-repeat center !important; }
 /*.w2ui-icon.undo{ background: url('images/lc_undo.svg') no-repeat center !important; }*/
-.w2ui-icon.undo{ background: url('images/menu/undo.svg') no-repeat center !important; }
+.w2ui-icon.undo{ background: url('images/menu/undo_blue.svg') no-repeat center !important; }
 .w2ui-button.checked .w2ui-icon.undo{ background: url('images/menu/undo_blue.svg') no-repeat center !important; }
+.w2ui-toolbar .disabled .w2ui-icon.undo {background: url('images/menu/undo.svg') no-repeat center !important;}
 
 /*.w2ui-icon.redo{ background: url('images/lc_redo.svg') no-repeat center !important; }*/
-.w2ui-icon.redo{ background: url('images/menu/redo.svg') no-repeat center !important; }
-.w2ui-button.checked .w2ui-icon.redo{ background: url('images/menu/redo.svg') no-repeat center !important; }
+.w2ui-icon.redo{ background: url('images/menu/redo_blue.svg') no-repeat center !important; }
+.w2ui-button.checked .w2ui-icon.redo{ background: url('images/menu/redo_blue.svg') no-repeat center !important; }
+.w2ui-toolbar .disabled .w2ui-icon.redo{ background: url('images/menu/redo.svg') no-repeat center !important; }
 
 /*.w2ui-icon.copyformat{ background: url('images/lc_formatpaintbrush.svg') no-repeat center !important; }*/
 .w2ui-icon.copyformat{ background: url('images/menu/formatpaintbrush.svg') no-repeat center !important; }
