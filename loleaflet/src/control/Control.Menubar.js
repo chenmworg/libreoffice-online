@@ -1510,7 +1510,7 @@ L.Control.Menubar = L.Control.extend({
 		// testdebug-menu
 		if (window.mode.isMobile()) {
 			L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-			L.DomUtil.addClass(L.DomUtil.get('document-container'), 'readonly');
+			// L.DomUtil.addClass(L.DomUtil.get('document-container'), 'readonly');
 			return;
 		}
 

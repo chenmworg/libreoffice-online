@@ -73,6 +73,8 @@ L.Map = L.Evented.extend({
 			L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 		}
 
+		$('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
+
 		this._initEvents();
 		this._cacheSVG = [];
 
@@ -436,7 +438,8 @@ L.Map = L.Evented.extend({
 			}
 		}
 	},
-	showLoading: function (container) {
+	showLoading: function (id) {
+		var container = $('#' + id);
 		if (container) {
 			var spinDom = $('<div id="spin-loading-layer" ></div>');
 			spinDom.addClass('active');
@@ -1021,7 +1024,7 @@ L.Map = L.Evented.extend({
 		L.DomEvent.addListener(container, 'scroll', this._onScroll, this);
 		container._leaflet = true;
 
-		this.showLoading(container);
+		this.showLoading(id);
 	},
 
 	_onScroll: function() {

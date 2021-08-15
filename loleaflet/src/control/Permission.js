@@ -6,16 +6,6 @@
 L.Map.include({
 	setPermission: function (perm) {
 		// testdebug-permission
-		var permission = window.storageData('permission');
-		if (permission) {
-			if (permission === 'readonly' || permission === 'view') {
-				this._enterReadOnlyMode(permission);
-			}
-			if (permission === 'edit') {
-				this._enterEditMode('edit');
-			}
-			return;
-		}
 		if (perm === 'edit') {
 			if (window.mode.isMobile() || window.mode.isTablet()) {
 				var button = $('#mobile-edit-button');

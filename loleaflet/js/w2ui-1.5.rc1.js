@@ -6102,9 +6102,6 @@ w2utils.event = {
                 for (var i = 0; i < this.items.length; i++) {
                     var it1 = this.items[i];
                     if (it1.id == null) it1.id = "item_" + i;
-                    if (it1.type == 'linewrap') {
-                    	continue;
-                    }
                     this.refresh(it1.id);
                 }
                 return;
@@ -6122,7 +6119,10 @@ w2utils.event = {
                 // does not exist - create it
                 if (it.type == 'spacer') {
                     html = '<td width="100%" id="tb_'+ this.name +'_item_'+ it.id +'" align="right"></td>';
-                } else {
+                } else if (it.type == 'linewrap') {
+	                // testdebug-menuwrap
+	                html += '</tr><tr>'
+                }   else {
                     html = '<td id="tb_'+ this.name + '_item_'+ it.id +'" style="'+ (it.hidden ? 'display: none' : '') +'" '+
                         '    class="'+ (it.disabled ? 'disabled' : '') +'" valign="middle">'+ html +
                         '</td>';
@@ -6136,7 +6136,11 @@ w2utils.event = {
                 if (['menu', 'menu-radio', 'menu-check', 'drop', 'color', 'text-color'].indexOf(it.type) != -1 && it.checked == false) {
                     if ($('#w2ui-overlay-'+ this.name).length > 0) $('#w2ui-overlay-'+ this.name)[0].hide();
                 }
-                // refresh
+	            // testdebug-menuwrap
+	            if (it.type == 'linewrap') {
+		            html = '</tr><tr>'
+	            }
+	            // refresh
                 el.html(html);
                 if (it.hidden) { el.css('display', 'none'); } else { el.css('display', ''); }
                 if (it.disabled) { el.addClass('disabled'); } else { el.removeClass('disabled'); }
