@@ -6065,7 +6065,10 @@ w2utils.event = {
                 if (it.id == null) it.id = "item_" + i;
                 if (it.type == 'spacer') {
                     html += '<td width="100%" id="tb_'+ this.name +'_item_'+ it.id +'" align="right"></td>';
-                } else {
+                } else if (it.type == 'linewrap') {
+                	// testdebug-menuwrap
+                	html += '</tr><tr>'
+                }  else {
                     html += '<td id="tb_'+ this.name + '_item_'+ it.id +'" style="'+ (it.hidden ? 'display: none' : '') +'" '+
                             '    class="'+ (it.disabled ? 'disabled' : '') +'" valign="middle">'+
                             '</td>';
@@ -6116,7 +6119,10 @@ w2utils.event = {
                 // does not exist - create it
                 if (it.type == 'spacer') {
                     html = '<td width="100%" id="tb_'+ this.name +'_item_'+ it.id +'" align="right"></td>';
-                } else {
+                } else if (it.type == 'linewrap') {
+	                // testdebug-menuwrap
+	                html += '</tr><tr>'
+                }   else {
                     html = '<td id="tb_'+ this.name + '_item_'+ it.id +'" style="'+ (it.hidden ? 'display: none' : '') +'" '+
                         '    class="'+ (it.disabled ? 'disabled' : '') +'" valign="middle">'+ html +
                         '</td>';

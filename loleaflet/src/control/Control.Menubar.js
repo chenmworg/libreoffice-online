@@ -19,9 +19,9 @@ L.Control.Menubar = L.Control.extend({
 				{name: _UNO('.uno:Save', 'text'), id: 'save', type: 'action'},
 				{name: _UNO('.uno:SaveAs', 'text'), id: 'saveas', type: 'action'},
 				{name: _('Share...'), id:'shareas', type: 'action'},
-				// {name: _UNO('.uno:Print', 'text'), id: 'print', type: 'action'}, // textdebug-menu
+				// {name: _UNO('.uno:Print', 'text'), id: 'print', type: 'action'}, // testdebug-menu
 				{name: _('See revision history'), id: 'rev-history', type: 'action'},
-					// textdebug-menu
+					// testdebug-menu
 				// {name: !window.ThisIsAMobileApp ? _('Download as') : _('Export as'), id: 'downloadas', type: 'menu', menu: [
 				// 	{name: _('PDF Document (.pdf)'), id: 'downloadas-pdf', type: 'action'},
 				// 	{name: _('ODF text document (.odt)'), id: 'downloadas-odt', type: 'action'},
@@ -254,9 +254,9 @@ L.Control.Menubar = L.Control.extend({
 				{name: _UNO('.uno:Save', 'presentation'), id: 'save', type: 'action'},
 				{name: _UNO('.uno:SaveAs', 'presentation'), id: 'saveas', type: 'action'},
 				{name: _('Share...'), id:'shareas', type: 'action'},
-				// {name: _UNO('.uno:Print', 'presentation'), id: 'print', type: 'action'}, // textdebug-menu
+				// {name: _UNO('.uno:Print', 'presentation'), id: 'print', type: 'action'}, // testdebug-menu
 				{name: _('See revision history'), id: 'rev-history', type: 'action'},
-					// // textdebug-menu
+					// // testdebug-menu
 				// {name: !window.ThisIsAMobileApp ? _('Download as') : _('Export as'), id: 'downloadas', type: 'menu', menu: [
 				// 	{name: _('PDF Document (.pdf)'), id: 'downloadas-pdf', type: 'action'},
 				// 	{name: _('ODF presentation (.odp)'), id: 'downloadas-odp', type: 'action'},
@@ -369,9 +369,9 @@ L.Control.Menubar = L.Control.extend({
 				{name: _UNO('.uno:Save', 'spreadsheet'), id: 'save', type: 'action'},
 				{name: _UNO('.uno:SaveAs', 'spreadsheet'), id: 'saveas', type: 'action'},
 				{name: _('Share...'), id:'shareas', type: 'action'},
-				// {name: _UNO('.uno:Print', 'spreadsheet'), id: 'print', type: 'action'}, // textdebug-menu
+				// {name: _UNO('.uno:Print', 'spreadsheet'), id: 'print', type: 'action'}, // testdebug-menu
 				{name: _('See revision history'), id: 'rev-history', type: 'action'},
-					// textdebug-menu
+					// testdebug-menu
 				// {name: !window.ThisIsAMobileApp ? _('Download as') : _('Export as'), id:'downloadas', type: 'menu', menu: [
 				// 	{name: _('PDF Document (.pdf)'), id: 'downloadas-pdf', type: 'action'},
 				// 	{name: _('ODF spreadsheet (.ods)'), id: 'downloadas-ods', type: 'action'},
@@ -487,11 +487,11 @@ L.Control.Menubar = L.Control.extend({
 				{name: _UNO('.uno:Save', 'text'), id: 'save', type: 'action'},
 				{name: _UNO('.uno:SaveAs', 'text'), id: 'saveas', type: 'action'},
 				{name: _('Share...'), id:'shareas', type: 'action'},
-				// {name: _UNO('.uno:Print', 'text'), id: 'print', type: 'action'}, // textdebug-menu
+				// {name: _UNO('.uno:Print', 'text'), id: 'print', type: 'action'}, // testdebug-menu
 				{name: _('See revision history'), id: 'rev-history', type: 'action'},
 				{name: _('Sign document'), id: 'signdocument', type: 'action'}
 			]},
-			// textdebug-menu
+			// testdebug-menu
 			// {name: !window.ThisIsAMobileApp ? _('Download as') : _('Export as'), id: 'downloadas', type: 'menu', menu: [
 			// 	{name: _('PDF Document (.pdf)'), id: 'downloadas-pdf', type: 'action'},
 			// 	{name: _('ODF text document (.odt)'), id: 'downloadas-odt', type: 'action'},
@@ -537,10 +537,10 @@ L.Control.Menubar = L.Control.extend({
 				{name: _UNO('.uno:Save', 'presentation'), id: 'save', type: 'action'},
 				{name: _UNO('.uno:SaveAs', 'presentation'), id: 'saveas', type: 'action'},
 				{name: _('Share...'), id:'shareas', type: 'action'},
-				// {name: _UNO('.uno:Print', 'presentation'), id: 'print', type: 'action'}, // textdebug-menu
+				// {name: _UNO('.uno:Print', 'presentation'), id: 'print', type: 'action'}, // testdebug-menu
 				{name: _('See revision history'), id: 'rev-history', type: 'action'},
 			]},
-			// textdebug-menu
+			// testdebug-menu
 			// {name: !window.ThisIsAMobileApp ? _('Download as') : _('Export as'), id:'downloadas', type: 'menu', menu: [
 			// 	{name: _('PDF Document (.pdf)'), id: 'downloadas-pdf', type: 'action'},
 			// 	{name: _('ODF presentation (.odp)'), id: 'downloadas-odp', type: 'action'},
@@ -585,10 +585,10 @@ L.Control.Menubar = L.Control.extend({
 				{name: _UNO('.uno:Save', 'spreadsheet'), id: 'save', type: 'action'},
 				{name: _UNO('.uno:SaveAs', 'spreadsheet'), id: 'saveas', type: 'action'},
 				{name: _('Share...'), id:'shareas', type: 'action'},
-				// {name: _UNO('.uno:Print', 'spreadsheet'), id: 'print', type: 'action'}, // textdebug-menu
+				// {name: _UNO('.uno:Print', 'spreadsheet'), id: 'print', type: 'action'}, // testdebug-menu
 				{name: _('See revision history'), id: 'rev-history', type: 'action'},
 			]},
-			// textdebug-menu
+			// testdebug-menu
 			// {name: !window.ThisIsAMobileApp ? _('Download as') : _('Export as'), id:'downloadas', type: 'menu', menu: [
 			// 	{name: _('PDF Document (.pdf)'), id: 'downloadas-pdf', type: 'action'},
 			// 	{name: _('ODF spreadsheet (.ods)'), id: 'downloadas-ods', type: 'action'},
@@ -1244,9 +1244,6 @@ L.Control.Menubar = L.Control.extend({
 			this._map.sendUnoCommand('.uno:LOKSidebarWriterPage');
 			this._map.fire('showwizardsidebar');
 			window.pageMobileWizard = true;
-		} else if (id === 'parserleft') {
-			alert('parserleftClick-menubar'+ id);
-			L._postWindowMouseEvent('buttonup', 2, 282, 224, 1, 1, 0);
 		}
 		// Inform the host if asked
 		if (postmessage)
@@ -1510,6 +1507,13 @@ L.Control.Menubar = L.Control.extend({
 	},
 
 	_initializeMenu: function(menu) {
+		// testdebug-menu
+		if (window.mode.isMobile()) {
+			L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+			L.DomUtil.addClass(L.DomUtil.get('document-container'), 'readonly');
+			return;
+		}
+
 		var menuHtml = this._createMenu(menu);
 		for (var i in menuHtml) {
 			this._menubarCont.appendChild(menuHtml[i]);

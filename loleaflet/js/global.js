@@ -28,6 +28,24 @@
 	removeStorage(storagePrefix);
 	console.error('location', location);
 
+	function storageData (key, value) {
+
+		var prefix = storagePrefix;
+
+		if (value !== undefined) {
+			// set
+			return localStorage.setItem(prefix + key, JSON.stringify(value));
+		}
+		var val = localStorage.getItem(prefix + key);
+		// get
+		try {
+			return JSON.parse(String(val));
+		} catch (e) {
+			return val;
+		}
+
+	}
+
 	var ua = navigator.userAgent.toLowerCase(),
 	    uv = navigator.vendor.toLowerCase(),
 	    doc = document.documentElement,
@@ -43,7 +61,7 @@
 
 	    win = navigator.platform.indexOf('Win') === 0,
 
-	    mobile = typeof orientation !== 'undefined' || ua.indexOf('mobile') !== -1,
+	    mobile = storageData('mobile') || typeof orientation !== 'undefined' || ua.indexOf('mobile') !== -1,
 	    cypressTest = ua.indexOf('cypress') !== -1,
 	    msPointer = !window.PointerEvent && window.MSPointerEvent,
 	    pointer = (window.PointerEvent && navigator.pointerEnabled && navigator.maxTouchPoints) || msPointer,
@@ -175,27 +193,13 @@
 		return results === null ? '' : results[1].replace(/\+/g, ' ');
 	};
 	// testdebug-storage
-	global.storageData = function (key, value) {
-
-		var prefix = storagePrefix;
-
-		if (value !== undefined) {
-			// set
-			return localStorage.setItem(prefix + key, JSON.stringify(value));
-		}
-		var val = localStorage.getItem(prefix + key);
-		// get
-		try {
-			return JSON.parse(String(val));
-		} catch (e) {
-			return val;
-		}
-
-	};
+	global.storageData = storageData;
 	global.mode = {
 		// Here "mobile" means "mobile phone" (at least for now). Has to match small screen size
 		// requirement.
 		isMobile: function() {
+			if (storageData('mobile')) return storageData('mobile');
+
 			if (L.Browser.mobile && L.Browser.cypressTest) {
 				return true;
 			}

@@ -240,6 +240,7 @@ L.Map = L.Evented.extend({
 		});
 
 		this.showBusy(_('Initializing...'), false);
+
 		this.on('statusindicator', this._onUpdateProgress, this);
 
 		this.on('editorgotfocus', this._onEditorGotFocus, this);
@@ -437,8 +438,9 @@ L.Map = L.Evented.extend({
 	},
 
 	showBusy: function(label, bar) {
-		if (window.ThisIsTheAndroidApp)
-			return;
+		// test debug
+		// if (window.ThisIsTheAndroidApp)
+		// 	return;
 
 		// If document is already loaded, ask the toolbar widget to show busy
 		// status on the bottom statusbar

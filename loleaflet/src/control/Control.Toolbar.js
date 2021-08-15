@@ -154,27 +154,22 @@ function onClick(e, id, item) {
 		map.fire('languagedialog');
 	}
 	else if (id === 'lefttoright') {
-		// L.control.lokDialog._postWindowMouseEvent('buttonup', 2, 360, 225, 1, 1, 0);
-		// var windowid = window.storageData('launchSidebarId');
-		// // x:[352, 370]  y: [220, 235]
-		//
-		// postWindowMouseEvent('buttondown',  windowid, 360, 228, 1, 1, 0);
-		// postWindowMouseEvent('buttonup', windowid, 360, 228, 1, 1, 0);
 
-		map._socket.sendMessage('uno .uno:ParaLeftToRight');
-
+		// map._socket.sendMessage('uno .uno:ParaLeftToRight');
+		map.sendUnoCommand('.uno:ParaLeftToRight');
 	}
 	else if (id === 'righttoleft') {
-		// L.tileLayer._postWindowMouseEvent('buttonup', 2, 282, 225, 1, 1, 0);
-		// var winid = window.storageData('launchSidebarId');
-		// // x:[375, 392]  y: [220, 235]
-		//
-		// postWindowMouseEvent('buttondown', winid, 385, 225, 1, 1, 0);
-		// postWindowMouseEvent('buttonup', winid, 385, 225, 1, 1, 0);
 
-		map._socket.sendMessage('uno .uno:ParaRightToLeft');
+		// map._socket.sendMessage('uno .uno:ParaRightToLeft');
+		map.sendUnoCommand('.uno:ParaRightToLeft');
 
+	}
+	else if (id === 'trackchanges') {
+		map.sendUnoCommand('.uno:TrackChanges');
 
+	}
+	else if (id === 'showtrackedchanges') {
+		map.sendUnoCommand('.uno:ShowTrackedChanges');
 	}
 
 }

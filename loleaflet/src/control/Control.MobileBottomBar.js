@@ -26,6 +26,7 @@ L.Control.MobileBottomBar = L.Control.extend({
 			return [
 				{type: 'button',  id: 'showsearchbar',  img: 'search', hint: _('Show the search bar')},
 				{type: 'break'},
+				{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 				{type: 'button',  id: 'bold',  img: 'bold', hint: _UNO('.uno:Bold'), uno: 'Bold'},
 				{type: 'button',  id: 'italic', img: 'italic', hint: _UNO('.uno:Italic'), uno: 'Italic'},
 				{type: 'button',  id: 'underline',  img: 'underline', hint: _UNO('.uno:Underline'), uno: 'Underline'},
@@ -33,6 +34,9 @@ L.Control.MobileBottomBar = L.Control.extend({
 				{type: 'break'},
 				{type: 'button',  id: 'fontcolor', img: 'textcolor', hint: _UNO('.uno:FontColor')},
 				{type: 'button',  id: 'backcolor', img: 'backcolor', hint: _UNO('.uno:BackgroundColor')},
+				{type: 'linewrap'},
+				{type: 'button', id: 'lefttoright', img: 'lefttoright',},
+				{type: 'button', id: 'righttoleft', img: 'righttoleft',},
 				{type: 'button',  id: 'leftpara',  img: 'alignleft', hint: _UNO('.uno:LeftPara', '', true),
 					uno: {textCommand: 'LeftPara', objectCommand: 'ObjectAlignLeft'},
 					unosheet: 'AlignLeft', disabled: true},
