@@ -6111,10 +6111,11 @@ w2utils.event = {
             }
             // create or refresh only one item
             var it = this.get(id);
-	        if (it1.type == 'linewrap') {
+
+            if (it == null) return false;
+	        if (it.type == 'linewrap') {
 		        return;
 	        }
-            if (it == null) return false;
             if (typeof it.onRefresh == 'function') {
                 var edata2 = this.trigger({ phase: 'before', type: 'refresh', target: id, item: it, object: it });
                 if (edata2.isCancelled === true) return;
