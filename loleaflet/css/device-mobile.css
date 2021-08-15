@@ -428,7 +428,8 @@ button.vex-dialog-button-secondary.vex-dialog-button.vex-last {
 #toolbar-down {
 	/*height: 34px !important;*/
     height: 74px !important;
-    border-top: 1px solid #f1f1f1 !important;
+    /*border-top: 1px solid #f1f1f1 !important;*/
+    top: 0 !important;
 }
 #toolbar-down > .w2ui-scroll-wrapper {
 	overflow-x: scroll !important;
@@ -612,7 +613,11 @@ td[id^=tb_spreadsheet-toolbar_item]:focus table.w2ui-button div.w2ui-icon, td[id
 
 #document-container.readonly {
 	/*top: 37px; !*set equal to toolbar up's height*!*/
-    top: 74px; /*set equal to toolbar up's height*/
+    top: 0px;
+    bottom: 0px;
+}
+.libreoffice-mode-mobile #document-container:not(.readonly) {
+    top: 74px !important;
     bottom: 0px;
 }
 

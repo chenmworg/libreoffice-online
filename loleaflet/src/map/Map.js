@@ -436,6 +436,16 @@ L.Map = L.Evented.extend({
 			}
 		}
 	},
+	showLoading: function (container) {
+		if (container) {
+			var spinDom = $('<div id="spin-loading-layer" ></div>');
+			spinDom.addClass('active');
+			container.append(spinDom);
+		}
+	},
+	hideLoading: function () {
+		L.DomUtil.remove(L.DomUtil.get());
+	},
 
 	showBusy: function(label, bar) {
 		// test debug
@@ -702,7 +712,10 @@ L.Map = L.Evented.extend({
 	// public methods for getting map state
 
 	getViewName: function(viewid) {
-		return this._viewInfo[viewid].username;
+		if (window.getParameterByName('username')) {
+			return window.getParameterByName('username');
+		}
+		return this._viewInfo[viewid] ? this._viewInfo[viewid].username : '';
 	},
 
 	getViewColor: function(viewid) {
@@ -1007,6 +1020,8 @@ L.Map = L.Evented.extend({
 		L.DomEvent.on(this._fileDownloader.contentWindow, 'contextmenu', L.DomEvent.preventDefault);
 		L.DomEvent.addListener(container, 'scroll', this._onScroll, this);
 		container._leaflet = true;
+
+		this.showLoading(container);
 	},
 
 	_onScroll: function() {
@@ -1452,6 +1467,7 @@ L.Map = L.Evented.extend({
 		}
 		else if (e.statusType === 'finish' || e.statusType === 'loleafletloaded' || e.statusType === 'reconnected') {
 			this.hideBusy();
+			this.hideLoading();
 		}
 	},
 

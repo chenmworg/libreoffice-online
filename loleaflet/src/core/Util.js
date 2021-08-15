@@ -242,6 +242,17 @@ L.Util = {
 	// on IE11 Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER are not supported
 	L.Util.MAX_SAFE_INTEGER = Math.pow(2, 53)-1;
 	L.Util.MIN_SAFE_INTEGER = -L.Util.MAX_SAFE_INTEGER;
+
+	L.Util.generateChars = function (length) {
+		var chars = '';
+
+		for (var i = 0; i < length; i++) {
+			var randomChar = Math.floor(Math.random() * 36);
+			chars += randomChar.toString(36);
+		}
+
+		return chars;
+	};
 })();
 
 if (!String.prototype.startsWith) {

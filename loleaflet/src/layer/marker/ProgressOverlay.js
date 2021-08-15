@@ -114,7 +114,7 @@ L.ProgressOverlay = L.Layer.extend({
 				if (!map.hasLayer(self)) {
 					map.addLayer(self);
 				}
-			}, 500 /* ms */);
+			}, 200 /* ms */);
 	},
 
 	// Hide ourselves if there is anything to hide

@@ -994,3 +994,49 @@ input.clipboard {
 	top: 24px;
 	color: white;
 	}
+
+#spin-loading-layer {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    background-repeat: no-repeat no-repeat;
+    background-position: 50%;
+    opacity: 0.7;
+    transition: opacity 100ms;
+    -moz-transition: opacity 100ms;
+    -o-transition: opacity 100ms;
+    -ms-transition: opacity 100ms;
+    -webkit-transition: opacity 100ms;
+}
+
+#spin-loading-layer.active:after {
+    z-index: 2;
+    content: '';
+    height: 28px;
+    width: 28px;
+    margin: -16px 0 0 -16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    -webkit-animation: rotate 0.8s infinite linear;
+    animation: rotate 0.8s infinite linear;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    border: 2px solid #ccc;
+    border-top-color: #444;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
