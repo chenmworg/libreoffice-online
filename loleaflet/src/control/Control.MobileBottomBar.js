@@ -36,7 +36,7 @@ L.Control.MobileBottomBar = L.Control.extend({
 				{type: 'button',  id: 'defaultnumbering',  img: 'numbering', hint: _UNO('.uno:DefaultNumbering', '', true),uno: 'DefaultNumbering', disabled: true},
 				{type: 'button',  id: 'defaultbullet',  img: 'bullet', hint: _UNO('.uno:DefaultBullet', '', true), uno: 'DefaultBullet', disabled: true},
 
-				{type: 'linewrap'},
+				{type: 'linewrap', id: 'linewrap', hidden: true},
 
 				{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 				{type: 'button', id: 'lefttoright', img: 'lefttoright',},

@@ -6067,7 +6067,7 @@ w2utils.event = {
                     html += '<td width="100%" id="tb_'+ this.name +'_item_'+ it.id +'" align="right"></td>';
                 } else if (it.type == 'linewrap') {
                 	// testdebug-menuwrap
-                	html += ' </tr><tr> '
+                	html += '</tr><tr>'
                 }  else {
                     html += '<td id="tb_'+ this.name + '_item_'+ it.id +'" style="'+ (it.hidden ? 'display: none' : '') +'" '+
                             '    class="'+ (it.disabled ? 'disabled' : '') +'" valign="middle">'+
@@ -6101,6 +6101,9 @@ w2utils.event = {
             if (id == null) {
                 for (var i = 0; i < this.items.length; i++) {
                     var it1 = this.items[i];
+	                if (it1.type == 'linewrap') {
+						continue;
+	                }
                     if (it1.id == null) it1.id = "item_" + i;
                     this.refresh(it1.id);
                 }
@@ -6108,6 +6111,9 @@ w2utils.event = {
             }
             // create or refresh only one item
             var it = this.get(id);
+	        if (it1.type == 'linewrap') {
+		        return;
+	        }
             if (it == null) return false;
             if (typeof it.onRefresh == 'function') {
                 var edata2 = this.trigger({ phase: 'before', type: 'refresh', target: id, item: it, object: it });
@@ -6116,13 +6122,11 @@ w2utils.event = {
             var el = $(this.box).find('#tb_'+ this.name +'_item_'+ w2utils.escapeId(it.id));
             var html  = this.getItemHTML(it);
             if (el.length === 0) {
+
                 // does not exist - create it
                 if (it.type == 'spacer') {
                     html = '<td width="100%" id="tb_'+ this.name +'_item_'+ it.id +'" align="right"></td>';
-                } else if (it.type == 'linewrap') {
-	                // testdebug-menuwrap
-	                html += '</tr><tr>'
-                }   else {
+                } else {
                     html = '<td id="tb_'+ this.name + '_item_'+ it.id +'" style="'+ (it.hidden ? 'display: none' : '') +'" '+
                         '    class="'+ (it.disabled ? 'disabled' : '') +'" valign="middle">'+ html +
                         '</td>';
@@ -6136,10 +6140,6 @@ w2utils.event = {
                 if (['menu', 'menu-radio', 'menu-check', 'drop', 'color', 'text-color'].indexOf(it.type) != -1 && it.checked == false) {
                     if ($('#w2ui-overlay-'+ this.name).length > 0) $('#w2ui-overlay-'+ this.name)[0].hide();
                 }
-	            // testdebug-menuwrap
-	            if (it.type == 'linewrap') {
-		            html = '</tr><tr>'
-	            }
 	            // refresh
                 el.html(html);
                 if (it.hidden) { el.css('display', 'none'); } else { el.css('display', ''); }
