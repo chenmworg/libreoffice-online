@@ -720,7 +720,14 @@ button.leaflet-control-search-next
 .w2ui-button.checked .w2ui-icon.decrementindent{ background: url('images/menu/decreaseindentation_blue.svg') no-repeat center !important; }
 
 .w2ui-icon.text{ background: url('images/lc_text.svg') no-repeat center !important; }
-.w2ui-icon.annotation{ background: url('images/lc_showannotations.svg') no-repeat center !important; }
+/*.w2ui-icon.annotation{ background: url('images/lc_showannotations.svg') no-repeat center !important; }*/
+.w2ui-icon.annotation{ background: url('images/menu/comment.svg') no-repeat center !important; }
+.w2ui-button.checked .w2ui-icon.annotation{ background: url('images/menu/comment_blue.svg') no-repeat center !important; }
+.w2ui-icon.trackchanges{ background: url('images/menu/trackchanges.svg') no-repeat center !important; }
+.w2ui-button.checked .w2ui-icon.trackchanges{ background: url('images/menu/trackchanges_blue.svg') no-repeat center !important; }
+.w2ui-icon.showtrackedchanges{ background: url('images/menu/showtrackedchanges.svg') no-repeat center !important; }
+.w2ui-button.checked .w2ui-icon.showtrackedchanges{ background: url('images/menu/showtrackedchanges_blue.svg') no-repeat center !important; }
+
 .w2ui-icon.inserttable{ background: url('images/lc_inserttable.svg') no-repeat center !important; }
 .w2ui-icon.insertgraphic{ background: url('images/lc_gallery.svg') no-repeat center !important; }
 .w2ui-icon.link{ background: url('images/lc_inserthyperlink.svg') no-repeat center !important; }
@@ -756,7 +763,9 @@ button.leaflet-control-search-next
 .w2ui-icon.insertpage{ background: url('images/lc_insertpage.svg') no-repeat center !important; }
 .w2ui-icon.insertsheet{ background: url('images/plus.svg') no-repeat center !important; }
 .w2ui-icon.conditionalformatdialog{ background: url('images/lc_conditionalformatdialog.svg') no-repeat center !important; }
-.w2ui-icon.search{ background: url('images/sc_recsearch.svg') no-repeat center !important; }
+/*.w2ui-icon.search{ background: url('images/sc_recsearch.svg') no-repeat center !important; }*/
+.w2ui-icon.search{ background: url('images/menu/search.svg') no-repeat center !important; }
+.w2ui-button.checked .w2ui-icon.search{ background: url('images/menu/search_blue.svg') no-repeat center !important; }
 .w2ui-icon.next{ background: url('images/lc_downsearch.svg') no-repeat center !important; }
 .w2ui-icon.presentation{ background: url('images/lc_dia.svg') no-repeat center !important; }
 .w2ui-icon.prev{ background: url('images/lc_upsearch.svg') no-repeat center !important; }
