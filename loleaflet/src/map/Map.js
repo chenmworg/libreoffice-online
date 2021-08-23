@@ -245,7 +245,7 @@ L.Map = L.Evented.extend({
 
 		this.on('statusindicator', this._onUpdateProgress, this);
 
-		this.on('editorgotfocus', this._onEditorGotFocus, this);o
+		this.on('editorgotfocus', this._onEditorGotFocus, this);
 
 		// Fired to signal that the input focus is being changed.
 		this.on('changefocuswidget', this._onChangeFocusWidget, this);
