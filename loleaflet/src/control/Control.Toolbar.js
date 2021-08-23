@@ -171,6 +171,9 @@ function onClick(e, id, item) {
 	else if (id === 'showtrackedchanges') {
 		map.sendUnoCommand('.uno:ShowTrackedChanges');
 	}
+	else if (id === 'searchandreplace') {
+		map.sendUnoCommand('.uno:SearchDialog');
+	}
 
 }
 

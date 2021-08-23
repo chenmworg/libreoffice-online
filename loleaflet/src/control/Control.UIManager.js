@@ -22,7 +22,8 @@ L.Control.UIManager = L.Control.extend({
 		}
 
 		if (window.mode.isMobile()) {
-			$('#mobile-edit-button').show();
+			// testdebug-mobile-edit
+			// $('#mobile-edit-button').show();
 		} else {
 			if (!window.enableNotebookbar) {
 				this.map.addControl(L.control.topToolbar());

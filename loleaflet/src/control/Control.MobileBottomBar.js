@@ -26,6 +26,7 @@ L.Control.MobileBottomBar = L.Control.extend({
 			return [
 				{type: 'button',  id: 'showsearchbar',  img: 'search', hint: _('Show the search bar')},
 				// {type: 'break'},
+				{type: 'button',  id: 'searchandreplace',  img: 'search', hint: _UNO('.uno:SearchDialog')},
 				{type: 'button',  id: 'bold',  img: 'bold', hint: _UNO('.uno:Bold'), uno: 'Bold'},
 				{type: 'button',  id: 'italic', img: 'italic', hint: _UNO('.uno:Italic'), uno: 'Italic'},
 				{type: 'button',  id: 'underline',  img: 'underline', hint: _UNO('.uno:Underline'), uno: 'Underline'},

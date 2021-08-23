@@ -245,7 +245,7 @@ L.Map = L.Evented.extend({
 
 		this.on('statusindicator', this._onUpdateProgress, this);
 
-		this.on('editorgotfocus', this._onEditorGotFocus, this);
+		this.on('editorgotfocus', this._onEditorGotFocus, this);o
 
 		// Fired to signal that the input focus is being changed.
 		this.on('changefocuswidget', this._onChangeFocusWidget, this);
@@ -1470,7 +1470,11 @@ L.Map = L.Evented.extend({
 		}
 		else if (e.statusType === 'finish' || e.statusType === 'loleafletloaded' || e.statusType === 'reconnected') {
 			this.hideBusy();
+			// testdebug-layout
 			this.hideLoading();
+			if (window.mode.isMobile()) {
+				$('#mobile-edit-button').show();
+			}
 		}
 	},
 
