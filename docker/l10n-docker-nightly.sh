@@ -80,7 +80,7 @@ mkdir -p "$INSTDIR"
 
 # libreoffice repo
 if test ! -d libreoffice ; then
-    git clone http://github.com/chenmworg/libreoffice-core libreoffice || exit 1
+    git clone https://github.com/chenmiaowei/core.git libreoffice || exit 1
 fi
 
 ( cd libreoffice && git fetch --all && git checkout $LIBREOFFICE_BRANCH && ./g pull -r ) || exit 1
