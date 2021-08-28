@@ -427,7 +427,7 @@ button.vex-dialog-button-secondary.vex-dialog-button.vex-last {
 #tb_actionbar_item_fullscreen{display: none;}
 #toolbar-down {
 	/*height: 34px !important;*/
-    height: 74px !important;
+    height: 120px !important;
     /*border-top: 1px solid #f1f1f1 !important;*/
     top: 0 !important;
 }
@@ -436,7 +436,7 @@ button.vex-dialog-button-secondary.vex-dialog-button.vex-last {
 	scrollbar-width: none; /*css draft (firefox only)*/
 	-ms-scrollbar: none; /*ie*/
 
-    max-height: 74px !important;
+    max-height: 120px !important;
 }
 #toolbar-down > .w2ui-scroll-wrapper::-webkit-scrollbar { /*webkit only*/
 	display: none;
@@ -617,7 +617,7 @@ td[id^=tb_spreadsheet-toolbar_item]:focus table.w2ui-button div.w2ui-icon, td[id
     bottom: 0px;
 }
 .libreoffice-mode-mobile #document-container:not(.readonly) {
-    top: 74px !important;
+    top: 120px !important;
     bottom: 0px;
 }
 

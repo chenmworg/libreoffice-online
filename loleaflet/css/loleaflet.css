@@ -21,6 +21,8 @@
 	/*top: 36px;*/
     /*testdebug-css*/
     top: 0;
+    border-top: none;
+
 }
 
 #toolbar-wrapper.readonly {
