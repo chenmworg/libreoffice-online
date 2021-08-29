@@ -234,7 +234,7 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'break', id: 'breaksidebar', hidden: true},
 			// {type: 'button',  id: 'fold',  img: 'fold', desktop: true, mobile: false, hidden: true},
 			{type: 'button',  id: 'fold',  img: 'fold', mobile: false, hidden: true},
-			{type: 'button',  id: 'hamburger-tablet',  img: 'hamburger', desktop: false, mobile: false, tablet: true, iosapptablet: false, hidden: true},
+			{type: 'button',  id: 'hamburger-tablet',  img: 'hamburger', desktop: false, mobile: false, tablet: false, iosapptablet: false, hidden: true},
 			{type: 'button', id: 'languagecode', desktop: false, mobile: true, tablet: false}
 		];
 	},
@@ -296,7 +296,7 @@ L.Control.TopToolbar = L.Control.extend({
 				// 'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar', 'sidebar');
 				toolbarUp.show('leftpara', 'centerpara', 'rightpara', 'justifypara', 'breakpara', 'linespacing',
 					'breakspacing', 'defaultbullet', 'defaultnumbering', 'breakbullet', 'incrementindent', 'decrementindent',
-					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges');
+					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges', 'lefttoright', 'righttoleft');
 
 			break;
 		case 'presentation':

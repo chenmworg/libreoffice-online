@@ -58,12 +58,14 @@ L.Control.MobileBottomBar = L.Control.extend({
 				// {type: 'break', id: 'breakbullet', hidden: true},
 				{type: 'button',  id: 'incrementindent',  img: 'incrementindent', hint: _UNO('.uno:IncrementIndent', '', true), uno: 'IncrementIndent', disabled: true},
 				{type: 'button',  id: 'decrementindent',  img: 'decrementindent', hint: _UNO('.uno:DecrementIndent', '', true), uno: 'DecrementIndent', disabled: true},
+
 				{type: 'linewrap', id: 'linewrap',},
+
 				{type: 'button',  id: 'undo',  img: 'undo', hint: _UNO('.uno:Undo'), uno: 'Undo', disabled: true, mobile: false},
 				{type: 'button',  id: 'redo',  img: 'redo', hint: _UNO('.uno:Redo'), uno: 'Redo', disabled: true, mobile: false},
-				{type: 'button',  id: 'insertannotation', img: 'annotation', hint: _UNO('.uno:InsertAnnotation', '', true), hidden: true},
-				{type: 'button',  id: 'trackchanges', img: 'trackchanges', uno: 'TrackChanges',hint: _UNO('.uno:TrackChanges'), hidden: true},
-				{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', uno: 'ShowTrackedChanges', hint: _UNO('.uno:ShowTrackedChanges'), hidden: true},
+				{type: 'button',  id: 'insertannotation', img: 'annotation', hint: _UNO('.uno:InsertAnnotation', '', true)},
+				{type: 'button',  id: 'trackchanges', img: 'trackchanges', uno: 'TrackChanges',hint: _UNO('.uno:TrackChanges')},
+				{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', uno: 'ShowTrackedChanges', hint: _UNO('.uno:ShowTrackedChanges')},
 
 			];
 		} else if (docType == 'spreadsheet') {

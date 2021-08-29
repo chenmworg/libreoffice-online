@@ -61,7 +61,7 @@
 
 	    win = navigator.platform.indexOf('Win') === 0,
 
-	    mobile = storageData('mobile') || typeof orientation !== 'undefined' || ua.indexOf('mobile') !== -1,
+	    mobile = typeof orientation !== 'undefined' || ua.indexOf('mobile') !== -1,
 	    cypressTest = ua.indexOf('cypress') !== -1,
 	    msPointer = !window.PointerEvent && window.MSPointerEvent,
 	    pointer = (window.PointerEvent && navigator.pointerEnabled && navigator.maxTouchPoints) || msPointer,
@@ -198,7 +198,7 @@
 		// Here "mobile" means "mobile phone" (at least for now). Has to match small screen size
 		// requirement.
 		isMobile: function() {
-			if (storageData('mobile')) return storageData('mobile');
+			if (storageData('mode') === 'mobile') return true;
 
 			if (L.Browser.mobile && L.Browser.cypressTest) {
 				return true;
@@ -208,9 +208,11 @@
 		},
 		// Mobile device with big screen size.
 		isTablet: function() {
+			if (storageData('mode') === 'tablet') return true;
 			return L.Browser.mobile && !window.mode.isMobile();
 		},
 		isDesktop: function() {
+			if (storageData('mode') === 'desktop') return true;
 			return !L.Browser.mobile;
 		},
 		getPermissionByLocation: function() {
@@ -219,15 +221,15 @@
 			if (['edit' | 'view' | 'readonly'].includes(permission)) {
 				return permission;
 			}
-			return '';
+			return 'edit';
 		},
 		getDeviceFormFactor: function() {
-			if (window.mode.isMobile())
+			if (window.mode.isDesktop())
+				return 'desktop';
+			else if (window.mode.isMobile())
 				return 'mobile';
 			else if (window.mode.isTablet())
 				return 'tablet';
-			else if (window.mode.isDesktop())
-				return 'desktop';
 			else
 				return null;
 		}
