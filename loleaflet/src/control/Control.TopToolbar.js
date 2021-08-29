@@ -93,7 +93,7 @@ L.Control.TopToolbar = L.Control.extend({
 
 	getToolItems: function() {
 		return [
-			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: true, hidden: true},
+			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: false, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 			// {type: 'button',  id: 'print', img: 'print', hint: _UNO('.uno:Print', 'text'), mobile: false, tablet: false},
 			{type: 'button', id: 'lefttoright', img: 'lefttoright', hint: _UNO('.uno:ParaLeftToRight'), uno: 'ParaLeftToRight'},

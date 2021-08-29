@@ -61,7 +61,7 @@
 
 	    win = navigator.platform.indexOf('Win') === 0,
 
-	    mobile = typeof orientation !== 'undefined' || ua.indexOf('mobile') !== -1,
+	    mobile = storageData('mode') === 'mobile' || typeof orientation !== 'undefined' || ua.indexOf('mobile') !== -1,
 	    cypressTest = ua.indexOf('cypress') !== -1,
 	    msPointer = !window.PointerEvent && window.MSPointerEvent,
 	    pointer = (window.PointerEvent && navigator.pointerEnabled && navigator.maxTouchPoints) || msPointer,
