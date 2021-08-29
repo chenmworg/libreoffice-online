@@ -6074,7 +6074,8 @@ w2utils.event = {
                             '</td>';
                 }
             }
-            html += '<td width="100%" id="tb_'+ this.name +'_right" align="right">'+ this.right +'</td>';
+            // testdebug-menu
+            // html += '<td width="100%" id="tb_'+ this.name +'_right" align="right">'+ this.right +'</td>';
             html += '</tr>'+
                     '</tbody></table></div>'+
                     '<div class="w2ui-scroll-left" onmousedown="event.preventDefault()" onclick="if($(this).closest(\'#toolbar-up\').length>0 || $(\'#toolbar-down\').width() > 768){var el=w2ui[\''+ this.name +'\']; if (el) el.scroll(\'left\');}"></div>'+

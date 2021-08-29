@@ -40,8 +40,8 @@ L.Control.MobileBottomBar = L.Control.extend({
 				{type: 'linewrap', id: 'linewrap',},
 
 				{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
-				{type: 'button', id: 'lefttoright', img: 'lefttoright',},
-				{type: 'button', id: 'righttoleft', img: 'righttoleft',},
+				{type: 'button', id: 'lefttoright', img: 'lefttoright', hint: _UNO('.uno:ParaLeftToRight'), uno: 'ParaLeftToRight'},
+				{type: 'button', id: 'righttoleft', img: 'righttoleft', hint: _UNO('.uno:ParaRightToLeft'), uno: 'ParaRightToLeft'},
 				{type: 'button',  id: 'leftpara',  img: 'alignleft', hint: _UNO('.uno:LeftPara', '', true),
 					uno: {textCommand: 'LeftPara', objectCommand: 'ObjectAlignLeft'},
 					unosheet: 'AlignLeft', disabled: true},
@@ -62,8 +62,8 @@ L.Control.MobileBottomBar = L.Control.extend({
 				{type: 'button',  id: 'undo',  img: 'undo', hint: _UNO('.uno:Undo'), uno: 'Undo', disabled: true, mobile: false},
 				{type: 'button',  id: 'redo',  img: 'redo', hint: _UNO('.uno:Redo'), uno: 'Redo', disabled: true, mobile: false},
 				{type: 'button',  id: 'insertannotation', img: 'annotation', hint: _UNO('.uno:InsertAnnotation', '', true), hidden: true},
-				{type: 'button',  id: 'trackchanges', img: 'trackchanges',},
-				{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', },
+				{type: 'button',  id: 'trackchanges', img: 'trackchanges', uno: 'TrackChanges',hint: _UNO('.uno:TrackChanges'), hidden: true},
+				{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', uno: 'ShowTrackedChanges', hint: _UNO('.uno:ShowTrackedChanges'), hidden: true},
 
 			];
 		} else if (docType == 'spreadsheet') {

@@ -153,27 +153,27 @@ function onClick(e, id, item) {
 	else if (id === 'languagecode') {
 		map.fire('languagedialog');
 	}
-	else if (id === 'lefttoright') {
-
-		// map._socket.sendMessage('uno .uno:ParaLeftToRight');
-		map.sendUnoCommand('.uno:ParaLeftToRight');
-	}
-	else if (id === 'righttoleft') {
-
-		// map._socket.sendMessage('uno .uno:ParaRightToLeft');
-		map.sendUnoCommand('.uno:ParaRightToLeft');
-
-	}
-	else if (id === 'trackchanges') {
-		map.sendUnoCommand('.uno:TrackChanges');
-
-	}
-	else if (id === 'showtrackedchanges') {
-		map.sendUnoCommand('.uno:ShowTrackedChanges');
-	}
-	else if (id === 'searchandreplace') {
-		map.sendUnoCommand('.uno:SearchDialog');
-	}
+	// else if (id === 'lefttoright') {
+	//
+	// 	// map._socket.sendMessage('uno .uno:ParaLeftToRight');
+	// 	map.sendUnoCommand('.uno:ParaLeftToRight');
+	// }
+	// else if (id === 'righttoleft') {
+	//
+	// 	// map._socket.sendMessage('uno .uno:ParaRightToLeft');
+	// 	map.sendUnoCommand('.uno:ParaRightToLeft');
+	//
+	// }
+	// else if (id === 'trackchanges') {
+	// 	map.sendUnoCommand('.uno:TrackChanges');
+	//
+	// }
+	// else if (id === 'showtrackedchanges') {
+	// 	map.sendUnoCommand('.uno:ShowTrackedChanges');
+	// }
+	// else if (id === 'searchandreplace') {
+	// 	map.sendUnoCommand('.uno:SearchDialog');
+	// }
 
 }
 

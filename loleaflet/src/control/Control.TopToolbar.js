@@ -96,9 +96,9 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: true, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 			// {type: 'button',  id: 'print', img: 'print', hint: _UNO('.uno:Print', 'text'), mobile: false, tablet: false},
-			{type: 'button', id: 'lefttoright', img: 'lefttoright', uno: 'Left-To-Right'},
-			{type: 'button', id: 'righttoleft', img: 'righttoleft', uno: 'Right-To-Left'},
-			{type: 'button',  id: 'searchandreplace',  img: 'search', hint: _UNO('.uno:SearchDialog')},
+			{type: 'button', id: 'lefttoright', img: 'lefttoright', hint: _UNO('.uno:ParaLeftToRight'), uno: 'ParaLeftToRight'},
+			{type: 'button', id: 'righttoleft', img: 'righttoleft', hint: _UNO('.uno:ParaRightToLeft'), uno: 'ParaRightToLeft'},
+			{type: 'button',  id: 'searchandreplace',  img: 'search', hint: _UNO('.uno:SearchDialog'), uno: 'SearchDialog'},
 
 			{type: 'break', id: 'savebreak', mobile: false},
 			{type: 'button',  id: 'undo',  img: 'undo', hint: _UNO('.uno:Undo'), uno: 'Undo', disabled: true, mobile: false},
@@ -211,8 +211,8 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'break',   id: 'break-number', hidden: true},
 			{type: 'button',  id: 'inserttextbox', img: 'text', hint: _UNO('.uno:Text', '', true), uno: 'Text?CreateDirectly:bool=true', hidden: true},
 			{type: 'button',  id: 'insertannotation', img: 'annotation', hint: _UNO('.uno:InsertAnnotation', '', true), hidden: true},
-			{type: 'button',  id: 'trackchanges', img: 'trackchanges', hidden: true},
-			{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', hidden: true},
+			{type: 'button',  id: 'trackchanges', img: 'trackchanges', uno: 'TrackChanges',hint: _UNO('.uno:TrackChanges'), hidden: true},
+			{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', uno: 'ShowTrackedChanges', hint: _UNO('.uno:ShowTrackedChanges'), hidden: true},
 			{type: 'drop',  id: 'inserttable',  img: 'inserttable', hint: _('Insert table'), hidden: true, overlay: {onShow: window.insertTable}, html: window.getInsertTablePopupHtml()},
 			// {type: 'button',  id: 'insertgraphic',  img: 'insertgraphic', hint: _UNO('.uno:InsertGraphic', '', true)},
 			// {type: 'menu', id: 'menugraphic', img: 'insertgraphic', hint: _UNO('.uno:InsertGraphic', '', true), hidden: true,
@@ -296,7 +296,7 @@ L.Control.TopToolbar = L.Control.extend({
 				// 'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar', 'sidebar');
 				toolbarUp.show('leftpara', 'centerpara', 'rightpara', 'justifypara', 'breakpara', 'linespacing',
 					'breakspacing', 'defaultbullet', 'defaultnumbering', 'breakbullet', 'incrementindent', 'decrementindent',
-					'breakindent', 'insertannotation', 'backcolor');
+					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges');
 
 			break;
 		case 'presentation':
