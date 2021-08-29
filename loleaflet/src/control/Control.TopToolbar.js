@@ -96,8 +96,8 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: true, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 			// {type: 'button',  id: 'print', img: 'print', hint: _UNO('.uno:Print', 'text'), mobile: false, tablet: false},
-			{type: 'button', id: 'lefttoright', img: 'lefttoright', },
-			{type: 'button', id: 'righttoleft', img: 'righttoleft', },
+			{type: 'button', id: 'lefttoright', img: 'lefttoright', uno: 'Left-To-Right'},
+			{type: 'button', id: 'righttoleft', img: 'righttoleft', uno: 'Right-To-Left'},
 			{type: 'button',  id: 'searchandreplace',  img: 'search', hint: _UNO('.uno:SearchDialog')},
 
 			{type: 'break', id: 'savebreak', mobile: false},

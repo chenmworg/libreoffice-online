@@ -447,7 +447,7 @@ L.Map = L.Evented.extend({
 		}
 	},
 	hideLoading: function () {
-		L.DomUtil.remove(L.DomUtil.get());
+		L.DomUtil.remove(L.DomUtil.get('spin-loading-layer'));
 	},
 
 	showBusy: function(label, bar) {

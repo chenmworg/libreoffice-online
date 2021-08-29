@@ -4,6 +4,9 @@
  */
 
  /* global brandProductName */
+// testdebug-brandProductName
+var brandProductName = 'TarjamahOffice Online';
+
 L.ProgressOverlay = L.Layer.extend({
 
 	options: {
