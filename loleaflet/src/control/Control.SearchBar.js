@@ -83,7 +83,9 @@ L.Control.SearchBar = L.Control.extend({
 			if (this.map._permission === 'edit')
 				$('#toolbar-down').show();
 			/** show edit button if only we are able to edit but in readonly mode */
-			if (window.docPermission  === 'edit' && this.map._permission === 'readonly')
+			// testdebug-edit-button
+			// if (window.docPermission  === 'edit' && this.map._permission === 'readonly')
+			if (window.docPermission  === 'edit')
 				$('#mobile-edit-button').show();
 		}
 	},

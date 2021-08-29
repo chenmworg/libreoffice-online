@@ -1472,8 +1472,10 @@ L.Map = L.Evented.extend({
 			this.hideBusy();
 			// testdebug-layout
 			this.hideLoading();
-			if (window.mode.isMobile()) {
+			if (window.mode.isMobile() && window.docPermission === 'edit') {
 				$('#mobile-edit-button').show();
+			} else {
+				$('#mobile-edit-button').hide();
 			}
 		}
 	},

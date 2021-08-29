@@ -35,6 +35,8 @@ L.Map.include({
 			}
 		}
 		else if (perm === 'view' || perm === 'readonly') {
+			$('#mobile-edit-button').hide();
+
 			if (window.mode.isMobile() || window.mode.isTablet()) {
 				$('#mobile-edit-button').hide();
 			}
