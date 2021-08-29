@@ -221,7 +221,7 @@
 			if (['edit' | 'view' | 'readonly'].includes(permission)) {
 				return permission;
 			}
-			return 'edit';
+			return '';
 		},
 		getDeviceFormFactor: function() {
 			if (window.mode.isDesktop())
