@@ -130,7 +130,7 @@
     </welcome>
 
     <storage desc="Backend storage">
-        <filesystem allow="false" />
+        <filesystem allow="true" />
         <wopi desc="Allow/deny wopi storage. Mutually exclusive with webdav." allow="true">
             <host desc="Regex pattern of hostname to allow or deny." allow="true">localhost</host>
             <host desc="Regex pattern of hostname to allow or deny." allow="true">rodin-mt.obs.ae-ad-1.g42cloud.com</host>
@@ -140,6 +140,10 @@
             <host desc="Regex pattern of hostname to allow or deny." allow="true">172\.3[01]\.[0-9]{1,3}\.[0-9]{1,3}</host>
             <host desc="Regex pattern of hostname to allow or deny." allow="true">192\.168\.[0-9]{1,3}\.[0-9]{1,3}</host>
             <host desc="Regex pattern of hostname to allow or deny." allow="false">192\.168\.1\.1</host>
+            <host desc="Regex pattern of hostname to allow or deny." allow="false">libreoffice.tarjamah.ai</host>
+            <host desc="Regex pattern of hostname to allow or deny." allow="false">libreofficedev.gomap.ae</host>
+
+
             <max_file_size desc="Maximum document size in bytes to load. 0 for unlimited." type="uint">0</max_file_size>
             <reuse_cookies desc="When enabled, cookies from the browser will be captured and set on WOPI requests." type="bool" default="false">false</reuse_cookies>
             <locking desc="Locking settings">
@@ -149,6 +153,9 @@
         <webdav desc="Allow/deny webdav storage. Mutually exclusive with wopi." allow="false">
             <host desc="Hostname to allow" allow="false">localhost</host>
             <host desc="Hostname to allow" allow="false">rodin-mt.obs.ae-ad-1.g42cloud.com</host>
+            <host desc="Hostname to allow" allow="false">libreoffice.tarjamah.ai</host>
+            <host desc="Hostname to allow" allow="false">libreofficedev.gomap.ae</host>
+
         </webdav>
         <ssl desc="SSL settings">
 	    <as_scheme type="bool" default="true" desc="When set we exclusively use the WOPI URI's scheme to enable SSL for storage">true</as_scheme>
