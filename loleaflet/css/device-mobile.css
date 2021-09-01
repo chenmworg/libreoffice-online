@@ -430,7 +430,7 @@ button.vex-dialog-button-secondary.vex-dialog-button.vex-last {
     /*testdebug-css*/
     height: 120px !important;
     /*border-top: 1px solid #f1f1f1 !important;*/
-    top: 0 !important;
+    /*top: 0 !important;*/
     border-top: none !important;
 }
 #toolbar-down > .w2ui-scroll-wrapper {

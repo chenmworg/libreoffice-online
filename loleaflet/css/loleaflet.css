@@ -149,7 +149,7 @@ body {
 }
 
 #sidebar-dock-wrapper {
-	display: none !important;
+	display: none;
 	background: #fff;
 	position: absolute;
 	/*top: 77px;*/

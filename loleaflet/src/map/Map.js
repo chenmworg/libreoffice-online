@@ -69,11 +69,14 @@ L.Map = L.Evented.extend({
 		this._onResize = L.bind(this._onResize, this);
 
 		// Start with readonly toolbars on desktop
-		if (window.mode.isDesktop()) {
-			L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-		}
+        // testdebug-toolbar
+		// if (window.mode.isDesktop()) {
+		// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+		// }
+        L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
-		$('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
+
+        $('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
 
 		this._initEvents();
 		this._cacheSVG = [];
@@ -186,9 +189,13 @@ L.Map = L.Evented.extend({
 
 			if (e.perm === 'readonly') {
 				L.DomUtil.addClass(this._container.parentElement, 'readonly');
-				if (window.mode.isDesktop()) {
-					L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-				}
+
+				// testdebug-toolbar
+				// if (window.mode.isDesktop()) {
+				// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				// }
+                L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+
 				L.DomUtil.addClass(L.DomUtil.get('main-menu'), 'readonly');
 				L.DomUtil.addClass(L.DomUtil.get('presentation-controls-wrapper'), 'readonly');
 				L.DomUtil.addClass(L.DomUtil.get('spreadsheet-row-column-frame'), 'readonly');
@@ -300,12 +307,13 @@ L.Map = L.Evented.extend({
 			// Show sidebar.
 			if (this._docLayer && !this._docLoadedOnce &&
 				(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
+			    // testdebug-sidebar
 				// Let the first page finish loading then load the sidebar.
-				var map = this;
+				// var map = this;
 				// Show the sidebar by default, but not on mobile.
-				if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
-					map._socket.sendMessage('uno .uno:SidebarShow');
-				}
+				// if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
+				// 	map._socket.sendMessage('uno .uno:SidebarShow');
+				// }
 			}
 
 			// We have loaded.

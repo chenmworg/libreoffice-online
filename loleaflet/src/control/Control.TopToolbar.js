@@ -232,8 +232,7 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'customanimation', img: 'sidebar_custom_animation', hint: _UNO('.uno:CustomAnimation', 'presentation', true), uno: '.uno:CustomAnimation', hidden: true},
 			{type: 'button',  id: 'masterslidespanel', img: 'sidebar_master_slides', hint: _UNO('.uno:MasterSlidesPanel', 'presentation', true), uno: '.uno:MasterSlidesPanel', hidden: true},
 			{type: 'break', id: 'breaksidebar', hidden: true},
-			// {type: 'button',  id: 'fold',  img: 'fold', desktop: true, mobile: false, hidden: true},
-			{type: 'button',  id: 'fold',  img: 'fold', mobile: false, hidden: true},
+			{type: 'button',  id: 'fold',  img: 'fold', desktop: true, mobile: false, hidden: true},
 			{type: 'button',  id: 'hamburger-tablet',  img: 'hamburger', desktop: false, mobile: false, tablet: false, iosapptablet: false, hidden: true},
 			{type: 'button', id: 'languagecode', desktop: false, mobile: true, tablet: false}
 		];
@@ -296,7 +295,7 @@ L.Control.TopToolbar = L.Control.extend({
 				// 'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar', 'sidebar');
 				toolbarUp.show('leftpara', 'centerpara', 'rightpara', 'justifypara', 'breakpara', 'linespacing',
 					'breakspacing', 'defaultbullet', 'defaultnumbering', 'breakbullet', 'incrementindent', 'decrementindent',
-					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges', 'lefttoright', 'righttoleft');
+					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges', 'lefttoright', 'righttoleft', 'fold');
 
 			break;
 		case 'presentation':
