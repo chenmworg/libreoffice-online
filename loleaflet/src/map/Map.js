@@ -73,10 +73,10 @@ L.Map = L.Evented.extend({
 		// if (window.mode.isDesktop()) {
 		// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 		// }
-        L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
+		L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
-        $('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
+		$('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
 
 		this._initEvents();
 		this._cacheSVG = [];
@@ -194,7 +194,7 @@ L.Map = L.Evented.extend({
 				// if (window.mode.isDesktop()) {
 				// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 				// }
-                L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
 				L.DomUtil.addClass(L.DomUtil.get('main-menu'), 'readonly');
 				L.DomUtil.addClass(L.DomUtil.get('presentation-controls-wrapper'), 'readonly');
