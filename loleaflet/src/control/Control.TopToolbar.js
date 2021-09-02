@@ -93,6 +93,37 @@ L.Control.TopToolbar = L.Control.extend({
 
 	getToolItems: function() {
 		return [
+			// {
+			// 	type: 'menu',
+			// 	id: 'download',
+			// 	img: 'download',
+			// 	hint: !window.ThisIsAMobileApp ? _('Download as') : _('Export as'),
+			// 	items: [{
+			// 		id: 'close-downloadas-pdf',
+			// 		text: _('PDF Document (.pdf)')
+			// 		// uno: "AlignLeft"
+			// 	}, {
+			// 		id: 'close-downloadas-odt',
+			// 		text: _('ODF text document (.odt)')
+			// 		// uno: "AlignHorizontalCenter"
+			// 	}, {
+			// 		id: 'close-downloadas-doc',
+			// 		text: _('Word 2003 Document (.doc)')
+			// 		// uno: "AlignRight"
+			// 	}, {
+			// 		id: 'close-downloadas-docx',
+			// 		text: _('Word Document (.docx)')
+			// 		// uno: "AlignBlock"
+			// 	}, {
+			// 		id: 'close-downloadas-rtf',
+			// 		text: _('Rich Text (.rtf)'),
+			// 		// uno: "AlignBlock"
+			// 	}, {
+			// 		id: 'close-downloadas-epub',
+			// 		text: _('EPUB (.epub)')
+			// 		// uno: "AlignBlock"
+			// 	}]
+			// },
 			{type: 'button',  id: 'closemobile',  img: 'closemobile', desktop: false, mobile: false, tablet: false, hidden: true},
 			{type: 'button',  id: 'save', img: 'save', hint: _UNO('.uno:Save')},
 			// {type: 'button',  id: 'print', img: 'print', hint: _UNO('.uno:Print', 'text'), mobile: false, tablet: false},
@@ -240,11 +271,22 @@ L.Control.TopToolbar = L.Control.extend({
 
 	create: function() {
 		var toolbar = $('#toolbar-up');
+		var that = this;
 		toolbar.w2toolbar({
 			name: 'editbar',
 			tooltip: 'bottom',
 			items: this.getToolItems(),
 			onClick: function (e) {
+				if ((e.item || {}).id === 'download') {
+					var id = (e.subItem || {}).id;
+					if (id) {
+						var format = id.substring('close-downloadas-'.length);
+						var fileName = that._map['wopi'].BaseFileName;
+						fileName = fileName.substr(0, fileName.lastIndexOf('.'));
+						fileName = fileName === '' ? 'document' : fileName;
+						that._map.downloadAs(fileName + '.' + format, format);
+					}
+				}
 				window.onClick(e, e.target);
 				window.hideTooltip(this, e.target);
 			},
