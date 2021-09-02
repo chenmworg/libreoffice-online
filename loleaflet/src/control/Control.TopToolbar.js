@@ -517,7 +517,7 @@ L.Control.TopToolbar = L.Control.extend({
 			this.options.stylesSelectValue = state;
 			$('.styles-select').val(state).trigger('change');
 		}
-		else if (commandName === '.uno:CharFontName') {
+		else if (commandName === '.uno:CharFontName' && state !== '宋体') {
 			$('.fonts-select option').each(function () {
 				value = this.value;
 				if (value.toLowerCase() === state.toLowerCase()) {
