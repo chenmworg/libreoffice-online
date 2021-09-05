@@ -295,7 +295,7 @@ L.Control.TopToolbar = L.Control.extend({
 				// 'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar', 'sidebar');
 				toolbarUp.show('leftpara', 'centerpara', 'rightpara', 'justifypara', 'breakpara', 'linespacing',
 					'breakspacing', 'defaultbullet', 'defaultnumbering', 'breakbullet', 'incrementindent', 'decrementindent',
-					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges', 'lefttoright', 'righttoleft', 'fold');
+					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges', 'lefttoright', 'righttoleft');
 
 			break;
 		case 'presentation':

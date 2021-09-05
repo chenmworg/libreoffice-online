@@ -70,11 +70,11 @@ L.Map = L.Evented.extend({
 
 		// Start with readonly toolbars on desktop
         // testdebug-toolbar
-		// if (window.mode.isDesktop()) {
-		// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-		// }
+		if (window.mode.isDesktop()) {
+			L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+		}
 
-		L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+		// L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
 		$('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
 
@@ -191,10 +191,10 @@ L.Map = L.Evented.extend({
 				L.DomUtil.addClass(this._container.parentElement, 'readonly');
 
 				// testdebug-toolbar
-				// if (window.mode.isDesktop()) {
-				// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-				// }
-				L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				if (window.mode.isDesktop()) {
+					L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				}
+				// L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
 				L.DomUtil.addClass(L.DomUtil.get('main-menu'), 'readonly');
 				L.DomUtil.addClass(L.DomUtil.get('presentation-controls-wrapper'), 'readonly');
@@ -309,11 +309,12 @@ L.Map = L.Evented.extend({
 				(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
 			    // testdebug-sidebar
 				// Let the first page finish loading then load the sidebar.
-				// var map = this;
+				var map = this;
 				// Show the sidebar by default, but not on mobile.
-				// if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
-				// 	map._socket.sendMessage('uno .uno:SidebarShow');
-				// }
+				if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
+					// map._socket.sendMessage('uno .uno:SidebarShow');
+					map._socket.sendMessage('uno .uno:SidebarHide');
+				}
 			}
 
 			// We have loaded.
