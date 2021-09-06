@@ -70,11 +70,10 @@ L.Map = L.Evented.extend({
 
 		// Start with readonly toolbars on desktop
         // testdebug-toolbar
-		if (window.mode.isDesktop()) {
-			L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-		}
-
-		// L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+		// if (window.mode.isDesktop()) {
+		// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+		// }
+		L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
 		$('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
 
@@ -191,19 +190,22 @@ L.Map = L.Evented.extend({
 				L.DomUtil.addClass(this._container.parentElement, 'readonly');
 
 				// testdebug-toolbar
-				if (window.mode.isDesktop()) {
-					L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-				}
-				// L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				// if (window.mode.isDesktop()) {
+				// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				// }
+				L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
 				L.DomUtil.addClass(L.DomUtil.get('main-menu'), 'readonly');
 				L.DomUtil.addClass(L.DomUtil.get('presentation-controls-wrapper'), 'readonly');
 				L.DomUtil.addClass(L.DomUtil.get('spreadsheet-row-column-frame'), 'readonly');
 			} else {
 				L.DomUtil.removeClass(this._container.parentElement, 'readonly');
-				if (window.mode.isDesktop()) {
-					L.DomUtil.removeClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-				}
+				// testdebug-toolbar
+				// if (window.mode.isDesktop()) {
+				// 	L.DomUtil.removeClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				// }
+				L.DomUtil.removeClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+
 				L.DomUtil.removeClass(L.DomUtil.get('main-menu'), 'readonly');
 				L.DomUtil.removeClass(L.DomUtil.get('presentation-controls-wrapper'), 'readonly');
 				L.DomUtil.removeClass(L.DomUtil.get('spreadsheet-row-column-frame'), 'readonly');
