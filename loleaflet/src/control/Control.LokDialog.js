@@ -998,14 +998,16 @@ L.Control.LokDialog = L.Control.extend({
 
 	_launchSidebar: function(id, width, height) {
 		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
+		// testdebug-sidebar
 		launchSidebarCount ++;
 		window.storageData('launchSidebarCount', launchSidebarCount);
 		window.storageData('launchSidebarId', id);
 		// launchSidebarCount == 1 为第一次调用，不打开
-		// if (launchSidebarCount === 1) {
-		// 	this._map._socket.sendMessage('uno .uno:Sidebar');
-		// 	return;
-		// }
+		if (launchSidebarCount === 1) {
+			// hide sidebar 隐藏
+			this._map._socket.sendMessage('uno .uno:Sidebar');
+			return;
+		}
 		if ((window.mode.isMobile() || window.mode.isTablet())
 		    && this._map._permission != 'edit')
 			return;

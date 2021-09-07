@@ -306,10 +306,11 @@ L.Control.StatusBar = L.Control.extend({
 						html: '<div id="InsertMode" class="loleaflet-font" title="' + _('Entering text mode') + '" style="padding: 5px 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</div>'
 					},
 					{type: 'break', id: 'break4', tablet: false},
-					{type: 'menu-radio', id: 'LanguageStatus',
-						mobile: false
-					},
-					{type: 'break', id: 'break5', tablet: false},
+					// testdebug-status
+					// {type: 'menu-radio', id: 'LanguageStatus',
+					// 	mobile: false
+					// },
+					// {type: 'break', id: 'break5', tablet: false},
 					{
 						type: 'html', id: 'StatusSelectionMode', mobile: false, tablet: false,
 						html: '<div id="StatusSelectionMode" class="loleaflet-font" title="' + _('Selection Mode') + '" style="padding: 5px 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</div>'
@@ -360,10 +361,12 @@ L.Control.StatusBar = L.Control.extend({
 						html: '<div id="StatusSelectionMode" class="loleaflet-font" title="' + _('Selection Mode') + '" style="padding: 5px 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</div>'
 					},
 					{type: 'break', id: 'break7', mobile: false, tablet: false},
-					{type: 'menu-radio', id: 'LanguageStatus',
-						mobile: false
-					},
-					{type: 'break', id: 'break8', mobile: false},
+
+					// testdebug-status
+					// {type: 'menu-radio', id: 'LanguageStatus',
+					// 	mobile: false
+					// },
+					// {type: 'break', id: 'break8', mobile: false},
 					{
 						type: 'html', id: 'lastModifyTime', mobile: false, tablet: false,
 						html: '<div id="toolbar-last-modify"><a class=""></a></div>'
@@ -381,10 +384,12 @@ L.Control.StatusBar = L.Control.extend({
 						html: '<div id="PageStatus" class="loleaflet-font" title="' + _('Number of Slides') + '" style="padding: 5px 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</div>'
 					},
 					{type: 'break', id: 'break2', mobile: false, tablet: false},
-					{type: 'menu-radio', id: 'LanguageStatus',
-						mobile: false
-					},
-					{type: 'break', id: 'break8', mobile: false}
+
+					// testdebug-status
+					// {type: 'menu-radio', id: 'LanguageStatus',
+					// 	mobile: false
+					// },
+					// {type: 'break', id: 'break8', mobile: false}
 				]);
 			}
 		

@@ -73,7 +73,6 @@ L.Map = L.Evented.extend({
 		// if (window.mode.isDesktop()) {
 		// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 		// }
-
 		L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
 
 		$('body').addClass('libreoffice-mode-' + window.deviceFormFactor);
@@ -201,9 +200,12 @@ L.Map = L.Evented.extend({
 				L.DomUtil.addClass(L.DomUtil.get('spreadsheet-row-column-frame'), 'readonly');
 			} else {
 				L.DomUtil.removeClass(this._container.parentElement, 'readonly');
-				if (window.mode.isDesktop()) {
-					L.DomUtil.removeClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-				}
+				// testdebug-toolbar
+				// if (window.mode.isDesktop()) {
+				// 	L.DomUtil.removeClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+				// }
+				L.DomUtil.removeClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+
 				L.DomUtil.removeClass(L.DomUtil.get('main-menu'), 'readonly');
 				L.DomUtil.removeClass(L.DomUtil.get('presentation-controls-wrapper'), 'readonly');
 				L.DomUtil.removeClass(L.DomUtil.get('spreadsheet-row-column-frame'), 'readonly');
@@ -309,11 +311,12 @@ L.Map = L.Evented.extend({
 				(this._docLayer._docType === 'spreadsheet' || this._docLayer._docType === 'text' || this._docLayer._docType === 'presentation')) {
 			    // testdebug-sidebar
 				// Let the first page finish loading then load the sidebar.
-				// var map = this;
+				var map = this;
 				// Show the sidebar by default, but not on mobile.
-				// if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
-				// 	map._socket.sendMessage('uno .uno:SidebarShow');
-				// }
+				if (window.mode.isDesktop() && !window.ThisIsAMobileApp) {
+					// map._socket.sendMessage('uno .uno:SidebarShow');
+					map._socket.sendMessage('uno .uno:SidebarHide');
+				}
 			}
 
 			// We have loaded.

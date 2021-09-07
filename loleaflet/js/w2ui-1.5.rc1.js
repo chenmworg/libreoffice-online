@@ -2729,7 +2729,10 @@ w2utils.event = {
                         var colspan = 1;
                         if (imgd === '') colspan++;
                         if (mitem.count == null && mitem.hotkey == null) colspan++;
-                        if (mitem.tooltip == null && mitem.hint != null) mitem.tooltip = mitem.hint; // for backward compatibility
+                        if (mitem.tooltip == null && mitem.hint != null) {
+	                        mitem.tooltip = mitem.hint; // for backward compatibility
+	                        mitem.tooltipPosition = mitem.hintPosition
+                        }
                         menu_html +=
                             '<tr index="'+ f + '" style="'+ (mitem.style ? mitem.style : '') +'" '+ (mitem.tooltip ? 'title="'+ w2utils.lang(mitem.tooltip) +'"' : '') +
                             '        class="'+ bg +' '+ (options.index === f ? 'w2ui-selected' : '') + ' ' + (mitem.disabled === true ? 'w2ui-disabled' : '') +'"'+
@@ -6205,7 +6208,11 @@ w2utils.event = {
             var html = '';
             if (item.caption != null && item.text == null) item.text = item.caption; // for backward compatibility
             if (item.text == null) item.text = '';
-            if (item.tooltip == null && item.hint != null) item.tooltip = item.hint; // for backward compatibility
+            if (item.tooltip == null && item.hint != null) {
+	            item.tooltip = item.hint; // for backward compatibility
+	            item.tooltipPosition = item.hintPosition
+
+            }
             if (item.tooltip == null) item.tooltip = '';
             var img  = '<td>&#160;</td>';
             var text = item.text;
@@ -6282,7 +6289,7 @@ w2utils.event = {
             if (this.tooltip == null) return;
             var $el  = $(this.box).find('#tb_'+ this.name + '_item_'+ w2utils.escapeId(id));
             var item = this.get(id);
-            var pos  = this.tooltip;
+            var pos  = item.tooltipPosition || this.tooltip;
             var txt  = item.tooltip;
             if (typeof txt == 'function') txt = txt.call(this, item);
             $el.prop('_mouse_over', true);

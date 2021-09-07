@@ -241,9 +241,9 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'numberformatincdecimals',  img: 'numberformatincdecimals', hint: _UNO('.uno:NumberFormatIncDecimals', 'spreadsheet', true), hidden: true, uno: 'NumberFormatIncDecimals', disabled: true},
 			{type: 'break',   id: 'break-number', hidden: true},
 			{type: 'button',  id: 'inserttextbox', img: 'text', hint: _UNO('.uno:Text', '', true), uno: 'Text?CreateDirectly:bool=true', hidden: true},
-			{type: 'button',  id: 'insertannotation', img: 'annotation', hint: _UNO('.uno:InsertAnnotation', '', true), hidden: true},
-			{type: 'button',  id: 'trackchanges', img: 'trackchanges', uno: 'TrackChanges',hint: _UNO('.uno:TrackChanges'), hidden: true},
-			{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', uno: 'ShowTrackedChanges', hint: _UNO('.uno:ShowTrackedChanges'), hidden: true},
+			{type: 'button',  id: 'insertannotation', img: 'annotation', hint: _UNO('.uno:InsertAnnotation', '', true), hidden: true, hintPosition: 'left'},
+			{type: 'button',  id: 'trackchanges', img: 'trackchanges', uno: 'TrackChanges',hint: _UNO('.uno:TrackChanges'), hidden: true, hintPosition: 'left'},
+			{type: 'button',  id: 'showtrackedchanges', img: 'showtrackedchanges', uno: 'ShowTrackedChanges', hint: _UNO('.uno:ShowTrackedChanges'), hidden: true, hintPosition: 'left', },
 			{type: 'drop',  id: 'inserttable',  img: 'inserttable', hint: _('Insert table'), hidden: true, overlay: {onShow: window.insertTable}, html: window.getInsertTablePopupHtml()},
 			// {type: 'button',  id: 'insertgraphic',  img: 'insertgraphic', hint: _UNO('.uno:InsertGraphic', '', true)},
 			// {type: 'menu', id: 'menugraphic', img: 'insertgraphic', hint: _UNO('.uno:InsertGraphic', '', true), hidden: true,
@@ -255,7 +255,7 @@ L.Control.TopToolbar = L.Control.extend({
 			// {type: 'drop',  id: 'insertshapes',  img: 'basicshapes_ellipse', hint: _('Insert shapes'), overlay: {onShow: window.insertShapes}, html: window.getShapesPopupHtml()},
 			// {type: 'button',  id: 'link',  img: 'link', hint: _UNO('.uno:HyperlinkDialog', '', true), disabled: true},
 			// {type: 'button',  id: 'insertsymbol', img: 'insertsymbol', hint: _UNO('.uno:InsertSymbol', '', true), uno: 'InsertSymbol'},
-			{type: 'spacer'},
+			// {type: 'spacer'},
 			{type: 'button',  id: 'edit',  img: 'edit'},
 			{type: 'button',  id: 'sidebar', img: 'sidebar_modify_page', hint: _UNO('.uno:Sidebar', '', true), uno: '.uno:Sidebar', hidden: true},
 			{type: 'button',  id: 'modifypage', img: 'sidebar_modify_page', hint: _UNO('.uno:ModifyPage', 'presentation', true), uno: '.uno:ModifyPage', hidden: true},
@@ -263,7 +263,7 @@ L.Control.TopToolbar = L.Control.extend({
 			{type: 'button',  id: 'customanimation', img: 'sidebar_custom_animation', hint: _UNO('.uno:CustomAnimation', 'presentation', true), uno: '.uno:CustomAnimation', hidden: true},
 			{type: 'button',  id: 'masterslidespanel', img: 'sidebar_master_slides', hint: _UNO('.uno:MasterSlidesPanel', 'presentation', true), uno: '.uno:MasterSlidesPanel', hidden: true},
 			{type: 'break', id: 'breaksidebar', hidden: true},
-			{type: 'button',  id: 'fold',  img: 'fold', desktop: true, mobile: false, hidden: true},
+			{type: 'button',  id: 'fold',  img: 'fold', desktop: false, mobile: false, hidden: true},
 			{type: 'button',  id: 'hamburger-tablet',  img: 'hamburger', desktop: false, mobile: false, tablet: false, iosapptablet: false, hidden: true},
 			{type: 'button', id: 'languagecode', desktop: false, mobile: true, tablet: false}
 		];
@@ -337,7 +337,7 @@ L.Control.TopToolbar = L.Control.extend({
 				// 'breakindent', 'inserttable', 'insertannotation', 'backcolor', 'breaksidebar', 'sidebar');
 				toolbarUp.show('leftpara', 'centerpara', 'rightpara', 'justifypara', 'breakpara', 'linespacing',
 					'breakspacing', 'defaultbullet', 'defaultnumbering', 'breakbullet', 'incrementindent', 'decrementindent',
-					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges', 'lefttoright', 'righttoleft', 'fold');
+					'breakindent', 'insertannotation', 'backcolor', 'trackchanges', 'showtrackedchanges', 'lefttoright', 'righttoleft');
 
 			break;
 		case 'presentation':

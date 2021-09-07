@@ -1503,11 +1503,11 @@ L.Control.Menubar = L.Control.extend({
 
 	_initializeMenu: function(menu) {
 		// testdebug-toolbar
-		// if (window.mode.isMobile()) {
-		// 	L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
-		// 	// L.DomUtil.addClass(L.DomUtil.get('document-container'), 'readonly');
-		// 	return;
-		// }
+		if (window.mode.isMobile()) {
+			L.DomUtil.addClass(L.DomUtil.get('toolbar-wrapper'), 'readonly');
+			// L.DomUtil.addClass(L.DomUtil.get('document-container'), 'readonly');
+			return;
+		}
 
 		var menuHtml = this._createMenu(menu);
 		for (var i in menuHtml) {
