@@ -1485,7 +1485,25 @@ L.Map = L.Evented.extend({
 			} else {
 				$('#mobile-edit-button').hide();
 			}
+		} else if (e.statusType === 'alltilesloaded') {
+			const {outFileName, outFileType} = this._getProps();
+			if (outFileName && ['pdf', 'odf', 'doc', 'docx', 'rtf', 'epub'].includes(outFileType)) {
+				this.downloadAs(`${outFileName}.${outFileType}`, outFileType);
+			}
 		}
+	},
+
+	_getProps: function() {
+		return document
+			.location
+			.search
+			.replace('?', '')
+			.split('&')
+			.reduce(function(a, l) {
+				const [k, v] = l.split('=');
+				a[k] = v;
+				return a;
+			}, {});
 	},
 
 	_isMouseEnteringLeaving: function (e) {
