@@ -933,14 +933,18 @@ L.TileLayer = L.GridLayer.extend({
 			this._map.fire('slidedownloadready', {url: url});
 		}
 		else if (command.id === 'export') {
-			const {outFileName, outFileType} = this._map._getProps();
+			var params = this._map._getProps();
+			var outFileName = params.outFileName;
+			var outFileType = params._getProps().outFileType;
 			if (outFileName && ['pdf', 'odf', 'doc', 'docx', 'rtf', 'epub'].includes(outFileType)) {
 				try {
 					parent.postMessage({
-						type: "downloadURL",
+						type: 'downloadURL',
 						url: url
 					}, '*');
-				} catch (e) {}
+				} catch (e) {
+					console.log(e);
+				}
 			} else {
 				this._map._fileDownloader.src = url;
 			}

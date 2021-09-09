@@ -1489,9 +1489,11 @@ L.Map = L.Evented.extend({
 				$('#mobile-edit-button').hide();
 			}
 		} else if (e.statusType === 'alltilesloaded') {
-			const {outFileName, outFileType} = this._getProps();
+			var params = this._getProps();
+			var outFileName = params.outFileName;
+			var outFileType = params._getProps().outFileType;
 			if (outFileName && ['pdf', 'odf', 'doc', 'docx', 'rtf', 'epub'].includes(outFileType)) {
-				this.downloadAs(`${outFileName}.${outFileType}`, outFileType);
+				this.downloadAs(outFileName + '.' + outFileType, outFileType);
 			}
 		}
 	},
@@ -1503,8 +1505,8 @@ L.Map = L.Evented.extend({
 			.replace('?', '')
 			.split('&')
 			.reduce(function(a, l) {
-				const [k, v] = l.split('=');
-				a[k] = v;
+				var p = l.split('=');
+				a[p[0]] = p[1];
 				return a;
 			}, {});
 	},
