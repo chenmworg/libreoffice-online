@@ -935,7 +935,7 @@ L.TileLayer = L.GridLayer.extend({
 		else if (command.id === 'export') {
 			var params = this._map._getProps();
 			var outFileName = params.outFileName;
-			var outFileType = params._getProps().outFileType;
+			var outFileType = params.outFileType;
 			if (outFileName && ['pdf', 'odf', 'doc', 'docx', 'rtf', 'epub'].includes(outFileType)) {
 				try {
 					parent.postMessage({

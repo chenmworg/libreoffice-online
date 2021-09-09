@@ -1491,7 +1491,7 @@ L.Map = L.Evented.extend({
 		} else if (e.statusType === 'alltilesloaded') {
 			var params = this._getProps();
 			var outFileName = params.outFileName;
-			var outFileType = params._getProps().outFileType;
+			var outFileType = params.outFileType;
 			if (outFileName && ['pdf', 'odf', 'doc', 'docx', 'rtf', 'epub'].includes(outFileType)) {
 				this.downloadAs(outFileName + '.' + outFileType, outFileType);
 			}
