@@ -1492,11 +1492,14 @@ L.Map = L.Evented.extend({
 			var params = this._getProps();
 			var outFileName = params.outFileName;
 			var outFileType = params.outFileType;
-			if (outFileName && ['pdf', 'odf', 'doc', 'docx', 'rtf', 'epub'].includes(outFileType)) {
+			if (outFileName && ['pdf', 'odf', 'doc', 'docx', 'rtf', 'epub'].includes(outFileType) && !this._downloadOnce) {
+				this._downloadOnce = true;
 				this.downloadAs(outFileName + '.' + outFileType, outFileType);
 			}
 		}
 	},
+
+	_downloadOnce: false,
 
 	_getProps: function() {
 		return document
