@@ -107,7 +107,6 @@ link.setAttribute("href", '][m4_ifelse(MOBILEAPP,[],[%SERVICE_ROOT%/loleaflet/%V
 document.getElementsByTagName("head")[[0]].appendChild(link);
 </script>
 ])
-<!--%BRANDING_CSS%--> <!-- add your logo here -->
 m4_ifelse(IOSAPP,[true],
   [<link rel="stylesheet" href="Branding/branding.css">])
 m4_ifelse(ANDROIDAPP,[true],
@@ -270,21 +269,14 @@ m4_syscmd([cat ]GLOBAL_JS)m4_dnl
 var link = document.createElement('link');
 link.setAttribute("rel", "stylesheet");
 link.setAttribute("type", "text/css");
-var brandingLink = document.createElement('link');
-brandingLink.setAttribute("rel", "stylesheet");
-brandingLink.setAttribute("type", "text/css");
 if (window.mode.isMobile()) {
     [link.setAttribute("href", ']m4_ifelse(MOBILEAPP,[],[%SERVICE_ROOT%/loleaflet/%VERSION%/])[device-mobile.css');]
-    [brandingLink.setAttribute("href", ']m4_ifelse(MOBILEAPP,[],[%SERVICE_ROOT%/loleaflet/%VERSION%/])m4_ifelse(IOSAPP,[true],[Branding/])[branding-mobile.css');]
 } else if (window.mode.isTablet()) {
     [link.setAttribute("href", ']m4_ifelse(MOBILEAPP,[],[%SERVICE_ROOT%/loleaflet/%VERSION%/])[device-tablet.css');]
-    [brandingLink.setAttribute("href", ']m4_ifelse(MOBILEAPP,[],[%SERVICE_ROOT%/loleaflet/%VERSION%/])m4_ifelse(IOSAPP,[true],[Branding/])[branding-tablet.css');]
 } else {
     [link.setAttribute("href", ']m4_ifelse(MOBILEAPP,[],[%SERVICE_ROOT%/loleaflet/%VERSION%/])[device-desktop.css');]
-    [brandingLink.setAttribute("href", ']m4_ifelse(MOBILEAPP,[],[%SERVICE_ROOT%/loleaflet/%VERSION%/])[branding-desktop.css');]
 }
 document.getElementsByTagName("head")[[0]].appendChild(link);
-document.getElementsByTagName("head")[[0]].appendChild(brandingLink);
 </script>
 
 m4_ifelse(MOBILEAPP,[true],
