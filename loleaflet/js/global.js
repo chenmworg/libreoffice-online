@@ -731,7 +731,7 @@
 	} else {
 		var websocketURI = global.host + global.serviceRoot + '/lool/' + encodeURIComponent(global.docURL + (docParams ? '?' + docParams : '')) + '/ws' + wopiSrc;
 		try {
-			global.socket = global.createWebSocket(websocketURI.replace('wss://', 'ws://'));
+			global.socket = global.createWebSocket(websocketURI);
 		} catch (err) {
 			console.log(err);
 		}
