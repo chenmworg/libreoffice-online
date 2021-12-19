@@ -623,8 +623,9 @@
 	}
 
 	global.createWebSocket = function(uri) {
-		console.error('createWebSocket', uri);
-
+		// not https => ws
+		if (uri && !window.location.href.indexOf('https') > -1) uri.replace('wss://', 'ws://');
+		console.log2('createWebSocket', uri);
 		if (global.socketProxy) {
 			window.socketProxy = true;
 			return new global.ProxySocket(uri);
