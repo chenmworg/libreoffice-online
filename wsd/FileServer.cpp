@@ -786,7 +786,7 @@ void FileServerRequestHandler::preprocessFile(const HTTPRequest& request,
     std::ostringstream cspOss;
     cspOss << "Content-Security-Policy: default-src 'none'; "
            "frame-src 'self' blob: " << documentSigningURL << "; "
-           "connect-src 'self' " << cnxDetails.getWebSocketUrl() << "; "
+//            "connect-src 'self' " << cnxDetails.getWebSocketUrl() << "; "
            "script-src 'unsafe-inline' 'self'; "
            "style-src 'self' 'unsafe-inline'; "
            "font-src 'self' data:; "
