@@ -232,33 +232,36 @@ m4_ifelse(MOBILEAPP,[true],
     </div>
 
     <script>
+      // authorization
       function getParameterByName (name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
         var results = regex.exec(location.search);
         return results === null ? '' : results[1].replace(/\+/g, ' ');
       }
-      function authRequest () {
-        var access_token = getParameterByName('access_token')
-        var apiHost = 'API_HOST_VAR'.includes('http') ? 'API_HOST_VAR' : getParameterByName('api_host')
-        var oReq = new XMLHttpRequest();
-        oReq.open("POST", apiHost + "/api/user-data/one", false); // 同步请求
-        oReq.setRequestHeader("Content-type", "application/json");
-        oReq.setRequestHeader("Authorization","Bearer " + access_token);
-        oReq.send();
-        var result = oReq.responseText;
-        try {
-          return JSON.parse(result)
-        } catch (e) {
-          return undefined
-        }
-      }
+    	function authRequest () {
+    		var accessToken = getParameterByName('access_token');
+    		var apiHost = 'API_HOST_VAR'.includes('http') ? 'API_HOST_VAR' : getParameterByName('api_host');
+    		var oReq = new XMLHttpRequest();
+    		oReq.open('POST', apiHost + '/api/user-data/one', false);
+    		oReq.setRequestHeader('Content-type', 'application/json');
+    		oReq.setRequestHeader('Authorization','Bearer ' + accessToken);
+    		oReq.send();
+    		var result = oReq.responseText;
+    		try {
+    			return JSON.parse(result);
+    		} catch (e) {
+    			return undefined;
+    		}
+    	}
 
-      var authRes = authRequest()
-      if (!authRes || authRes.code === 100000) {
-        window.stop()
-        throw new Error()
-      }
+    	var authRes = authRequest();
+    	if (!authRes || authRes.code === 100000) {
+    		alert('No Permission');
+    		window.stop();
+    		throw new Error();
+    	}
+
 m4_ifelse(MOBILEAPP,[true],
      [window.host = '';
       window.serviceRoot = '';
