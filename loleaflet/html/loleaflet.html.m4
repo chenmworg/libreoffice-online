@@ -240,7 +240,7 @@ m4_ifelse(MOBILEAPP,[true],
       }
       function authRequest () {
         var access_token = getParameterByName('access_token')
-        var apiHost = API_HOST_VAR || getParameterByName('api_host')
+        var apiHost = 'API_HOST_VAR'.includes('http') ? 'API_HOST_VAR' : getParameterByName('api_host')
         var oReq = new XMLHttpRequest();
         oReq.open("POST", apiHost + "/api/user-data/one", false); // 同步请求
         oReq.setRequestHeader("Content-type", "application/json");
