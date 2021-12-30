@@ -236,7 +236,7 @@ m4_ifelse(MOBILEAPP,[true],
       function getParameterByName (name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
+        var results = regex.exec(window.location.search);
         return results === null ? '' : results[1].replace(/\+/g, ' ');
       }
     	function authRequest () {
@@ -256,7 +256,7 @@ m4_ifelse(MOBILEAPP,[true],
     	}
 
     	var authRes = authRequest();
-    	if (!authRes || authRes.code === 100000) {
+    	if (!authRes || authRes.code !== 100000) {
     		alert('No Permission');
     		window.stop();
     		throw new Error();

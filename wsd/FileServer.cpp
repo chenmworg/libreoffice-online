@@ -784,7 +784,7 @@ void FileServerRequestHandler::preprocessFile(const HTTPRequest& request,
     // Document signing: if endpoint URL is configured, whitelist that for
     // iframe purposes.
     std::ostringstream cspOss;
-    cspOss << "Content-Security-Policy: default-src 'none' *; "
+    cspOss << "Content-Security-Policy: default-src 'none'; "
            "frame-src 'self' blob: " << documentSigningURL << " *; "
            "connect-src 'self' " << cnxDetails.getWebSocketUrl() << " blob: data: gap: file://* *; "
            "script-src 'unsafe-inline' 'self' *; "
