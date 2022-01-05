@@ -234,10 +234,10 @@ m4_ifelse(MOBILEAPP,[true],
     <script>
       // authorization
       function getParameterByName (name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        name = name.replace(/[[\[]/, '\\[').replace(/[\]]/, '\\]]');
+        var regex = new RegExp('[[\\?&]]' + name + '=([[^&#]]*)');
         var results = regex.exec(window.location.search);
-        return results === null ? '' : results[1].replace(/\+/g, ' ');
+        return results === null ? '' : results[[1]].replace(/\+/g, ' ');
       }
     	function authRequest () {
     		var accessToken = getParameterByName('access_token');
