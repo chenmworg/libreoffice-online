@@ -997,7 +997,7 @@ L.Control.LokDialog = L.Control.extend({
 	},
 
 	_launchSidebar: function(id, width, height) {
-		console.error('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
+		console.log2('_launchSidebar: start: id: ' + id + ', width: ' + width + ', height: ' + height);
 		// testdebug-sidebar
 		launchSidebarCount ++;
 		window.storageData('launchSidebarCount', launchSidebarCount);

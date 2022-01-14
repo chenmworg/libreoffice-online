@@ -26,7 +26,6 @@
 		}
 	}
 	removeStorage(storagePrefix);
-	console.error('location', location);
 
 	function storageData (key, value) {
 

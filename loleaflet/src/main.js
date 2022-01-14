@@ -24,7 +24,7 @@ if (reuseCookies !== '') {
 }
 
 var filePath = getParameterByName('file_path');
-var permission = global.storageData('permission') || getParameterByName('permission') || 'edit';
+var permission = global.storageData('permission') || getParameterByName('permission') || 'readonly';
 var timestamp = getParameterByName('timestamp');
 // Should the document go inactive or not
 var alwaysActive = getParameterByName('alwaysactive');
