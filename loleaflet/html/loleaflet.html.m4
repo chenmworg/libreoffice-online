@@ -257,7 +257,23 @@ m4_ifelse(MOBILEAPP,[true],
 
     	var authRes = authRequest();
     	if (!authRes || authRes.code !== 100000) {
-    		alert('No Permission');
+        var alertCount = 0;
+        var timer;
+        var f = function () {
+          var bodyDom = document.getElementsByTagName("body")[[0]];
+          console.log('alertCount', alertCount, timer)
+        if (alertCount > 50 && timer) {
+          clearTimeout(timer)
+          return
+        }
+          alertCount += 1
+          if (!bodyDom) {
+            timer = setTimeout(f, 100)
+          } else {
+            bodyDom.innerHTML = '<div style="text-align: center;font-size: 1.2em;padding: 1em;">Failed to load the document. Check your permissions.</div>'
+          }
+        };
+        f()
     		window.stop();
     		throw new Error();
     	}
