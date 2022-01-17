@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get -y install locales-all libpng16-16 fontconfig adduser cpio \
                findutils nano libpoco-dev libcap2-bin openssl inotify-tools \
                procps libubsan0 libubsan1 openssh-client fonts-wqy-zenhei \
-               fonts-wqy-microhei fonts-droid-fallback fonts-noto-cjk
+               fonts-wqy-microhei fonts-droid-fallback fonts-noto-cjk vim
 
 # copy freshly built LibreOffice master and LibreOffice Online master with latest translations
 COPY /instdir /

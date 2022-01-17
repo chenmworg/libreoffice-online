@@ -241,12 +241,14 @@ m4_ifelse(MOBILEAPP,[true],
       }
     	function authRequest () {
     		var accessToken = getParameterByName('access_token');
+        var docId = getParameterByName('doc_id');
     		var apiHost = 'API_HOST_VAR'.includes('http') ? 'API_HOST_VAR' : getParameterByName('api_host');
     		var oReq = new XMLHttpRequest();
-    		oReq.open('POST', apiHost + '/api/user-data/one', false);
+    		oReq.open('POST', apiHost + '/api/translation/file/detail', false);
     		oReq.setRequestHeader('Content-type', 'application/json');
     		oReq.setRequestHeader('Authorization','Bearer ' + accessToken);
-    		oReq.send();
+    		var sendData = {id: docId};
+        oReq.send(JSON.stringify(sendData));
     		var result = oReq.responseText;
     		try {
     			return JSON.parse(result);
@@ -261,16 +263,16 @@ m4_ifelse(MOBILEAPP,[true],
         var timer;
         var f = function () {
           var bodyDom = document.getElementsByTagName("body")[[0]];
-          console.log('alertCount', alertCount, timer)
         if (alertCount > 50 && timer) {
-          clearTimeout(timer)
-          return
+          clearTimeout(timer);
+          return;
         }
           alertCount += 1
           if (!bodyDom) {
             timer = setTimeout(f, 100)
           } else {
-            bodyDom.innerHTML = '<div style="text-align: center;font-size: 1.2em;padding: 1em;">Failed to load the document. Check your permissions.</div>'
+            var alertText = (authRes && authRes.msg) || 'Failed to load the document. Check your permissions.';
+            bodyDom.innerHTML = '<div style="text-align: center;font-size: 1.2em;padding: 1em;">' + alertText + '</div>';
           }
         };
         f()
