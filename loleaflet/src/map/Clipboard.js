@@ -70,13 +70,20 @@ L.Clipboard = L.Class.extend({
 	// We can do a much better job when we fetch text/plain too.
 	stripHTML: function(html) {
 		var tmp = document.createElement('div');
+		tmp.style.opacity = 0
+		document.body.appendChild(tmp)
 		tmp.innerHTML = html;
 		// attempt to cleanup unwanted elements
 		var styles = tmp.querySelectorAll('style');
 		for (var i = 0; i < styles.length; i++) {
 			this.compatRemoveNode(styles[i]);
 		}
-		return tmp.textContent.trim() || tmp.innerText.trim() || '';
+		// testdebug-copy
+		var c = tmp.textContent.trim()
+		var t = tmp.innerText.trim()
+		document.body.removeChild(tmp)
+		return t || c || '';
+		// return tmp.textContent.trim() || tmp.innerText.trim() || '';
 	},
 
 	setKey: function(key) {
