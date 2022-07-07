@@ -80,8 +80,11 @@ L.Control.SearchBar = L.Control.extend({
 		}
 		else if (id === 'hidesearchbar') {
 			$('#toolbar-search').hide();
-			if (this.map._permission === 'edit')
+			if (this.map._permission === 'edit') {
 				$('#toolbar-down').show();
+				// testdebug-toolbar
+				$('.libreoffice-mode-mobile #document-container').css('cssText', '');
+			}
 			/** show edit button if only we are able to edit but in readonly mode */
 			// testdebug-edit-button
 			// if (window.docPermission  === 'edit' && this.map._permission === 'readonly')

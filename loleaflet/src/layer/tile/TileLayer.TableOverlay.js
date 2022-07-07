@@ -213,10 +213,11 @@ L.TileLayer.include({
 		this._updateTableMarkers();
 	},
 	_onTableSelectedMsg: function (textMsg) {
-		if (this._map._permission !== 'edit') {
-			this._clearTableMarkers();
-			return;
-		}
+		// testdebug-clipboard
+		// if (this._map._permission !== 'edit') {
+		// 	this._clearTableMarkers();
+		// 	return;
+		// }
 
 		if (this._tableMarkersDragged == true) {
 			return;

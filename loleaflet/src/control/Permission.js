@@ -58,9 +58,10 @@ L.Map.include({
 
 		this.fire('updatepermission', {perm : perm});
 
-		if (this._docLayer._docType === 'text') {
-			this.setZoom(10);
-		}
+		// testdebug-general
+		// if (this._docLayer._docType === 'text') {
+		// 	this.setZoom(10);
+		// }
 
 	},
 

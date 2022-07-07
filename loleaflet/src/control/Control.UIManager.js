@@ -180,8 +180,13 @@ L.Control.UIManager = L.Control.extend({
 		if (window.mode.isMobile()) {
 			if (e.perm === 'edit') {
 				$('#toolbar-down').show();
+				// testdebug-toolbar
+				$('.libreoffice-mode-mobile #document-container').css('cssText', '');
 			}
 			else {
+				// testdebug-toolbar
+				$('.libreoffice-mode-mobile #document-container').css('cssText', 'top: 0 !important');
+
 				$('#toolbar-down').hide();
 			}
 		}

@@ -83,6 +83,9 @@ L.Control.MobileWizard = L.Control.extend({
 			if (scrolled > maxScrolled) {$('#mobile-wizard-scroll-indicator').css('display','none');}
 			else {$('#mobile-wizard-scroll-indicator').css('display','block');}
 		});
+		// testdebug-toolbar
+		$('.libreoffice-mode-mobile #document-container').css('cssText', 'top: 0 !important');
+
 		$('#toolbar-down').hide();
 		if (window.ThisIsTheAndroidApp)
 			window.postMobileMessage('MOBILEWIZARD show');
@@ -104,6 +107,8 @@ L.Control.MobileWizard = L.Control.extend({
 		$('#mobile-wizard-content').empty();
 		if (this.map._permission === 'edit') {
 			$('#toolbar-down').show();
+			// testdebug-toolbar
+			$('.libreoffice-mode-mobile #document-container').css('cssText', '');
 		}
 		if (window.ThisIsTheAndroidApp)
 			window.postMobileMessage('MOBILEWIZARD hide');

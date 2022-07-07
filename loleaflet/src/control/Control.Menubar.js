@@ -1223,6 +1223,9 @@ L.Control.Menubar = L.Control.extend({
 		} else if (id === 'repair') {
 			this._map._socket.sendMessage('commandvalues command=.uno:DocumentRepair');
 		} else if (id === 'searchdialog') {
+			// testdebug-toolbar
+			$('.libreoffice-mode-mobile #document-container').css('cssText', 'top: 0 !important');
+
 			$('#toolbar-down').hide();
 			$('#toolbar-search').show();
 			$('#mobile-edit-button').hide();

@@ -101,6 +101,9 @@ function onClick(e, id, item) {
 		map._socket.sendMessage('commandvalues command=.uno:DocumentRepair');
 	}
 	else if (id === 'showsearchbar') {
+		// testdebug-toolbar
+		$('.libreoffice-mode-mobile #document-container').css('cssText', 'top: 0 !important');
+
 		$('#toolbar-down').hide();
 		$('#tb_editbar_item_showsearchbar .w2ui-button').removeClass('over');
 		$('#toolbar-search').show();
