@@ -450,6 +450,7 @@ L.Map = L.Evented.extend({
 		}
 	},
 	showLoading: function (id) {
+		return;
 		var container = $('#' + id);
 		if (container) {
 			var spinDom = $('<div id="spin-loading-layer" ></div>');
