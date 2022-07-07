@@ -46,10 +46,3 @@ loolwsd-generate-proof-key
 
 # Start loolwsd
 exec /usr/bin/loolwsd --version --o:sys_template_path=/opt/lool/systemplate --o:child_root_path=/opt/lool/child-roots --o:file_server_root_path=/usr/share/loolwsd ${extra_params}
-
-
-set -e
-sed -i \
--e "s|API_HOST_VAR|${API_HOST_VAR}|g" \
--e "s|WS_HOST_VAR|${WS_HOST_VAR}|g" \
-/usr/share/loolwsd/loleaflet/dist/loleaflet.html

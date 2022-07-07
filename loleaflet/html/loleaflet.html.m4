@@ -239,7 +239,7 @@ m4_ifelse(MOBILEAPP,[true],
         var results = regex.exec(window.location.search);
         return results === null ? '' : results[[1]].replace(/\+/g, ' ');
       }
-      /*
+
     	function authRequest () {
     		var accessToken = getParameterByName('access_token');
         var docId = getParameterByName('doc_id');
@@ -280,7 +280,7 @@ m4_ifelse(MOBILEAPP,[true],
     		window.stop();
     		throw new Error();
     	}
-    */
+
 
 m4_ifelse(MOBILEAPP,[true],
      [window.host = '';
