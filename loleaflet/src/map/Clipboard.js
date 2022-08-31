@@ -789,9 +789,6 @@ L.Clipboard = L.Class.extend({
 		if (!localStorage.getItem(itemKey)) {
 			localStorage.setItem(itemKey, '1');
 			return false;
-		} else if (!storage) {
-			// testdebug-fix
-			return false;
 		}
 		return true;
 	},

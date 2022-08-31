@@ -324,7 +324,7 @@ L.TileLayer = L.GridLayer.extend({
 			},
 		this);
 
-		map.on('updatepermission', function(e) {
+		map.on('updatepermission', function() {
 			// testdebug-clipboard
 			// if (e.perm !== 'edit') {
 			// 	this._clearSelections();

@@ -449,14 +449,14 @@ L.Map = L.Evented.extend({
 			}
 		}
 	},
-	showLoading: function (id) {
+	showLoading: function () {
 		return;
-		var container = $('#' + id);
-		if (container) {
-			var spinDom = $('<div id="spin-loading-layer" ></div>');
-			spinDom.addClass('active');
-			container.append(spinDom);
-		}
+		// var container = $('#' + id);
+		// if (container) {
+		// 	var spinDom = $('<div id="spin-loading-layer" ></div>');
+		// 	spinDom.addClass('active');
+		// 	container.append(spinDom);
+		// }
 	},
 	hideLoading: function () {
 		L.DomUtil.remove(L.DomUtil.get('spin-loading-layer'));

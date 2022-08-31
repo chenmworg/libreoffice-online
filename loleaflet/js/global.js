@@ -627,7 +627,6 @@
 		if (uri && !(window.location.href.slice(0, 5) === 'https')) {
 			uri = uri.replace('wss://', 'ws://');
 		}
-		console.log2('createWebSocket', uri);
 		if (global.socketProxy) {
 			window.socketProxy = true;
 			return new global.ProxySocket(uri);

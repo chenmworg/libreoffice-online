@@ -2,6 +2,10 @@
   "name": "loleaflet",
   "version": "0.8.0-dev",
   "description": "LibreOffice online front-end",
+  "scripts": {
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore ./src"
+  },
   "devDependencies": {
     "@braintree/sanitize-url": "3.0.0",
     "@types/jquery": "2.0.40",
@@ -19,6 +23,7 @@
     "jquery-ui": "1.10.5",
     "json-js": "1.1.2",
     "l10n-for-node": "0.0.1",
+    "lint-staged": "^13.0.3",
     "select2": "4.0.1",
     "shrinkpack": "1.0.0-alpha",
     "smartmenus": "1.0.0",
@@ -36,5 +41,13 @@
     "libreoffice",
     "lool"
   ],
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  }
 }
