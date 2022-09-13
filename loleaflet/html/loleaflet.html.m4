@@ -241,25 +241,31 @@ m4_ifelse(MOBILEAPP,[true],
       }
 
     	function authRequest () {
+        var authApi = getParameterByName('api');
+        var apiHost = getParameterByName('api_host');
+        if (!(authApi || apiHost)) return false;
     		var accessToken = getParameterByName('access_token');
         var docId = getParameterByName('doc_id');
-    		var apiHost = 'API_HOST_VAR'.includes('http') ? 'API_HOST_VAR' : getParameterByName('api_host');
     		var oReq = new XMLHttpRequest();
-    		oReq.open('POST', apiHost + '/api/translation/file/detail', false);
+        const requestApi = authApi || (apiHost + '/api/translation/file/detail')
+    		oReq.open('POST', requestApi, false);
     		oReq.setRequestHeader('Content-type', 'application/json');
     		oReq.setRequestHeader('Authorization','Bearer ' + accessToken);
     		var sendData = {id: docId};
         oReq.send(JSON.stringify(sendData));
-    		var result = oReq.responseText;
-    		try {
-    			return JSON.parse(result);
-    		} catch (e) {
-    			return undefined;
-    		}
+        if (oReq.status === 200) {
+          var result = oReq.responseText;
+          try {
+            return JSON.parse(result);
+          } catch (e) {
+            return false;
+          }
+        }
+        return false;
     	}
 
     	var authRes = authRequest();
-    	if (!authRes || authRes.code !== 100000) {
+    	if (!authRes || !(authRes.code === 100000 || authRes.code === 200)) {
         var alertCount = 0;
         var timer;
         var f = function () {
