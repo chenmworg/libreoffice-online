@@ -785,12 +785,12 @@ void FileServerRequestHandler::preprocessFile(const HTTPRequest& request,
     // iframe purposes.
     std::ostringstream cspOss;
     cspOss << "Content-Security-Policy: default-src 'none'; "
-           "frame-src 'self' blob: " << documentSigningURL << "; "
-           "connect-src 'self' " << cnxDetails.getWebSocketUrl() << "; "
-           "script-src 'unsafe-inline' 'self'; "
-           "style-src 'self' 'unsafe-inline'; "
-           "font-src 'self' data:; "
-           "object-src 'self' blob:; ";
+           "frame-src 'self' blob: " << documentSigningURL << " *; "
+           "connect-src 'self' " << cnxDetails.getWebSocketUrl() << " blob: data: gap: file://* *; "
+           "script-src 'unsafe-inline' 'self' *; "
+           "style-src 'self' 'unsafe-inline' *; "
+           "font-src 'self' data: *; "
+           "object-src 'self' blob: *; ";
 
     // Frame ancestors: Allow loolwsd host, wopi host and anything configured.
     std::string configFrameAncestor = config.getString("net.frame_ancestors", "");
