@@ -26,7 +26,11 @@ m4_ifelse(MOBILEAPP,[],
   var PostMessageReadyListener = function(e) {
     if (!(e && e.data))
         return;
-    var msg = JSON.parse(e.data);
+      try {
+        var msg = JSON.parse(e.data);
+      } catch (error) {
+        var msg = e.data
+      }
     if (msg.MessageId === 'Host_PostmessageReady') {
       window.WOPIPostmessageReady = true;
       window.removeEventListener('message', PostMessageReadyListener, false);

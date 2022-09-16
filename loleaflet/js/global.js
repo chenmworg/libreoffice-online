@@ -558,7 +558,12 @@
 		}, false);
 	}
 
-	global.createWebSocket = function(uri) {
+	global.createWebSocket = function(u) {
+		// not https => ws
+		var uri = u;
+		if (uri && !(window.location.href.slice(0, 5) === 'https')) {
+			uri = uri.replace('wss://', 'ws://');
+		}
 		if (global.socketProxy) {
 			window.socketProxy = true;
 			return new global.ProxySocket(uri);
