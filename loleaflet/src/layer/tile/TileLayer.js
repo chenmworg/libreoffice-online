@@ -324,11 +324,10 @@ L.TileLayer = L.GridLayer.extend({
 			},
 		this);
 
-		map.on('updatepermission', function() {
-			// testdebug-clipboard
-			// if (e.perm !== 'edit') {
-			// 	this._clearSelections();
-			// }
+		map.on('updatepermission', function(e) {
+			if (e.perm !== 'edit') {
+				this._clearSelections();
+			}
 		}, this);
 
 		for (var key in this._selectionHandles) {
@@ -1139,7 +1138,7 @@ L.TileLayer = L.GridLayer.extend({
 		}
 
 		// if (textMsg.match('EMPTY')) {
-		if (textMsg.match('EMPTY') || this._map._permission !== 'edit') { // testdebug-commnet
+		if (textMsg.match('EMPTY')) { // testdebug-commnet
 			this._cellCursorTwips = new L.Bounds(new L.Point(0, 0), new L.Point(0, 0));
 			this._cellCursor = L.LatLngBounds.createDefault();
 			this._cellCursorXY = new L.Point(-1, -1);
@@ -1276,8 +1275,8 @@ L.TileLayer = L.GridLayer.extend({
 			this._showURLPopUp(cursorPos, obj.hyperlink.link);
 		}
 
-		if (!this._map.editorHasFocus() && this._map._isCursorVisible && (modifierViewId === this._viewId)) { // testdebug-clipboard
-		// if (!this._map.editorHasFocus() && this._map._isCursorVisible && (modifierViewId === this._viewId) && (this._map._permission === 'edit')) { // testdebug-commnet
+		// if (!this._map.editorHasFocus() && this._map._isCursorVisible && (modifierViewId === this._viewId)) { // testdebug-cursor
+		if (!this._map.editorHasFocus() && this._map._isCursorVisible && (modifierViewId === this._viewId) && (this._map._permission === 'edit')) {
 			// Regain cursor if we had been out of focus and now have input.
 			// Unless the focus is in the Calc Formula-Bar, don't steal the focus.
 			if (!this._map.calcInputBarHasFocus())
@@ -2284,19 +2283,13 @@ L.TileLayer = L.GridLayer.extend({
 	// enable or disable blinking cursor and  the cursor overlay depending on
 	// the state of the document (if the falgs are set)
 	_updateCursorAndOverlay: function (/*update*/) {
-		// testdebug-clipboard
-		if (this._map._isCursorVisible   // only when LOK has told us it is ok
+		// testdebug-cursor
+		if (this._map._permission === 'edit'
+			&& this._map._isCursorVisible   // only when LOK has told us it is ok
 			&& this._map.editorHasFocus()   // not when document is not focused
 			&& !this._map.isSearching()  	// not when searching within the doc
 			&& !this._isZooming             // not when zooming
 			&& !this._isEmptyRectangle(this._visibleCursor)) {
-		// testdebug-clipboard
-		// if (this._map._permission === 'edit'
-		// && this._map._isCursorVisible   // only when LOK has told us it is ok
-		// && this._map.editorHasFocus()   // not when document is not focused
-		// && !this._map.isSearching()  	// not when searching within the doc
-		// && !this._isZooming             // not when zooming
-		// && !this._isEmptyRectangle(this._visibleCursor)) {
 
 			this._updateCursorPos();
 

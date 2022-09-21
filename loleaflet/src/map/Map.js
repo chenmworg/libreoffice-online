@@ -186,7 +186,10 @@ L.Map = L.Evented.extend({
 				this._fireInitComplete('updatepermission');
 			}
 
-			if (e.perm === 'readonly') {
+			// testdebug-toolbar
+			if (e.perm === 'readonly' || e.perm === 'view') {
+			// if (e.perm === 'readonly') {
+
 				L.DomUtil.addClass(this._container.parentElement, 'readonly');
 
 				// testdebug-toolbar
